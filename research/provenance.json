@@ -1,0 +1,775 @@
+{
+  "capturedDate": "2026-10-05",
+  "scope": "固定提交源码研究；近期 X 原型与相近仓库之间的版本关系未全部确认",
+  "repositories": [
+    {
+      "repository": "animated-solar-system-with-react-three-fiber",
+      "commit": "67518d1f5c1fe52ba3cdf5596969fea9bc9912be",
+      "capturedAt": "2026-10-04T09:05:25.360724+00:00",
+      "archiveSha256": "91f83c8227966a7e419aa147b1bf18dd874aa3370ef4bad6665216406ce6f119",
+      "files": [
+        {
+          "path": "LICENSE",
+          "bytes": 1070,
+          "sha256": "f6719c454b384f789c75c9bae4c8691c2ab3ab04a06d607d0b07d4213fd0047f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 274,
+          "sha256": "bb3334efe976e222f3ad2a3e81098067f22ff8ac9b871710408cc319d7e0e1c3"
+        },
+        {
+          "path": "package.json",
+          "bytes": 704,
+          "sha256": "e7969cfa5fa2cc3004fa722f3902d98d690dbcbc4c85eec353c5388e33f32498"
+        },
+        {
+          "path": "public/index.html",
+          "bytes": 1544,
+          "sha256": "fc162db1a67614b4ce8dc1223a570cd1f09707b7fbcec2ba5aae840594f3dc66"
+        },
+        {
+          "path": "src/App.js",
+          "bytes": 3183,
+          "sha256": "e8e7ebac394c05c8b7d74153de7ec5d411ba29f479db2dbf506eec04b1ed602a"
+        },
+        {
+          "path": "src/Dialog.js",
+          "bytes": 1512,
+          "sha256": "77b04c984b76f53e1f7cdd35a24b4352584003b49b3c0547d6327122adf27575"
+        },
+        {
+          "path": "src/index.js",
+          "bytes": 228,
+          "sha256": "b5e6d5dd07bab1fd8697d4740e78eb9c4977b863ea43211dceaa5a0a1e5edd0b"
+        },
+        {
+          "path": "src/planetData.js",
+          "bytes": 1318,
+          "sha256": "5181f1fa07de08caaffdc48a32fe4cf70625a51757532d855b8f5245e2420ba8"
+        },
+        {
+          "path": "src/styles.css",
+          "bytes": 1282,
+          "sha256": "dacc82459af8baf91558a26da1ffd515ecdce112c451dfd944020a4964ff5f80"
+        }
+      ],
+      "ok": true,
+      "url": "https://github.com/dilums/animated-solar-system-with-react-three-fiber/tree/67518d1f5c1fe52ba3cdf5596969fea9bc9912be",
+      "license": "MIT（原件已核对）"
+    },
+    {
+      "repository": "customizable-react-dashboard-with-charts",
+      "commit": "eac83918b76fe38b931a76a3e9882399663fbc0a",
+      "capturedAt": "2026-10-04T09:05:24.645959+00:00",
+      "archiveSha256": "940e0209b0556ab505bddb8355e02cef8d7103fdffb7891979bef9963de73ee7",
+      "files": [
+        {
+          "path": "LICENSE",
+          "bytes": 1070,
+          "sha256": "f6719c454b384f789c75c9bae4c8691c2ab3ab04a06d607d0b07d4213fd0047f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 263,
+          "sha256": "bd06a8bef33801f75ec9322f154a11316d0fc7c41e9c77cfcefdcee75a2e1294"
+        },
+        {
+          "path": "package.json",
+          "bytes": 769,
+          "sha256": "429531a8ed9ca0eb6a9785af56201f1f985354385cc2edf6bc2a3636d37cc463"
+        },
+        {
+          "path": "public/index.html",
+          "bytes": 1544,
+          "sha256": "fc162db1a67614b4ce8dc1223a570cd1f09707b7fbcec2ba5aae840594f3dc66"
+        },
+        {
+          "path": "src/AddList.js",
+          "bytes": 2436,
+          "sha256": "f8f49b2f66fd421cd30096477d7b6b4a820244b9f01314102905cc4928496506"
+        },
+        {
+          "path": "src/App.js",
+          "bytes": 2116,
+          "sha256": "abd14a2b6ce6bea220a370573bff6134452e24654ac7565b7c354c5173e2cf73"
+        },
+        {
+          "path": "src/AreaChart.js",
+          "bytes": 1526,
+          "sha256": "92bb82bdae8581987ee3eacac4266ba698b25e308e4ef9ea39a8d2b2704bdba6"
+        },
+        {
+          "path": "src/BarChart.js",
+          "bytes": 1264,
+          "sha256": "3bb5997064110d5ee07d1d3b2ae0403e985a8cedda101f380f05d8cc660a095c"
+        },
+        {
+          "path": "src/Content.js",
+          "bytes": 2658,
+          "sha256": "4b19986820afed01511f26b3c390fadd3d32c9cde8feddf53fd7e28b3e4a32f8"
+        },
+        {
+          "path": "src/Header.js",
+          "bytes": 2299,
+          "sha256": "a145e8340c50a33f326cb5bbc55d276c08a6e5143ccd75d7c77ba348c9f0e340"
+        },
+        {
+          "path": "src/LineChart.js",
+          "bytes": 1305,
+          "sha256": "585a82ab4091356cb8945ae257d50e5aac850707767e2e1e2cf9be33598ce2f9"
+        },
+        {
+          "path": "src/ScatterChart.js",
+          "bytes": 962,
+          "sha256": "70103550e0782efa5008daf7d9729af4540801a1df56948ec3e7f3c7c2d0274b"
+        },
+        {
+          "path": "src/Sidebar.js",
+          "bytes": 3095,
+          "sha256": "27f7a8c4fab8b053269f01fc44c5f2bd8334720d5ef8e4aff8282ebc729ad395"
+        },
+        {
+          "path": "src/TopBar.js",
+          "bytes": 882,
+          "sha256": "abe684b5948431d60b8875f54828fa582c121064eef4bd455821bae09f89fc40"
+        },
+        {
+          "path": "src/Widget.js",
+          "bytes": 1265,
+          "sha256": "13391b8a478752a75a4ff71b9ef9bf4ae66542bfa358ebdb87a5a457a5f2c811"
+        },
+        {
+          "path": "src/index.js",
+          "bytes": 228,
+          "sha256": "b5e6d5dd07bab1fd8697d4740e78eb9c4977b863ea43211dceaa5a0a1e5edd0b"
+        },
+        {
+          "path": "src/styles.css",
+          "bytes": 4174,
+          "sha256": "bd798bfdec9a6de2791b07654c410212f0515697724811d0d8116bc8253f7c18"
+        }
+      ],
+      "ok": true,
+      "url": "https://github.com/dilums/customizable-react-dashboard-with-charts/tree/eac83918b76fe38b931a76a3e9882399663fbc0a",
+      "license": "MIT（原件已核对）"
+    },
+    {
+      "repository": "react-state-management",
+      "commit": "6c20abe678537dc168a2587412f920e9162213a1",
+      "capturedAt": "2026-10-04T09:05:24.442595+00:00",
+      "archiveSha256": "2d2a7cd8c068e0712ca8a66eff4f2ee973be6596ed532a5bb082f6fb9ce96cd1",
+      "files": [
+        {
+          "path": "LICENSE",
+          "bytes": 1070,
+          "sha256": "f6719c454b384f789c75c9bae4c8691c2ab3ab04a06d607d0b07d4213fd0047f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 17493,
+          "sha256": "48a281de1712b46119a0dbfbc32b6ffc20618b1ad886874e7ce21aad48c39722"
+        }
+      ],
+      "ok": true,
+      "url": "https://github.com/dilums/react-state-management/tree/6c20abe678537dc168a2587412f920e9162213a1",
+      "license": "MIT（原件已核对）"
+    },
+    {
+      "repository": "jet-engine-threejs",
+      "commit": "b8601913ee2d524bac3d21758a9ca3c77818bfa5",
+      "capturedAt": "2026-10-04T09:05:24.634434+00:00",
+      "archiveSha256": "203d10636005fe33ca84a78d0cbe6ae653f656698478a4c1427c9dbac2559837",
+      "files": [
+        {
+          "path": "LICENSE",
+          "bytes": 1070,
+          "sha256": "f6719c454b384f789c75c9bae4c8691c2ab3ab04a06d607d0b07d4213fd0047f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 205,
+          "sha256": "bf6f45a96da5d440a5dc7db6584a79a279b740642abbf19fdb74a08557050181"
+        },
+        {
+          "path": "index.html",
+          "bytes": 366,
+          "sha256": "d384713ab9af562c946a199b3cf5c5abeab9deaa2573738381572f3f1010dae2"
+        },
+        {
+          "path": "package.json",
+          "bytes": 279,
+          "sha256": "eef07afbae8d1ae8d1dd1873fa5454d7e8b5080a35eff9217c6372e967bf75fe"
+        },
+        {
+          "path": "src/main.js",
+          "bytes": 14224,
+          "sha256": "468a5f1dcb4d4ac5275e76df7259d276fc397e0025493332741ca7923de38877"
+        },
+        {
+          "path": "src/style.css",
+          "bytes": 146,
+          "sha256": "9c46fe914adb2f75201ffe4d24c29bced8b1ba9b6cfa7301d0beaa92f13db2ee"
+        }
+      ],
+      "ok": true,
+      "url": "https://github.com/dilums/jet-engine-threejs/tree/b8601913ee2d524bac3d21758a9ca3c77818bfa5",
+      "license": "MIT（原件已核对）"
+    },
+    {
+      "repository": "hexapod-robot-simulator",
+      "commit": "f0e5dc24369a3c77d596eac5762e674403687373",
+      "capturedAt": "2026-10-04T09:05:26.739354+00:00",
+      "archiveSha256": "ffc96167c5d3808d1f7ea5a6fd34fe259a2064cac4a5e4595effddd5a85082a6",
+      "files": [
+        {
+          "path": "README.md",
+          "bytes": 274,
+          "sha256": "c83e5f63bb2be7d03aee8c5f7e8539633d5f47e8f8f1c1b5e2d9fd1c995668d0"
+        },
+        {
+          "path": "app/dimentions.tsx",
+          "bytes": 720,
+          "sha256": "6c4625240e781553df05ae89cc103cdb6e1e4ba9daa43a87e7f45bfa863fac51"
+        },
+        {
+          "path": "app/globals.css",
+          "bytes": 4475,
+          "sha256": "bd1b199ee70b1f7376e184716b97c8d00a3a124f4869560db799f1d71bd9a5e5"
+        },
+        {
+          "path": "app/inversek.tsx",
+          "bytes": 1104,
+          "sha256": "6bdd33850391c17ac3b7b79fdeb1e8119676dbace5ca25d099947e53167618d9"
+        },
+        {
+          "path": "app/layout.tsx",
+          "bytes": 706,
+          "sha256": "bc6c10119464bbf66818f4a1301ceb172f84aa14bf3f2f91cbad59c2b2f77b85"
+        },
+        {
+          "path": "app/page.tsx",
+          "bytes": 1526,
+          "sha256": "b645de1411ac68e6698f1b82b6ddb07ac59d9c2495a8a714b54d06abe592ce1d"
+        },
+        {
+          "path": "app/patterns.tsx",
+          "bytes": 964,
+          "sha256": "7be2fb43ed16aa799dcf1494380922dcdc52b5ada0cc1252edbf6ccdb62554f9"
+        },
+        {
+          "path": "app/plot.tsx",
+          "bytes": 994,
+          "sha256": "858b082f2ccc9bd4c483e2d61367601b5a5ca5042383e1a0e0b54c9cf0f529f0"
+        },
+        {
+          "path": "app/settings.tsx",
+          "bytes": 1309,
+          "sha256": "28d173339c3ee362b391ef910366e21bd93633d4d1683b0c143af0aecb7313a4"
+        },
+        {
+          "path": "app/stuff.tsx",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "app/walk.tsx",
+          "bytes": 5692,
+          "sha256": "95daf8947f25633e209bc149c87345ca00ed10e9f35540518d13f47d5693ddad"
+        },
+        {
+          "path": "components.json",
+          "bytes": 444,
+          "sha256": "7973647e1fcba157065f8990ce37e09339d1f3c12817ff99b96e1dfdb32a1c80"
+        },
+        {
+          "path": "components/slider-set.tsx",
+          "bytes": 1435,
+          "sha256": "5f8beb2d10501b008b72ec4b6b643dd1ed18711b6cd09a0cfc5a0dcacacf2af3"
+        },
+        {
+          "path": "components/ui/button-group.tsx",
+          "bytes": 2209,
+          "sha256": "ccbf09097f5ebf2eec86f1a96cb92e8dd39d251ebb5867394196c8b4fec68a5c"
+        },
+        {
+          "path": "components/ui/button.tsx",
+          "bytes": 2142,
+          "sha256": "8116b8529db6dc4e3c04bd5ebdd223a38535dcc737830d12ec4b290433d469d8"
+        },
+        {
+          "path": "components/ui/label.tsx",
+          "bytes": 611,
+          "sha256": "9ec42c8a57e82311118b794318409ee02b2cebfa49ba6cce8457cff6448cd471"
+        },
+        {
+          "path": "components/ui/separator.tsx",
+          "bytes": 699,
+          "sha256": "e9dddbd8dbbc0eccd683306481b0f0bbc8e2b60ea97817416ebb9fe7fbbbdca8"
+        },
+        {
+          "path": "components/ui/slider.tsx",
+          "bytes": 1996,
+          "sha256": "640996327017c3977e3c61eee8ec55230fa0bec509d0f4b44bdc9acdd8eca138"
+        },
+        {
+          "path": "components/ui/tabs.tsx",
+          "bytes": 1969,
+          "sha256": "e8469e599381cf021ce751c27cca3d8cb06440a45665ca9c2ef2efb0acef1fd9"
+        },
+        {
+          "path": "constants/index.ts",
+          "bytes": 2376,
+          "sha256": "73ce0324ded76b4d21c465a054075090f40e8b927f0b52a53affee2101223571"
+        },
+        {
+          "path": "hexapod/Hexagon.ts",
+          "bytes": 3431,
+          "sha256": "fba453fb3d049c10182eb0fd15170d67aaf3c0576678dbeb49187bd1af3d5891"
+        },
+        {
+          "path": "hexapod/Linkage.ts",
+          "bytes": 10356,
+          "sha256": "32a13505a2a51392b8e3ce5f3a929946c5238ea54add38e5aef064c5ae0a19d6"
+        },
+        {
+          "path": "hexapod/Vector.ts",
+          "bytes": 2047,
+          "sha256": "773f1ea3687671c497bf9c6ddb676d5d20936eed63b6ee758c966fcd279914a0"
+        },
+        {
+          "path": "hexapod/VirtualHexapod.ts",
+          "bytes": 10679,
+          "sha256": "2ecc61314353a7e45cb08fb770e805d741d9e761e7eacbc170bdcbcde3c314b8"
+        },
+        {
+          "path": "hexapod/constants.ts",
+          "bytes": 1699,
+          "sha256": "3e6555f2d90f984b2b5e09591f09f8d36d111ae90018d5c403e2fb15774efbb8"
+        },
+        {
+          "path": "hexapod/geometry.ts",
+          "bytes": 5638,
+          "sha256": "e4316321cb103ae1bba8f276bca0a0a1c18d1ad69abe3ac2e1e5d34edef569d8"
+        },
+        {
+          "path": "hexapod/index.ts",
+          "bytes": 301,
+          "sha256": "974b0ca1360c69d5fde3fa7bd0bb07d7d30f02c4d32845f7ba6938c63d228145"
+        },
+        {
+          "path": "hexapod/solvers/ik/HexapodSupportCheck.ts",
+          "bytes": 1504,
+          "sha256": "21aa10a2861d3c54b90cb79b215f136c405286a99317ef75cf7921b61325c561"
+        },
+        {
+          "path": "hexapod/solvers/ik/IKInfo.ts",
+          "bytes": 2655,
+          "sha256": "e5fbe0911129d65e1333b60c2ad30ef87d53f737fffc593fb9bed18c9ffa08bb"
+        },
+        {
+          "path": "hexapod/solvers/ik/IKSolver.ts",
+          "bytes": 9501,
+          "sha256": "095c95ce6f63e6d1903aa4aa4ac1722362fc7bba3d79995c6ff58eebc2a995c3"
+        },
+        {
+          "path": "hexapod/solvers/ik/LinkageIKSolver.ts",
+          "bytes": 5521,
+          "sha256": "c3f9d7d197f583312f85bb6fb899072afad07043bf3b3d3c42b4ea30f190654d"
+        },
+        {
+          "path": "hexapod/solvers/ik/hexapodSolver.ts",
+          "bytes": 7680,
+          "sha256": "d94e607ddeddf649bc98732f78940756dd0801ff8d4c0dd0566413a8355567b7"
+        },
+        {
+          "path": "hexapod/solvers/orient/orientSolverGeneral.ts",
+          "bytes": 6061,
+          "sha256": "49db9789ac9ea4399bee7c88d1e120c1f752bb83ced78abf16be538b315b8bf1"
+        },
+        {
+          "path": "hexapod/solvers/orient/orientSolverHelpers.ts",
+          "bytes": 2390,
+          "sha256": "0a78fc0845f0a2847b0b77ae8926481b7bf9af28165602f476bfe4415bb435f7"
+        },
+        {
+          "path": "hexapod/solvers/orient/orientSolverSpecific.ts",
+          "bytes": 2515,
+          "sha256": "5e80d07cac52f060ebc7fb09d20dd9b62fd569a48592fdbd7182a5d110d33a53"
+        },
+        {
+          "path": "hexapod/solvers/twistSolver.ts",
+          "bytes": 4865,
+          "sha256": "55f507c5cd49e4db24cee2795820a43cfde6c16cf1feb5305b9eba4e1e818c29"
+        },
+        {
+          "path": "hexapod/solvers/walkSequenceSolver.ts",
+          "bytes": 9141,
+          "sha256": "32162cbe92bfa456e1ccd9179c2ca4ebe424ee97adc265dabd78ba6304fd1bbf"
+        },
+        {
+          "path": "lib/utils.ts",
+          "bytes": 166,
+          "sha256": "7c8c3dfc0cdd370d44932828eb067ef771c8fe7996693221d5d4b90af6d54f2d"
+        },
+        {
+          "path": "next.config.ts",
+          "bytes": 176,
+          "sha256": "39d9d7500b4f7f715e6214fa5d80eaafa5277d96f392d7aa9fc60aa2ab168bc5"
+        },
+        {
+          "path": "package.json",
+          "bytes": 1029,
+          "sha256": "7cb39c1fa2053e100e6d2f44ed4a7bf70c473165e49f9a2d8221cecb66a13704"
+        },
+        {
+          "path": "stores/main.tsx",
+          "bytes": 1268,
+          "sha256": "fa5275d3af2ae991d7ae25d1348bbf247059f432cf67f22eae6010ec0d8f62fe"
+        },
+        {
+          "path": "templates/hexapodParams.ts",
+          "bytes": 1225,
+          "sha256": "44d843a0def7d47644987c30c46e18bb6f44abfe4371b663f92c36c5788fee9c"
+        },
+        {
+          "path": "templates/index.ts",
+          "bytes": 547,
+          "sha256": "584817be3f99da94caaa7b5f7028297fe959f24570268262f116b21cfa4f2c44"
+        },
+        {
+          "path": "templates/plotParams.ts",
+          "bytes": 7656,
+          "sha256": "f5a17decc9763a94582a11f8a7026aa726971bafe828523372b9cf900a0bb9bd"
+        },
+        {
+          "path": "templates/plotter.ts",
+          "bytes": 3581,
+          "sha256": "fc7654facbf21fafd3f9055a5fdd6991cd4ac97084195d2b3269f5d853e47ef8"
+        },
+        {
+          "path": "templates/updateHexapod.ts",
+          "bytes": 1126,
+          "sha256": "9b95cee3955d3c607d5656e6f67b8f26ac3a063bd90364b1a7f2293a653f746e"
+        },
+        {
+          "path": "tsconfig.json",
+          "bytes": 666,
+          "sha256": "be18523b23b78b6e1a876ddd107d330f0168bddf09d751b57e0b5edce69c66f3"
+        },
+        {
+          "path": "types/index.ts",
+          "bytes": 678,
+          "sha256": "4f90713658db551350ee1140effe3ff588163af6e15c731fe048b96af5306eeb"
+        }
+      ],
+      "ok": true,
+      "url": "https://github.com/dilums/hexapod-robot-simulator/tree/f0e5dc24369a3c77d596eac5762e674403687373",
+      "license": "根许可证未取得"
+    },
+    {
+      "repository": "responsive-strandbeest",
+      "commit": "4eb0e454bb4d089de4c40da21f51c4efacad4e24",
+      "capturedAt": "2026-10-04T09:05:27.062984+00:00",
+      "archiveSha256": "e8a606038f1fb2c498c7ef7f23d306cff9c8fad674f2661ee86c316a8de90466",
+      "files": [
+        {
+          "path": "LICENSE",
+          "bytes": 1070,
+          "sha256": "f6719c454b384f789c75c9bae4c8691c2ab3ab04a06d607d0b07d4213fd0047f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 218,
+          "sha256": "fd01b0c8789f828819515a433dd0f04588dedf13a1a96340ce5ad8bcce7e4bba"
+        },
+        {
+          "path": "index.html",
+          "bytes": 487,
+          "sha256": "3ec88b99cd9d7e1272bf906da46d0b9f17b5338736f0759c144fb6f68fb1fd71"
+        },
+        {
+          "path": "main.js",
+          "bytes": 3757,
+          "sha256": "200736cff1dd3aed37fe861820484e1dcffbbee8be80473087960b5b8b3f866a"
+        },
+        {
+          "path": "style.css",
+          "bytes": 146,
+          "sha256": "be24099aa4f5425ddc97f187aabb18aa333c0f3cc7822b0e0899754015bd5f4b"
+        }
+      ],
+      "ok": true,
+      "url": "https://github.com/dilums/responsive-strandbeest/tree/4eb0e454bb4d089de4c40da21f51c4efacad4e24",
+      "license": "MIT（原件已核对）"
+    },
+    {
+      "repository": "kinematic-creatures",
+      "commit": "5cb2408262dd271b1f9ae1746c32161ee54e07dc",
+      "capturedAt": "2026-10-04T09:05:26.773315+00:00",
+      "archiveSha256": "8886092ca9bc32439e05608bf9ed5906c3a59d2e287f76cfcc3dbd8ca76eff53",
+      "files": [
+        {
+          "path": "LICENSE",
+          "bytes": 1070,
+          "sha256": "f6719c454b384f789c75c9bae4c8691c2ab3ab04a06d607d0b07d4213fd0047f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 204,
+          "sha256": "a50fe9fdfcfccf0ea0603db9f1e2d7ab399ba088d8d41e21f5f76a97261b35d2"
+        },
+        {
+          "path": "index.html",
+          "bytes": 470,
+          "sha256": "bad2763ed066a91c2d4886f3f505d1d778ebed98e82e7ab1fe799cf8dbc384aa"
+        },
+        {
+          "path": "main.js",
+          "bytes": 3480,
+          "sha256": "b673eca490777d57d5e4d6548ac80a8d15ae3a1b3e7f0b9c9e46499addeaf5a7"
+        },
+        {
+          "path": "style.css",
+          "bytes": 307,
+          "sha256": "9c4a79123d930d8a613273397cfd6572a8073ad4dd817a45398fa4e1ebeeeb78"
+        }
+      ],
+      "ok": true,
+      "url": "https://github.com/dilums/kinematic-creatures/tree/5cb2408262dd271b1f9ae1746c32161ee54e07dc",
+      "license": "MIT（原件已核对）"
+    },
+    {
+      "repository": "aisdk-threejs-starter",
+      "commit": "8b182dc5314fc622e61f262fc6bc0301bc31e2c3",
+      "capturedAt": "2026-10-04T09:05:27.612153+00:00",
+      "archiveSha256": "f2a58c213383053c3db05c6916a15f9237237c90f10d893c2960dbd129681c9c",
+      "files": [
+        {
+          "path": "README.md",
+          "bytes": 1578,
+          "sha256": "6257d9762984b021d73d6ac458cc7dea314a592ffd1d5a65c9e1171093abbad4"
+        },
+        {
+          "path": "app/api/chat/route.ts",
+          "bytes": 605,
+          "sha256": "0f8727ad89952847da86facd30c23388b0fc6a20e422a8120ef2fccb5f73cfb8"
+        },
+        {
+          "path": "app/globals.css",
+          "bytes": 4475,
+          "sha256": "bd1b199ee70b1f7376e184716b97c8d00a3a124f4869560db799f1d71bd9a5e5"
+        },
+        {
+          "path": "app/layout.tsx",
+          "bytes": 689,
+          "sha256": "e65025ca7842d1b3ec1fcb41768f974cfbb9c5ca85abb2fb2ace6dfa4ac4f860"
+        },
+        {
+          "path": "app/page.tsx",
+          "bytes": 6713,
+          "sha256": "8d36858e4cb45d430a93a165f1a4a5186e18e5a128c0a69f94c8711963538067"
+        },
+        {
+          "path": "components.json",
+          "bytes": 444,
+          "sha256": "7973647e1fcba157065f8990ce37e09339d1f3c12817ff99b96e1dfdb32a1c80"
+        },
+        {
+          "path": "components/ui/button.tsx",
+          "bytes": 2083,
+          "sha256": "7b260b5eeb59e4756fc3907e54852f06d58e8003ff0e030c1d97cff194d87f00"
+        },
+        {
+          "path": "components/ui/card.tsx",
+          "bytes": 1989,
+          "sha256": "78cdb63dff3ec7ef074ada630ff20a5d8004768b6cbe24ed134a8bfba12bafbb"
+        },
+        {
+          "path": "components/ui/input.tsx",
+          "bytes": 962,
+          "sha256": "56b7fd30208addbcc2468cfda4f5bc0a55342211deaab61ee35b1c352b1622f1"
+        },
+        {
+          "path": "components/ui/textarea.tsx",
+          "bytes": 759,
+          "sha256": "de4e9fb0fd8e8ed10ea2e475ffe202a922ffe77e3f3edb2c517b0781447ad1b4"
+        },
+        {
+          "path": "lib/utils.ts",
+          "bytes": 849,
+          "sha256": "5e74959b122555507522780bfa8590aca0197683a2e3058f9ffcf1180f9f9f85"
+        },
+        {
+          "path": "next.config.ts",
+          "bytes": 133,
+          "sha256": "614bce25b089c3f19b1e17a6346c74b858034040154c6621e7d35303004767cc"
+        },
+        {
+          "path": "package.json",
+          "bytes": 991,
+          "sha256": "f7be1c048c22322a6ef5c26f93079156c146c12c5df6b394399d900dd84462c5"
+        },
+        {
+          "path": "prompts/system/index.ts",
+          "bytes": 2385,
+          "sha256": "93d401041d520df214dcbbfaafaa8b1c6d2033971f2596bcfaf31a4613ad1f5c"
+        },
+        {
+          "path": "tsconfig.json",
+          "bytes": 598,
+          "sha256": "7400777529a3d1725c6ca349866a955ef4d00717f93a1d1e162c8e5b85f2abd6"
+        }
+      ],
+      "ok": true,
+      "url": "https://github.com/dilums/aisdk-threejs-starter/tree/8b182dc5314fc622e61f262fc6bc0301bc31e2c3",
+      "license": "根许可证未取得"
+    },
+    {
+      "repository": "van-allen-belts-auroras",
+      "commit": "94fcad576ddf633c79a06d52a03cc0c4ddf50638",
+      "capturedAt": "2026-10-04T09:05:28.875561+00:00",
+      "archiveSha256": "2c382639e1da1f146a790d4423c570bd26488dc65cf926b245059e151d3f6ecd",
+      "files": [
+        {
+          "path": "LICENSE",
+          "bytes": 1070,
+          "sha256": "f6719c454b384f789c75c9bae4c8691c2ab3ab04a06d607d0b07d4213fd0047f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 210,
+          "sha256": "fc3ee5b7412c51bf0adc770c1bbdd386906fca38275b0fef444a1533a34d5704"
+        },
+        {
+          "path": "index.html",
+          "bytes": 26362,
+          "sha256": "f82bd9464694f860216451d9bff7e65f4e6d8817790d7762799b57ffbc8a7af5"
+        },
+        {
+          "path": "main.js",
+          "bytes": 2671,
+          "sha256": "ea3a0717671e190a1f119189272ae3ece0fa89064d09b98d52a5328829253a5a"
+        },
+        {
+          "path": "style.css",
+          "bytes": 368,
+          "sha256": "ee0bf43e9ebeb87de4c411f6e26588352de362cd173843250643b9d5f67f3438"
+        }
+      ],
+      "ok": true,
+      "url": "https://github.com/dilums/van-allen-belts-auroras/tree/94fcad576ddf633c79a06d52a03cc0c4ddf50638",
+      "license": "MIT（原件已核对）"
+    },
+    {
+      "repository": "dna-structure-animation-3d",
+      "commit": "6acd2aed1538a48296ae4d3973a2244f2d5579f3",
+      "capturedAt": "2026-10-04T09:05:28.855000+00:00",
+      "archiveSha256": "34e571ed21d9a78c1b6657e9609510172c2ea76a9375c1df0579ed62449b951f",
+      "files": [
+        {
+          "path": "LICENSE",
+          "bytes": 1070,
+          "sha256": "f6719c454b384f789c75c9bae4c8691c2ab3ab04a06d607d0b07d4213fd0047f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 200,
+          "sha256": "7db5ace631b245f86e14201b27502913ff86460b7d09438a04f56ee27602827a"
+        },
+        {
+          "path": "index.html",
+          "bytes": 587,
+          "sha256": "3e71be879936a25325c32c06430732d79f3097c799e199a0b1bdeee200a5ffd5"
+        },
+        {
+          "path": "main.js",
+          "bytes": 2808,
+          "sha256": "8d55b5e44a64ec5b77a842bda9de4433314932819221d0c118ced8ec3d83c5a2"
+        },
+        {
+          "path": "style.css",
+          "bytes": 41,
+          "sha256": "916b2ca0175096f5355147c53e3e8d07f62cfae7739fb59ab9c49a5fac67db4a"
+        }
+      ],
+      "ok": true,
+      "url": "https://github.com/dilums/dna-structure-animation-3d/tree/6acd2aed1538a48296ae4d3973a2244f2d5579f3",
+      "license": "MIT（原件已核对）"
+    },
+    {
+      "repository": "animated-periodic-table",
+      "commit": "4a122495afcd6bbd4b2912f63dfda541ae3f90d8",
+      "capturedAt": "2026-10-04T09:05:29.149894+00:00",
+      "archiveSha256": "3c0e3ec8556545d6bfe52d9291eb613dbff6d99eecbebb281b8b968e1209b353",
+      "files": [
+        {
+          "path": "LICENSE",
+          "bytes": 1070,
+          "sha256": "f6719c454b384f789c75c9bae4c8691c2ab3ab04a06d607d0b07d4213fd0047f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 213,
+          "sha256": "3148b421a37e4131f0e3e2b4207a6fef456cc63913a5450ae1f06286e4ecbaeb"
+        },
+        {
+          "path": "index.html",
+          "bytes": 476,
+          "sha256": "29695302843bb31fec62a8c5b7954bce39f69cbb29e2d778f92772470e3f570a"
+        },
+        {
+          "path": "main.js",
+          "bytes": 5408,
+          "sha256": "740966c7fd623acf76bf1841cbdb4ff49eee88f31b42077c22573b67e2c0f5e8"
+        },
+        {
+          "path": "style.css",
+          "bytes": 854,
+          "sha256": "fd7d32ad150ce8792510548de5a7dbde68df553abbb32522c1bc66851263602c"
+        }
+      ],
+      "ok": true,
+      "url": "https://github.com/dilums/animated-periodic-table/tree/4a122495afcd6bbd4b2912f63dfda541ae3f90d8",
+      "license": "MIT（原件已核对）"
+    },
+    {
+      "repository": "gemini-3-smart-home-app",
+      "commit": "afb8b961c4eaa482507ec72c770afb06df49b28e",
+      "url": "https://github.com/dilums/gemini-3-smart-home-app/tree/afb8b961c4eaa482507ec72c770afb06df49b28e",
+      "license": "本轮仅补查六个文本文件，未取得独立许可原件",
+      "files": [
+        {
+          "path": "App.tsx",
+          "bytes": 24520,
+          "sha256": "c8aa868d8ccd0023cb04d3287de514c6c4b70cf8ee8fe7a9cb50d450830b5cdf"
+        },
+        {
+          "path": "README.md",
+          "bytes": 245,
+          "sha256": "86fa599338cabaa43587d8bc0ef4ba668fc32616dfd47f026b673053fc901c56"
+        },
+        {
+          "path": "types.ts",
+          "bytes": 1103,
+          "sha256": "03f58ac8ead70d7209268601bb6694808b67563e157d514c18688554f5646223"
+        },
+        {
+          "path": "package.json",
+          "bytes": 611,
+          "sha256": "7411f272c926fe86c2f31cddcea2c4e03e75832f0eca26778eca241678eed100"
+        },
+        {
+          "path": "components/Scene3D.tsx",
+          "bytes": 17852,
+          "sha256": "9f80d74231170302c44c6caf42463eb113576ddd9cc224435fff5d2c2d35f90c"
+        },
+        {
+          "path": "services/geminiService.ts",
+          "bytes": 1451,
+          "sha256": "30ad266cec75386979bfd2acf9311586a591e96cf7799f42347e73e4309c7406"
+        }
+      ]
+    }
+  ]
+}

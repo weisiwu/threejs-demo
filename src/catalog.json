@@ -1,0 +1,1383 @@
+[
+  {
+    "slug": "customizable-dashboard",
+    "title": "可定制仪表盘",
+    "subtitle": "拖动卡片，保存完整布局，再验证刷新恢复。",
+    "category": "界面与状态",
+    "parameter": {
+      "label": "柱高倍率",
+      "min": 0.3,
+      "max": 2,
+      "step": 0.1,
+      "value": 1
+    },
+    "action": "保存布局",
+    "mechanism": "稳定卡片 ID、items 与 layouts 一起持久化",
+    "limit": "图表使用固定种子生成的示例数据；不接入真实监控。",
+    "sources": [
+      {
+        "url": "https://javascript.plainenglish.io/tired-of-boring-static-dashboards-lets-build-a-fully-customizable-dashboard-in-react-88cb5369cfe1",
+        "title": "可定制仪表盘原文"
+      },
+      {
+        "url": "https://github.com/dilums/customizable-react-dashboard-with-charts/tree/eac83918b76fe38b931a76a3e9882399663fbc0a",
+        "title": "customizable-react-dashboard-with-charts"
+      }
+    ],
+    "research": [
+      "面板定制先解决身份和顺序。布局保存的是 revenue、orders、traffic 这样的业务 ID；柱体只是这些记录的一种画法。若保存 mesh 的索引，删除前面的卡片后，旧配置就会指向另一张图。",
+      "复现把顺序放进 ids 数组，上移时交换相邻 ID，删除时按 ID 过滤；添加图表寻找尚未占用的 metric-N。保存入口写入 threejs-demo.dashboard.v1，重新打开时校验数量、类型与唯一性。柱高倍率会重建几何，旧几何与材质先释放。",
+      "初始三张图的高度按 (i+1)×倍率计算，数值是演示数据。保存布局后刷新，orders → revenue → traffic 应保持原顺序。这检验了存储与视图是否从同一份配置重建；没有接入真实业务接口，也没有照搬原仓库的图表组件。"
+    ],
+    "archivedArticle": "dilum-customizable-dashboard",
+    "article": ""
+  },
+  {
+    "slug": "state-management",
+    "title": "状态订阅实验",
+    "subtitle": "输入、计数与渲染次数，用同一操作比较订阅。",
+    "category": "界面与状态",
+    "parameter": {
+      "label": "父级更新标记",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "value": 0
+    },
+    "action": "增加计数",
+    "mechanism": "React state、memo、Context 与标量外部订阅",
+    "limit": "实验比较更新传播范围，不输出性能排名；开发模式调用次数不能当作生产耗时。",
+    "sources": [
+      {
+        "url": "https://javascript.plainenglish.io/mastering-react-state-management-a-comprehensive-guide-5b21359ec76a",
+        "title": "React 状态管理原文"
+      },
+      {
+        "url": "https://github.com/dilums/react-state-management/tree/6c20abe678537dc168a2587412f920e9162213a1",
+        "title": "react-state-management"
+      },
+      {
+        "url": "https://react.dev/reference/react/memo",
+        "title": "React memo 官方文档"
+      },
+      {
+        "url": "https://react.dev/reference/react/useContext",
+        "title": "React useContext 官方文档"
+      },
+      {
+        "url": "https://github.com/facebookexperimental/Recoil",
+        "title": "Recoil 官方仓库归档状态"
+      }
+    ],
+    "research": [
+      "状态管理的比较必须先定义更新来源。本例把计数变更与无关父级更新分开，分别记录普通组件、memo、Context 消费者和 useSyncExternalStore 订阅者的实际渲染次数。",
+      "四个组件在同一个 React 根中运行。memo 收到稳定的数值 prop；Context 的子元素引用保持稳定，因此父级噪声不会因新建 element 而重绘消费者。外部 store 返回数值快照，subscribe 返回清理函数，离开场景后卸载 React 根。",
+      "增加计数会通知 store 并更新 Context；无关父级更新只改父级噪声。观察 memo 计数不变，才有理由讨论它在这一更新路径上的作用。这里没有重装已归档的 Recoil，也没有以四根柱子的动画冒充四种状态库性能测量。"
+    ],
+    "archivedArticle": "dilum-react-state-management",
+    "article": ""
+  },
+  {
+    "slug": "solar-system-basics",
+    "title": "太阳系场景搭建",
+    "subtitle": "球体、光源与轨道线，逐层检查场景树。",
+    "category": "科学可视化",
+    "parameter": {
+      "label": "轨道尺度",
+      "min": 0.6,
+      "max": 1.6,
+      "step": 0.1,
+      "value": 1
+    },
+    "action": "切换轨道",
+    "mechanism": "椭圆采样、声明数据与 Three.js 场景对象",
+    "limit": "行星尺寸、轨道和纹理为展示配置，不是等比例天文模型。",
+    "sources": [
+      {
+        "url": "https://medium.com/geekculture/build-3d-apps-with-react-animated-solar-system-part-1-c4c394a8574c",
+        "title": "太阳系教程第一篇"
+      },
+      {
+        "url": "https://github.com/dilums/animated-solar-system-with-react-three-fiber/tree/67518d1f5c1fe52ba3cdf5596969fea9bc9912be",
+        "title": "animated-solar-system-with-react-three-fiber"
+      }
+    ],
+    "research": [
+      "先将 scene、camera、renderer 的职责分清。太阳和六个行星都是程序化网格；轨道线、材质与灯光决定可见性，镜头并不承担天体运动计算。",
+      "行星位置使用 x=a cosθ、z=b sinθ，y 固定为 2。每个行星分配 planet-N，轨道与行星共用显示尺度。轨道尺度只改变空间呈现，太阳不随该参数缩放。",
+      "运行时用 OrbitControls 处理拖动，ResizeObserver 更新相机宽高比；像素比上限为 1.75。这样可以检查场景是否随容器变化，而不是只在作者截图尺寸下成立。轨道半径与球体尺寸均为展示单位。"
+    ],
+    "archivedArticle": "dilum-solar-system-part1",
+    "article": ""
+  },
+  {
+    "slug": "solar-system-orbits",
+    "title": "轨道与交互",
+    "subtitle": "用秒制时间驱动公转、自转与行星选择。",
+    "category": "科学可视化",
+    "parameter": {
+      "label": "播放倍率",
+      "min": 0,
+      "max": 5,
+      "step": 0.25,
+      "value": 1
+    },
+    "action": "聚焦行星",
+    "mechanism": "公转与自转共用模拟时钟，点击以稳定 ID 选中",
+    "limit": "这是动画机制复现；未进行真实轨道数值积分。",
+    "sources": [
+      {
+        "url": "https://medium.com/geekculture/build-3d-apps-with-react-animated-solar-system-part-2-1186a5c8bd1",
+        "title": "太阳系教程第二篇"
+      },
+      {
+        "url": "https://github.com/dilums/animated-solar-system-with-react-three-fiber/tree/67518d1f5c1fe52ba3cdf5596969fea9bc9912be",
+        "title": "animated-solar-system-with-react-three-fiber"
+      }
+    ],
+    "research": [
+      "自转与公转是两个角度，不能把父级变换和 mesh 自身旋转混在一个变量里解释。复现先求行星在椭圆上的位置，再单独改 rotation.y。",
+      "公转相位按积分 phase += dt×播放倍率推进，各行星除以 1+i×0.5；位置仍为椭圆参数方程。这是匀速参数运动，未按开普勒第二定律修正角速度。轨道形状像椭圆不代表轨道力学已成立。",
+      "聚焦按钮循环选择稳定行星 ID，镜头目标跟随所选位置的当前快照。播放倍率可以降至零，且改倍率不会重置先前相位。重置会重新建立同一初始相位。"
+    ],
+    "archivedArticle": "dilum-solar-system-part2",
+    "article": ""
+  },
+  {
+    "slug": "visibility-dashboard",
+    "title": "可见性仪表盘",
+    "subtitle": "离屏停止采样，回到卡片保留观察状态。",
+    "category": "界面与状态",
+    "parameter": {
+      "label": "采样周期（秒）",
+      "min": 0.2,
+      "max": 2,
+      "step": 0.1,
+      "value": 0.5
+    },
+    "action": "切换卡片可见性",
+    "mechanism": "IntersectionObserver 与请求调度分别管理生命周期",
+    "limit": "数据来自本地确定性采样器；没有 LogicVein 私有代码或生产性能数据。",
+    "sources": [
+      {
+        "url": "https://logicvein.com/blog-and-news/boosting-dashboard-performance/",
+        "title": "Boosting Dashboard Performance"
+      },
+      {
+        "url": "https://github.com/dilums/customizable-react-dashboard-with-charts/tree/eac83918b76fe38b931a76a3e9882399663fbc0a",
+        "title": "customizable-react-dashboard-with-charts"
+      },
+      {
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API",
+        "title": "MDN IntersectionObserver 文档"
+      }
+    ],
+    "research": [
+      "性能优化要决定何时可以停止工作。IntersectionObserver 的相交结果、卡片是否被手动隐藏、document.visibilityState 三项共同决定采样门。",
+      "卡片隐藏时保留尺寸，避免周围布局跳动；采样间隔由累计模拟时间与周期参数比较。采样门关闭期间不产生新样本，恢复后采一次，并清掉积压时间，不把离开页面的时间补成大量轮询。",
+      "场景中的十二根柱体只在采样发生时更新。样本数可以观察采样门是否有效；整个 WebGL 场景仍需渲染以响应镜头，因此本例不会声称完全停止了 GPU 工作。离开场景会断开 observer。"
+    ],
+    "archivedArticle": "dilum-dashboard-visibility",
+    "article": ""
+  },
+  {
+    "slug": "network-management",
+    "title": "网络运维控制台",
+    "subtitle": "筛选设备、模拟事件，再读取逐项备份回执。",
+    "category": "界面与状态",
+    "parameter": {
+      "label": "显示设备数",
+      "min": 4,
+      "max": 16,
+      "step": 1,
+      "value": 8
+    },
+    "action": "切换所选设备状态",
+    "mechanism": "稳定实体 ID、版本事件与批量幂等操作",
+    "limit": "网络设备和回执为本地模拟，不访问实物或公司网络。",
+    "sources": [
+      {
+        "url": "https://logicvein.com/blog-and-news/streamlining-network-management-with-a-thoughtfully-designed-ui/",
+        "title": "网络管理 UI 原文"
+      }
+    ],
+    "research": [
+      "批量操作不能只给出一个成功提示。复现将设备选择、设备锁定和单设备结果分开，批次同时返回成功与失败数量。",
+      "16 个设备各有 ID、enabled、revision 与 locked。显示数量控制可见设备及其选择范围；device-3 被设为锁定。操作只改变已选且未锁定的记录，并增加各自修订号，批次 ID 保存在 seen 集合。",
+      "按钮执行的是模拟状态切换。原文谈及备份等管理任务，但这里没有路由器、备份文件或远端 RPC。显示一个设备卡片并不足以证明配置已经保存；要进入真实管理系统，还需要服务器回执和任务重试语义。"
+    ],
+    "archivedArticle": "dilum-network-management-ui",
+    "article": ""
+  },
+  {
+    "slug": "scene-builder",
+    "title": "场景指令工作台",
+    "subtitle": "验证 JSON，再添加、删除或清空三维对象。",
+    "category": "生成与资产",
+    "article": "dilum-ai-scene-protocol",
+    "parameter": {
+      "label": "默认物体尺寸",
+      "min": 0.3,
+      "max": 2,
+      "step": 0.1,
+      "value": 1
+    },
+    "action": "执行指令",
+    "mechanism": "判别式操作协议、字段校验与对象预算",
+    "limit": "使用本地结构化指令；未调用语言模型或生成服务。",
+    "sources": [
+      {
+        "url": "https://github.com/dilums/aisdk-threejs-starter/tree/8b182dc5314fc622e61f262fc6bc0301bc31e2c3",
+        "title": "aisdk-threejs-starter"
+      }
+    ],
+    "research": [
+      "模型产出落到场景时，最容易出问题的是执行边界。复现只接受 add、remove、clear 的 JSON 指令，不解释 JavaScript，也不执行模型返回的函数。",
+      "sceneCommand 在一次提交里校验所有对象，再返回新数组。类型限定 box、sphere、cylinder；位置需三个有限数，绝对值不超过 20，尺寸在 0.05–5，颜色为六位十六进制。总物体不超过 40，业务 ID 唯一。",
+      "校验失败会保留原场景，错误信息进入回执。默认尺寸参数修改待提交的 add 指令；真正生效的几何由指令决定。更新场景先释放旧资源，避免反复编辑积累几何。原作者起步仓库可供接口研究，但本例没有接入 AI SDK 或任何收费模型。"
+    ]
+  },
+  {
+    "slug": "hexapod-robot",
+    "title": "六足步态实验",
+    "subtitle": "单腿 IK、支撑阶段与步态相位一起观察。",
+    "category": "机械机构",
+    "parameter": {
+      "label": "抬脚高度",
+      "min": 0.1,
+      "max": 1.2,
+      "step": 0.1,
+      "value": 0.6
+    },
+    "action": "切换步态",
+    "mechanism": "六条腿独立求解，tripod 与 ripple 改变相位表",
+    "limit": "几何运动学示意；未包含舵机限位、碰撞、接地受力或真机验证。",
+    "sources": [
+      {
+        "url": "https://github.com/dilums/hexapod-robot-simulator/tree/f0e5dc24369a3c77d596eac5762e674403687373",
+        "title": "hexapod-robot-simulator"
+      }
+    ],
+    "research": [
+      "六足机器人可先拆成足端轨迹和单腿逆运动学。三足步态按 i%2 分组，相邻两组错半周期；ripple 将六条腿依次错开六分之一周期。",
+      "两段腿长分别为 1.55 与 1.8。足端在支撑段保持地面高度，摆动段用 sin(2πp) 抬脚；平面目标由余弦定理求肩肘角，再旋转到每条腿的局部朝向。不可达时保留该腿上一有效姿态。",
+      "本例显示六条腿的最大末端回算误差，不能据此证明机器人不会跌倒。没有触地力、躯干平衡、惯性或舵机协议。原仓库的全模型和许可未完整确认，因此没有镜像其整套实现。"
+    ],
+    "archivedArticle": "dilum-hexapod-code",
+    "article": ""
+  },
+  {
+    "slug": "jet-engine",
+    "title": "喷气发动机粒子",
+    "subtitle": "切开机匣，观察内外气流的预设路径。",
+    "category": "机械机构",
+    "parameter": {
+      "label": "气流速度",
+      "min": 0.2,
+      "max": 3,
+      "step": 0.1,
+      "value": 1
+    },
+    "action": "切换剖视",
+    "mechanism": "BufferGeometry 粒子和时间 uniform 在 GPU 更新",
+    "limit": "气流为路径动画，不是 CFD；颜色不代表温度或压强。",
+    "sources": [
+      {
+        "url": "https://github.com/dilums/jet-engine-threejs/tree/b8601913ee2d524bac3d21758a9ca3c77818bfa5",
+        "title": "jet-engine-threejs"
+      }
+    ],
+    "research": [
+      "粒子流首先是空间路径与时间相位。两组 Points 各有 4000 点，config 属性存初相位、圆周角与半径随机量，CPU 不逐帧搬动 8000 个位置。",
+      "顶点着色器用 fract(config.x+uTime×0.22) 沿轴向循环，x 在 -4 到 4 之间。核心与外涵用不同半径函数；透明加法混合与关闭 depthWrite 让流路叠加。颜色表示分支归属。",
+      "风扇只有 16 个程序化叶片。外壳剖视操作不改变流场，速度参数同时改变相位和风扇转动。路径由公式指定，没有求解压力、密度、边界层或压缩性；因此没有 CFD 结果或发动机效率结论。"
+    ],
+    "archivedArticle": "dilum-jet-engine-particles",
+    "article": ""
+  },
+  {
+    "slug": "strandbeest",
+    "title": "步行连杆机构",
+    "subtitle": "圆交点求解脚尖，完整扫过曲柄周期。",
+    "category": "机械机构",
+    "parameter": {
+      "label": "曲柄速度",
+      "min": 0.1,
+      "max": 2,
+      "step": 0.1,
+      "value": 0.7
+    },
+    "action": "切换装配分支",
+    "mechanism": "两圆交点、固定杆长与连续装配分支",
+    "limit": "复现几何连杆机制；没有动力学、材料与实物行走证据。",
+    "sources": [
+      {
+        "url": "https://github.com/dilums/responsive-strandbeest/tree/4eb0e454bb4d089de4c40da21f51c4efacad4e24",
+        "title": "responsive-strandbeest"
+      }
+    ],
+    "research": [
+      "机构复现不能靠给每根杆写一条独立动画。Jansen 腿由八个点与十二条杆构成，曲柄固定长度 15，其余节点依次由两圆交点求出。",
+      "固定点为 (0,0) 与 (-38,7.8)，曲柄端为 (15cosθ,15sinθ)。每次求交保留指定 x 或 y 方向的装配解；镜像操作翻转 x 而保持所有距离。杆长残差从最终坐标重新量出。",
+      "复现安排六组腿，左右三组相位错开 120°。单位测试覆盖 360 个整数角度与两个镜像分支。镜像腿不等于证明足端连续接触地面；实际材料、摩擦、驱动和地面运动都没有模拟。"
+    ],
+    "archivedArticle": "dilum-strandbeest-linkage",
+    "article": ""
+  },
+  {
+    "slug": "kinematic-creature",
+    "title": "柔性链条追踪",
+    "subtitle": "目标移动，70 个节段保持根部与长度约束。",
+    "category": "机械机构",
+    "parameter": {
+      "label": "目标距离",
+      "min": 2,
+      "max": 8,
+      "step": 0.2,
+      "value": 4
+    },
+    "action": "切换目标轨迹",
+    "mechanism": "FABRIK 前后迭代与不可达目标处理",
+    "limit": "几何约束链，不是有受力和碰撞的柔体。",
+    "sources": [
+      {
+        "url": "https://github.com/dilums/kinematic-creatures/tree/5cb2408262dd271b1f9ae1746c32161ee54e07dc",
+        "title": "kinematic-creatures"
+      }
+    ],
+    "research": [
+      "柔性链使用 FABRIK。把末端移到目标后从尾向头保持段长，再固定根部从头向尾投影，两次遍历构成一次迭代。",
+      "70 段、每段 0.15，总长 10.5。目标轨迹由距离参数和相位产生，每帧最多迭代 32 次；误差是求解后的末端到请求目标的距离。目标超过总长时，整条链沿目标方向伸直。",
+      "这是位置约束，未限制各关节转角，也没有自碰撞与体积约束。根部固定是算法约束，躯干看起来柔软则来自几何排列。两者需要分别核对。"
+    ],
+    "archivedArticle": "dilum-kinematic-creatures",
+    "article": ""
+  },
+  {
+    "slug": "dna-structure",
+    "title": "DNA 点云",
+    "subtitle": "两条螺旋与横向连接，按密度生成固定点云。",
+    "category": "科学可视化",
+    "parameter": {
+      "label": "粒子密度",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "value": 3
+    },
+    "action": "切换点云与骨架",
+    "mechanism": "预分配位置缓冲、固定种子与点组标签",
+    "limit": "双螺旋造型示意，没有真实原子、碱基或实验结构映射。",
+    "sources": [
+      {
+        "url": "https://github.com/dilums/dna-structure-animation-3d/tree/6acd2aed1538a48296ae4d3973a2244f2d5579f3",
+        "title": "dna-structure-animation-3d"
+      }
+    ],
+    "research": [
+      "双螺旋展示由两条参数曲线和连接杆组成。曲线绕三圈，半径 1.3，高度 7，两股相位相差 120°；这个角度是视觉配置，不能拿来解释真实碱基对几何。",
+      "点云使用固定种子，密度参数乘以 4000 得到点数，其中每五个点插入一个横向连接采样。骨架由两条 TubeGeometry 与十九根连接杆构成。切换表示只改变显隐，改密度才重建数据。",
+      "原资料可以用来研究粒子预算与曲线生成，但本例没有碱基序列、原子坐标、化学键级和真实沟槽尺寸。点数增加反映显示成本，不能作为科学精度增加的证据。"
+    ],
+    "archivedArticle": "dilum-dna-particle-structure",
+    "article": ""
+  },
+  {
+    "slug": "periodic-table",
+    "title": "元素相态卡片",
+    "subtitle": "选择元素，比较相态图形与共享动画。",
+    "category": "科学可视化",
+    "parameter": {
+      "label": "动画速度",
+      "min": 0,
+      "max": 3,
+      "step": 0.1,
+      "value": 1
+    },
+    "action": "切换显示相态",
+    "mechanism": "按数据字段选形状，多个卡片共享波形时间",
+    "limit": "相态切换为图形实验，不是温度压强下的相变计算。",
+    "sources": [
+      {
+        "url": "https://github.com/dilums/animated-periodic-table/tree/4a122495afcd6bbd4b2912f63dfda541ae3f90d8",
+        "title": "animated-periodic-table"
+      }
+    ],
+    "research": [
+      "元素选择需要一份稳定标识，而原子动画可以单独设计。复现只收录前十八个元素，选择后显示符号、原子序数与简化电子数。",
+      "电子按 2、8、8 的容量分配到三层，圆环是教学壳层。固态、液态、气态按钮分别切换方块、圆柱和散点形状，未依据温压计算具体元素相态。",
+      "元素身份与表示方式分开：切相态不改变选中元素。真实元素百科还需要物性数据、单位与来源，特别是沸点、密度与晶型。当前画面不能证明电子沿这些圆轨道运动。"
+    ],
+    "archivedArticle": "dilum-periodic-table-svg",
+    "article": ""
+  },
+  {
+    "slug": "aurora",
+    "title": "极光叙事时间轴",
+    "subtitle": "太阳风、路径与极光显现分为明确阶段。",
+    "category": "科学可视化",
+    "parameter": {
+      "label": "时间轴速度",
+      "min": 0.1,
+      "max": 3,
+      "step": 0.1,
+      "value": 1
+    },
+    "action": "跳到下一阶段",
+    "mechanism": "阶段标签与粒子运动共用可回放时间轴",
+    "limit": "粒子沿预设路径，未求解洛伦兹力或真实磁场。",
+    "sources": [
+      {
+        "url": "https://github.com/dilums/van-allen-belts-auroras/tree/94fcad576ddf633c79a06d52a03cc0c4ddf50638",
+        "title": "van-allen-belts-auroras"
+      }
+    ],
+    "research": [
+      "极光演示采用四阶段时间轴：太阳风开始、到达路径、极光显现、循环恢复。时间轴总长八秒，每阶段两秒。",
+      "24 个粒子沿八条 CatmullRom 路径运行，幕帘由八条闭合的波状管线构成，在后两阶段可见。下一阶段按钮直接跳到下一个两秒边界；速度只改变时间轴推进。",
+      "路径和幕帘是明确编写的叙事几何，未解洛伦兹力、磁场线或带电粒子分布。时间与比例不对应真实地磁过程。先把事件顺序讲清，再决定是否需要引入物理模型。"
+    ],
+    "archivedArticle": "dilum-aurora-svg-timeline",
+    "article": ""
+  },
+  {
+    "slug": "anomaly-monitor",
+    "title": "异常监测台",
+    "subtitle": "阈值、观测窗口与告警证据同屏对账。",
+    "category": "界面与状态",
+    "article": "dilum-x-anomaly-detection",
+    "parameter": {
+      "label": "异常阈值",
+      "min": 1,
+      "max": 5,
+      "step": 0.1,
+      "value": 2.5
+    },
+    "action": "注入异常",
+    "mechanism": "滑动窗口 z 分数与可追溯告警",
+    "limit": "使用合成信号，未分析真实天体或业务数据。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/1984665204840632681",
+        "title": "作者 X 原帖 · 1984665204840632681"
+      },
+      {
+        "url": "https://github.com/dilums/aisdk-threejs-starter/tree/8b182dc5314fc622e61f262fc6bc0301bc31e2c3",
+        "title": "aisdk-threejs-starter"
+      }
+    ],
+    "research": [
+      "异常判定以此前 35 个样本为基线，待测的最后一个样本不混入均值和标准差。Z 分数定义为 |x-μ|/max(σ,10⁻⁶)。",
+      "正常序列为 20+2sin(0.7i)，注入操作加入一个幅值至少 45 的脉冲并移除最旧样本。告警 ID 使用本次操作号；阈值决定这次注入是否写入告警计数。",
+      "改阈值会重新着色当前样本，但不会倒改历史告警数。这里是确定性的单变量阈值检测，没有天文观测、概率模型或 AI 异常分类。原帖的异常叙事可以启发界面，却不能替代样本与检测依据。"
+    ]
+  },
+  {
+    "slug": "skeleton-explorer",
+    "title": "骨骼结构浏览器",
+    "subtitle": "分部件选择与标注，检查模型身份。",
+    "category": "生成与资产",
+    "article": "dilum-x-trellis-skeleton",
+    "parameter": {
+      "label": "拆解间距",
+      "min": 0,
+      "max": 1.5,
+      "step": 0.1,
+      "value": 0
+    },
+    "action": "隔离选中部件",
+    "mechanism": "程序化骨架、稳定部件 ID 与反向定位",
+    "limit": "未运行 TRELLIS.2；骨架为程序化形态示意，非解剖资料。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2001697511850021167",
+        "title": "作者 X 原帖 · 2001697511850021167"
+      },
+      {
+        "url": "https://github.com/microsoft/TRELLIS.2",
+        "title": "Microsoft TRELLIS.2 官方仓库"
+      }
+    ],
+    "research": [
+      "结构查看器首先处理部件身份。本例有头部、八个椎体、六根肋环与四根长骨，共十九个程序化部件；每个部件都有稳定 ID。",
+      "列表按钮与场景拾取都写入 selection。拆解参数只移动各部件的 transform，不重新分配 ID；隔离按钮显示当前部件，再次操作恢复整体。高亮与运行读数读取同一选择。",
+      "没有生成或加载 TRELLIS.2 网格，也没有医学解剖校准。外观刻意简化，目的是把“看得到结构”推进到“能选中、命名、隔离和回位”。若换成生成骨架，需要先检查连通性、部件分割与命名。"
+    ]
+  },
+  {
+    "slug": "character-selection",
+    "title": "角色选择大厅",
+    "subtitle": "预览三种程序化角色，确认后保存角色 ID。",
+    "category": "游戏与空间",
+    "article": "dilum-x-character-selection",
+    "parameter": {
+      "label": "预览转速",
+      "min": 0,
+      "max": 2,
+      "step": 0.1,
+      "value": 0.3
+    },
+    "action": "确认角色",
+    "mechanism": "预览与已确认状态分离",
+    "limit": "未调用图像与三维生成工具，角色无战斗或骨骼动画系统。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2008584593222652057",
+        "title": "作者 X 原帖 · 2008584593222652057"
+      },
+      {
+        "url": "https://github.com/dilums/aisdk-threejs-starter/tree/8b182dc5314fc622e61f262fc6bc0301bc31e2c3",
+        "title": "aisdk-threejs-starter"
+      }
+    ],
+    "research": [
+      "角色选择包含预览态与确认态。鼠标换预览不能立即覆盖已确认的角色，否则用户尚未提交选择就会进入另一条业务状态。",
+      "侦察型、工程型、守卫型由三组程序化 humanoid 构成，持有 scout、engineer、guardian ID。选中模型放大，确认按钮才写入 confirmed；旋转速度只控制预览运动。",
+      "三个模型同时留在场景中，切换没有重复创建资源。没有角色生成调用、骨骼绑定、行走或战斗系统。引入生成资产后，应让资产清单映射到 characterId，而不是把文件名作为角色身份。"
+    ]
+  },
+  {
+    "slug": "ornithopter",
+    "title": "扑翼机构",
+    "subtitle": "一根曲柄驱动两侧连杆与翅膀。",
+    "category": "机械机构",
+    "article": "dilum-x-ornithopter",
+    "parameter": {
+      "label": "翼幅",
+      "min": 1,
+      "max": 2.5,
+      "step": 0.1,
+      "value": 1.6
+    },
+    "action": "切换装配分支",
+    "mechanism": "镜像局部坐标与四杆闭环求解",
+    "limit": "运动学原型，无气动、驱动器或飞行验收。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2013293638768562325",
+        "title": "作者 X 原帖 · 2013293638768562325"
+      },
+      {
+        "url": "https://github.com/dilums/responsive-strandbeest/tree/4eb0e454bb4d089de4c40da21f51c4efacad4e24",
+        "title": "responsive-strandbeest"
+      }
+    ],
+    "research": [
+      "扑翼机构由曲柄和两根输出杆形成闭环。两个约束圆的交点决定翼根连接点，左右侧共享相位并镜像。",
+      "曲柄半径 0.35，固定输出点 (1.5,0)，连接半径为 1.5 和 1.35。选另一圆交点会改变装配分支；翼幅参数只缩放翼板，不改变约束杆长。残差从求出的连接点到曲柄端重新测量。",
+      "翼板姿态采用输出方向的缩放角度，是可读的机构示意。没有翼面升力、惯性、柔性铰链或飞行控制。手稿风格和流畅运动都不能证明这组参数能驱动实体飞行器。"
+    ]
+  },
+  {
+    "slug": "ship-selection",
+    "title": "飞船整备舱",
+    "subtitle": "切换机体，给稳定实体装上推进器。",
+    "category": "游戏与空间",
+    "article": "dilum-x-ship-selection",
+    "parameter": {
+      "label": "预览转速",
+      "min": 0,
+      "max": 2,
+      "step": 0.1,
+      "value": 0.2
+    },
+    "action": "切换推进器装备",
+    "mechanism": "飞船身份、素材与装备槽分别记录",
+    "limit": "程序化模型；未完成飞行、碰撞或生成资产验收。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2016193959408836932",
+        "title": "作者 X 原帖 · 2016193959408836932"
+      },
+      {
+        "url": "https://github.com/dilums/aisdk-threejs-starter/tree/8b182dc5314fc622e61f262fc6bc0301bc31e2c3",
+        "title": "aisdk-threejs-starter"
+      }
+    ],
+    "research": [
+      "选船与装备是两份状态：selection 决定当前操作目标，每艘船自己的 Map 项记录推进器是否装备。换船不应把上一艘的装备复制过来。",
+      "三个程序化机体在统一展示中心运行，推进器通过显隐表达槽位状态。操作切换当前 shipId 的装备，预览转速控制旋转；模型身份保持不变。",
+      "这是一组选择与配置交互，没有生成模型导入、推进性能或可飞行控制器。后续装入真实资产时，需要核对资源轴向、包围盒中心和挂点 transform；灯光统一只能改善展示，无法修正挂点。"
+    ]
+  },
+  {
+    "slug": "sales-timeline",
+    "title": "销量数据时间轴",
+    "subtitle": "逐帧计算排名与数字，暂停后精确回放。",
+    "category": "科学可视化",
+    "article": "dilum-x-remotion-sales",
+    "parameter": {
+      "label": "时间点",
+      "min": 0,
+      "max": 10,
+      "step": 0.1,
+      "value": 0
+    },
+    "action": "切换数据年份",
+    "mechanism": "帧编号驱动确定性柱形与稳定排名",
+    "limit": "使用合成销量数据，未复现真实榜单或运行 Remotion 导出。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2018367621381620142",
+        "title": "作者 X 原帖 · 2018367621381620142"
+      },
+      {
+        "url": "https://github.com/dilums/animated-solar-system-with-react-three-fiber/tree/67518d1f5c1fe52ba3cdf5596969fea9bc9912be",
+        "title": "animated-solar-system-with-react-three-fiber"
+      },
+      {
+        "url": "https://www.remotion.dev/docs/the-fundamentals",
+        "title": "Remotion 官方基础文档"
+      }
+    ],
+    "research": [
+      "排名动画必须从时间点算出结果。复现使用二十条带稳定 game-ID 的合成记录，时间点 t 决定数值，随后按值排序，并列时按 ID 排序。",
+      "展示帧编号为 floor(30t)，柱高为值/14。两套样例共享 ID，样例 B 加入不同偏移。每次渲染直接计算当前快照，不依赖上一帧递增排名，所以向前向后拖时间有明确结果。",
+      "没有真实销量表，也没有调用 Remotion 导出。三维柱体复现的是数据时间轴交互；若要声称某年的销量榜，必须补充地域、统计口径、截止时间和原表。"
+    ]
+  },
+  {
+    "slug": "industrial-arm",
+    "title": "机械臂 IK 工作站",
+    "subtitle": "移动目标，观察基座与双连杆的位置逆解。",
+    "category": "机械机构",
+    "article": "dilum-x-industrial-arm",
+    "parameter": {
+      "label": "目标高度",
+      "min": 0.5,
+      "max": 6,
+      "step": 0.1,
+      "value": 3
+    },
+    "action": "移动目标",
+    "mechanism": "基座偏航与两连杆逆运动学",
+    "limit": "实现位置 IK 与腕部显示，不是全六自由度求解或真机控制。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2027426781389897883",
+        "title": "作者 X 原帖 · 2027426781389897883"
+      },
+      {
+        "url": "https://github.com/dilums/hexapod-robot-simulator/tree/f0e5dc24369a3c77d596eac5762e674403687373",
+        "title": "hexapod-robot-simulator"
+      }
+    ],
+    "research": [
+      "本例求解位置，不求完整六自由度姿态。基座朝向把三维目标转换到一个垂直平面，肩肘采用两段 IK，腕部只作可见的末端结构。",
+      "两段长度为 3 和 2.6，水平目标距离为 3.5，高度由滑块提供。余弦定理先算肘角，再求肩角；拒绝超过总臂长或落在内侧盲区的目标。按钮转动目标方位，机械臂重新求解。",
+      "读数包括端点误差和关节角。不可达目标保留上一姿态，失败不是把目标强制夹回可达边界。没有关节限位、末端方向、碰撞避让或真机命令，因此不能将这个演示称为完整机器人控制器。"
+    ]
+  },
+  {
+    "slug": "world-environment",
+    "title": "三维地形探索",
+    "subtitle": "程序化环境、障碍代理与角色位置一起更新。",
+    "category": "游戏与空间",
+    "article": "dilum-x-world-environment",
+    "parameter": {
+      "label": "地形高度",
+      "min": 0,
+      "max": 1.5,
+      "step": 0.1,
+      "value": 0.6
+    },
+    "action": "切换昼夜",
+    "mechanism": "统一坐标、地面采样与障碍碰撞",
+    "limit": "未调用 World Labs 或 Hunyuan3D；环境是确定性程序化场景。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2028877095968117240",
+        "title": "作者 X 原帖 · 2028877095968117240"
+      },
+      {
+        "url": "https://github.com/dilums/aisdk-threejs-starter/tree/8b182dc5314fc622e61f262fc6bc0301bc31e2c3",
+        "title": "aisdk-threejs-starter"
+      }
+    ],
+    "research": [
+      "生成环境进入玩法前，要建立可查询的地面与障碍。本例用同一高度函数 h(x,z)=sin(0.55x)cos(0.4z)×幅度生成网格并采样角色脚底。",
+      "角色使用 WASD 或方向键移动，边界限定在 ±7.4。十六棵树各有半径 0.7 的碰撞代理；尝试移动时先查代理，再更新角色位置。修改地形幅度后，树根与角色重新采样高度。",
+      "昼夜操作只切换地形色调，没有太阳轨迹或照度模拟。World Labs 与 Hunyuan3D 没有在本例调用；程序化地形用来验证控制链路。若换成高斯场或三角网格，碰撞与高度查询需要重新提供。"
+    ]
+  },
+  {
+    "slug": "smart-home",
+    "title": "智能家居沙盘",
+    "subtitle": "灯光命令、回执与房间模型对应同一设备。",
+    "category": "界面与状态",
+    "article": "dilum-x-smart-home",
+    "parameter": {
+      "label": "灯光亮度",
+      "min": 0,
+      "max": 2,
+      "step": 0.1,
+      "value": 1
+    },
+    "action": "切换所选房间灯",
+    "mechanism": "deviceId、版本与本地命令回执",
+    "limit": "设备为本地模拟，不控制真实家电。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2033950707947286861",
+        "title": "作者 X 原帖 · 2033950707947286861"
+      },
+      {
+        "url": "https://github.com/dilums/customizable-react-dashboard-with-charts/tree/eac83918b76fe38b931a76a3e9882399663fbc0a",
+        "title": "customizable-react-dashboard-with-charts"
+      },
+      {
+        "url": "https://github.com/dilums/gemini-3-smart-home-app/tree/afb8b961c4eaa482507ec72c770afb06df49b28e",
+        "title": "补查智能家居源码（版本关联未确认）"
+      }
+    ],
+    "research": [
+      "补查作者的 gemini-3-smart-home-app 固定提交后，可见 generateSystemInsight 将房间状态序列化为文字，并请求 gemini-2.5-flash 返回 response.text；该函数没有把模型返回值解析成设备控制对象。",
+      "原工程的灯光按钮在 App.tsx 用 setRooms 直接修改房间状态。复现沿用“状态、命令、回执分开”的思路，四个房间有各自灯光与 revision。每次操作为当前房间翻转状态、递增版本，再给出模拟 op-N 确认。",
+      "亮度只改变灯泡材质发光，不是房间照度或真实耗电。没有硬件连接与模型调用；原帖与补查仓库的具体版本对应仍未确认。不能因仓库名含 Gemini 3 就将代码里实际模型改写为 Gemini 3。"
+    ]
+  },
+  {
+    "slug": "interactive-map",
+    "title": "交互地图实验",
+    "subtitle": "筛选站点、选择实体，并在两种风格间复用交互。",
+    "category": "界面与状态",
+    "article": "dilum-x-map-interactions",
+    "parameter": {
+      "label": "地图缩放",
+      "min": 0.7,
+      "max": 1.5,
+      "step": 0.1,
+      "value": 1
+    },
+    "action": "切换节点筛选",
+    "mechanism": "世界坐标与稳定点位身份",
+    "limit": "地图为自定义示意坐标，不提供地理定位精度。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2043734181314998677",
+        "title": "作者 X 原帖 · 2043734181314998677"
+      },
+      {
+        "url": "https://github.com/dilums/customizable-react-dashboard-with-charts/tree/eac83918b76fe38b931a76a3e9882399663fbc0a",
+        "title": "customizable-react-dashboard-with-charts"
+      }
+    ],
+    "research": [
+      "地图的选择与筛选应保留节点 ID。复现有十六个节点、两类颜色及固定连接，UI 列表与三维拾取共享 node-N。",
+      "筛选轮换全部、青色、金色，地图缩放统一作用于场景组。隐藏节点仍保留其数据身份，筛选不重建或重新编号；选择读数明确保留最后选中的 ID。",
+      "节点与连接是合成拓扑，没有地理坐标、能源站点或地理投影。空间布局只帮助检查操作关联。用于实际地图时，应先分清地理尺度、屏幕缩放、相机距离以及过滤后的连接显示规则。"
+    ]
+  },
+  {
+    "slug": "futuristic-interface",
+    "title": "未来控制界面",
+    "subtitle": "扫描任务从待机、进行中到结果，按状态显示。",
+    "category": "界面与状态",
+    "article": "dilum-x-futuristic-interface",
+    "parameter": {
+      "label": "扫描时长（秒）",
+      "min": 1,
+      "max": 5,
+      "step": 0.5,
+      "value": 2
+    },
+    "action": "启动扫描",
+    "mechanism": "带任务 ID 的状态机与确定性结果",
+    "limit": "扫描对象和结果为本地模拟，未接入传感器或生成服务。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2045545685899153440",
+        "title": "作者 X 原帖 · 2045545685899153440"
+      },
+      {
+        "url": "https://github.com/dilums/customizable-react-dashboard-with-charts/tree/eac83918b76fe38b931a76a3e9882399663fbc0a",
+        "title": "customizable-react-dashboard-with-charts"
+      }
+    ],
+    "research": [
+      "科幻界面中的按钮需要明确任务阶段。复现以待命、扫描中、完成构成有限状态，进度由累计模拟时间除以扫描时长得到。",
+      "扫描中再次点击不会重开任务。完成后可启动下一次，任务计数增加；圆环与扫描杆读取同一 elapsed，因此不会出现进度完成而画面仍在另跑计时器的情况。",
+      "圈形 HUD 是程序化几何，没有后端扫描、传感器或模型请求。当前结果只证明状态流程有终点。真实任务需要区分发起、排队、失败、超时和取消，并以服务端完成回执驱动结束。"
+    ]
+  },
+  {
+    "slug": "robot-roster",
+    "title": "机器人图鉴",
+    "subtitle": "同一机器人切换外观，条目与选择保持稳定。",
+    "category": "生成与资产",
+    "article": "dilum-x-robot-roster",
+    "parameter": {
+      "label": "材质粗糙度",
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "value": 0.4
+    },
+    "action": "确认造型",
+    "mechanism": "robotId 与 styleId 分开绑定",
+    "limit": "程序化原创造型，不含原帖角色媒体或生成模型。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2049169897029042176",
+        "title": "作者 X 原帖 · 2049169897029042176"
+      },
+      {
+        "url": "https://github.com/dilums/aisdk-threejs-starter/tree/8b182dc5314fc622e61f262fc6bc0301bc31e2c3",
+        "title": "aisdk-threejs-starter"
+      }
+    ],
+    "research": [
+      "机器人阵列先定义 roster-ID，再定义造型。三个模型共享 humanoid 基础结构，追加程序化肩甲与头环，通过 scout、engineer、guardian 区分身份。",
+      "当前预览放大，确认按钮记录选择；粗糙度滑块遍历各模型的 MeshStandardMaterial，改变材质反射而不改身份或网格。三个模型常驻，避免切换期间重新生成 ID。",
+      "未导入任何生成机器人资产，也没有骨骼、关节驱动和性能设定。材质更亮不代表模型质量更高；真正筛选生成资产还需比较面数、拓扑、贴图和动画兼容性。"
+    ]
+  },
+  {
+    "slug": "planet-explorer",
+    "title": "行星探索台",
+    "subtitle": "选择行星，用同一时钟改变展示尺度。",
+    "category": "科学可视化",
+    "article": "dilum-x-planet-explorer",
+    "parameter": {
+      "label": "时间倍率",
+      "min": 0,
+      "max": 5,
+      "step": 0.25,
+      "value": 1
+    },
+    "action": "切换展示尺度",
+    "mechanism": "轨道、选中与模拟时间分层",
+    "limit": "虚构行星展示配置；没有真实天体力学与图像生成记录。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2050981225175928895",
+        "title": "作者 X 原帖 · 2050981225175928895"
+      },
+      {
+        "url": "https://github.com/dilums/animated-solar-system-with-react-three-fiber/tree/67518d1f5c1fe52ba3cdf5596969fea9bc9912be",
+        "title": "animated-solar-system-with-react-three-fiber"
+      }
+    ],
+    "research": [
+      "行星浏览器把选中对象和镜头目标关联。列表选择与场景拾取都使用 planet-N，选中后根据对象世界坐标设置 OrbitControls target，并移动镜头到相对偏移。",
+      "六个行星沿指定椭圆运动，按钮切换 1 与 1.25 的显示尺度。倍率控制模拟相位，选中行为只改变当前镜头快照；没有持续追踪行星的摄像机系统。",
+      "球体没有真实地表纹理与星历，名称 A–F 也是示例标签。浏览器机制可用于检查生成星球资产的展示流程，但天体参数需要另接数据源。"
+    ]
+  },
+  {
+    "slug": "black-hole",
+    "title": "时空网格示意",
+    "subtitle": "调节径向凹陷，并明确它只是展示函数。",
+    "category": "科学可视化",
+    "article": "dilum-x-black-hole",
+    "parameter": {
+      "label": "网格深度",
+      "min": 0.3,
+      "max": 3,
+      "step": 0.1,
+      "value": 1.5
+    },
+    "action": "切换网格显示",
+    "mechanism": "径向高度函数与裁剪半径",
+    "limit": "展示几何，不是广义相对论或粒子动力学求解。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2052063467407057112",
+        "title": "作者 X 原帖 · 2052063467407057112"
+      },
+      {
+        "url": "https://github.com/dilums/animated-solar-system-with-react-three-fiber/tree/67518d1f5c1fe52ba3cdf5596969fea9bc9912be",
+        "title": "animated-solar-system-with-react-three-fiber"
+      }
+    ],
+    "research": [
+      "复现将凹陷网格明示为径向展示函数：y=0.3-d/sqrt(max(0.4,r²))。最大值裁剪避开中心除零，d 是展示深度。",
+      "网格为 64×64 分段平面，圆环和 24 个绕行点用程序化几何生成。切换按钮改变 wireframe，深度参数只重算网格高度与法线。",
+      "图形没有解爱因斯坦方程、光线测地线或吸积盘流体。黑色球、亮环、凹陷网格属于三种视觉提示，也没有按物理长度统一标定。若要解释引力透镜，应另外给出光线路径与观测条件。"
+    ]
+  },
+  {
+    "slug": "biological-structure",
+    "title": "生物形态浏览器",
+    "subtitle": "拆解形态，点选部件，再从标签回到场景。",
+    "category": "生成与资产",
+    "article": "dilum-x-biological-structures",
+    "parameter": {
+      "label": "拆解程度",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "value": 0
+    },
+    "action": "切换外膜显示",
+    "mechanism": "partId、位置与形态标签分层",
+    "limit": "程序化形态示意，非解剖标准或医疗资料。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2053155739389378849",
+        "title": "作者 X 原帖 · 2053155739389378849"
+      },
+      {
+        "url": "https://github.com/dilums/dna-structure-animation-3d/tree/6acd2aed1538a48296ae4d3973a2244f2d5579f3",
+        "title": "dna-structure-animation-3d"
+      }
+    ],
+    "research": [
+      "结构探索用四个部件表达外膜、核区与两个细胞器。每个部件有 ID 与初始坐标，拆解通过初始坐标加偏移×进度计算，拖回零能精确回位。",
+      "透明外膜关闭 depthWrite，减少对内部物体的遮挡；外膜显隐、选中 ID 和拆解进度是三份状态。列表与拾取都能定位同一部件。",
+      "部件是原创概念形态，没有实验成像、分割标签或真实细胞结构坐标。自动生成模型若要用于科普，应核对术语对应、部件数量、内外关系以及误导性比例。"
+    ]
+  },
+  {
+    "slug": "turbofan-airflow",
+    "title": "涡扇气流分支",
+    "subtitle": "核心流和外涵流分别展示，速度共用时钟。",
+    "category": "机械机构",
+    "article": "dilum-x-turbofan-flow",
+    "parameter": {
+      "label": "气流速度",
+      "min": 0.2,
+      "max": 3,
+      "step": 0.1,
+      "value": 1
+    },
+    "action": "切换内外涵",
+    "mechanism": "不同路径配置与粒子相位",
+    "limit": "路径示意，非 CFD；不计算推力、压比或效率。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2054968280864133585",
+        "title": "作者 X 原帖 · 2054968280864133585"
+      },
+      {
+        "url": "https://github.com/dilums/jet-engine-threejs/tree/b8601913ee2d524bac3d21758a9ca3c77818bfa5",
+        "title": "jet-engine-threejs"
+      }
+    ],
+    "research": [
+      "内涵与外涵是不同路径，展示时应能单独开关。复现共享发动机场景的两组着色器粒子，各 4000 点，通过 uKind 选择核心或外侧半径函数。",
+      "核心半径为 0.35+0.45sin(πp)，外涵为 1.4+0.3sin(πp)，再乘径向分布因子。参数 p 循环推进，uColor 只标记路径。按钮轮换两支、仅外涵、仅核心，读数按可见支路计算点数。",
+      "这能检查路径归属和遮挡，未定义质量流率、涵道比、气体温度与推力。两组点数相同不代表涵道比为 1；粒子速度也不是可引用的空气流速。"
+    ]
+  },
+  {
+    "slug": "atomic-explorer",
+    "title": "原子表示实验",
+    "subtitle": "选择前 18 种元素，比较两种简化表示。",
+    "category": "科学可视化",
+    "article": "dilum-x-atomic-explorer",
+    "parameter": {
+      "label": "原子序数",
+      "min": 1,
+      "max": 18,
+      "step": 1,
+      "value": 6
+    },
+    "action": "切换表示",
+    "mechanism": "元素身份与展示配置独立",
+    "limit": "壳层与点云均为简化示意，不是电子轨道或量子计算。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2061490330361589849",
+        "title": "作者 X 原帖 · 2061490330361589849"
+      },
+      {
+        "url": "https://github.com/dilums/animated-periodic-table/tree/4a122495afcd6bbd4b2912f63dfda541ae3f90d8",
+        "title": "animated-periodic-table"
+      }
+    ],
+    "research": [
+      "原子浏览器区分元素身份和图形表示。原子序数 1–18 决定元素符号与电子计数；按钮在圆轨道壳层与装饰点云间切换。",
+      "壳层按 2、8、8 填充。点云使用每个元素对应的固定种子，每个序数生成 150 个点，采样半径采用体积均匀分布 r=R×cbrt(u)。",
+      "装饰点云没有波函数、概率密度或轨道量子数；壳层轨迹也不是量子电子真实路径。让表示方式有明确标签，比给所有形状统一称“电子云”更准确。"
+    ]
+  },
+  {
+    "slug": "molecular-structure",
+    "title": "分子图与空间结构",
+    "subtitle": "切换水、乙醇和苯，沿原子 ID 查看连接。",
+    "category": "科学可视化",
+    "article": "dilum-x-molecular-graph",
+    "parameter": {
+      "label": "显示键长",
+      "min": 0.7,
+      "max": 1.5,
+      "step": 0.1,
+      "value": 1
+    },
+    "action": "切换分子",
+    "mechanism": "原子图、键引用与展示坐标",
+    "limit": "小分子连接示例；坐标为教学摆放，未做能量优化。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2063664615398240467",
+        "title": "作者 X 原帖 · 2063664615398240467"
+      },
+      {
+        "url": "https://github.com/dilums/dna-structure-animation-3d/tree/6acd2aed1538a48296ae4d3973a2244f2d5579f3",
+        "title": "dna-structure-animation-3d"
+      }
+    ],
+    "research": [
+      "分子示例将原子 ID 和键端点分开保存。水有 3 个原子与 2 条键记录，乙醇 9 个原子与 8 条，苯 12 个原子与 12 条。",
+      "键记录引用原子数组，换分子先释放旧网格，再按新表建立原子与连接。显示键长滑块在同一中心缩放坐标，连接端点随原子位置重算。",
+      "坐标是教学摆放，未校准真实键角、键长、芳香性或键级。苯的六角连接图不等于完整化学模型；乙醇的组成与连接关系可检查，但不能拿显示长度做化学测量。"
+    ]
+  },
+  {
+    "slug": "circuit-builder",
+    "title": "电路网表工作台",
+    "subtitle": "修改电阻与电压，求解节点电位并检查失败。",
+    "category": "生成与资产",
+    "article": "dilum-x-local-circuit-json",
+    "parameter": {
+      "label": "电源电压（V）",
+      "min": 1,
+      "max": 24,
+      "step": 1,
+      "value": 12
+    },
+    "action": "求解电路",
+    "mechanism": "电阻与理想电压源的线性 MNA",
+    "limit": "本地网表求解；未调用 Gemma 或其他模型，暂不支持交流与非线性器件。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2070187709361254669",
+        "title": "作者 X 原帖 · 2070187709361254669"
+      },
+      {
+        "url": "https://github.com/dilums/aisdk-threejs-starter/tree/8b182dc5314fc622e61f262fc6bc0301bc31e2c3",
+        "title": "aisdk-threejs-starter"
+      }
+    ],
+    "research": [
+      "电路展示先求解网表，再画图。支持电阻和独立理想电压源，以节点 0 为参考，采用修正节点分析 MNA，联立节点电压和电压源电流。",
+      "电阻在矩阵中写入导纳 1/R 的对角与负的非对角项；电压源增加一行一列约束。高斯消元使用部分主元，主元小于 10⁻¹² 时报告奇异。默认 12V 与两只 1kΩ 电阻的 out 为 6V。",
+      "修改 R2 为 2kΩ 后 out 为 8V。无效网表不会替换上一成功解。最多 30 节点与 60 器件；没有交流、瞬态、二极管或 SPICE 兼容承诺，也没有把模型文本当可执行电路代码。"
+    ]
+  },
+  {
+    "slug": "reactor-diagnostics",
+    "title": "反应堆诊断台",
+    "subtitle": "负载、告警与解释读取同一份虚构快照。",
+    "category": "界面与状态",
+    "article": "dilum-x-arc-reactor-diagnostics",
+    "parameter": {
+      "label": "运行负载",
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "value": 0.5
+    },
+    "action": "注入故障",
+    "mechanism": "固定场景、规则判定与 snapshotId",
+    "limit": "虚构设备诊断，不是实物工程或真实传感器。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2074537139329785891",
+        "title": "作者 X 原帖 · 2074537139329785891"
+      },
+      {
+        "url": "https://github.com/dilums/customizable-react-dashboard-with-charts/tree/eac83918b76fe38b931a76a3e9882399663fbc0a",
+        "title": "customizable-react-dashboard-with-charts"
+      }
+    ],
+    "research": [
+      "诊断面板使用一个确定性快照：温度=40+35×负载+故障偏移。故障偏移为 55，按钮切换冷却失效并增加事件版本。",
+      "三维核心颜色由同一温度阈值驱动，高于 100 时变红；面板同步显示负载、温度、故障与版本，避免图形与文字读取不同帧的数据。",
+      "温度是示例值，规则阈值不是安全工程判据。没有真实反应堆、传感器、控制系统或模型推理；原帖界面只适合讨论告警组织与状态一致性。"
+    ]
+  },
+  {
+    "slug": "kinetic-pavilion",
+    "title": "动态花瓣亭",
+    "subtitle": "沿局部铰轴开合，观察中间姿态。",
+    "category": "机械机构",
+    "article": "dilum-x-kinetic-pavilion",
+    "parameter": {
+      "label": "展开程度",
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "value": 0
+    },
+    "action": "展开或收拢",
+    "mechanism": "局部转轴、统一相位与中间姿态",
+    "limit": "建筑运动学原型，未做结构、碰撞或可施工验证。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2081060174954188957",
+        "title": "作者 X 原帖 · 2081060174954188957"
+      },
+      {
+        "url": "https://github.com/dilums/responsive-strandbeest/tree/4eb0e454bb4d089de4c40da21f51c4efacad4e24",
+        "title": "responsive-strandbeest"
+      }
+    ],
+    "research": [
+      "开合建筑可先用层级 transform 做原型。六根立柱与六片花瓣各有铰链 group，花瓣局部几何随铰链旋转，中心与支点不随开合漂移。",
+      "滑块直接设置开合比例，按钮发出目标 0 或 1。每帧按 dt×2.5 向目标插值，误差小于阈值时精确落到终点；手动拖动会取消自动目标，避免两种输入互相争抢。",
+      "形态由程序化半球片构成，未模拟受力、遮阳性能或建筑机械尺寸。开合视觉可以验证控制与层级关系，结构可建造性仍需实体设计资料。"
+    ]
+  },
+  {
+    "slug": "rule-universe",
+    "title": "规则图演化",
+    "subtitle": "每一步保存匹配与新图，按预算重写。",
+    "category": "科学可视化",
+    "article": "dilum-x-rule-universes",
+    "parameter": {
+      "label": "节点预算",
+      "min": 12,
+      "max": 80,
+      "step": 4,
+      "value": 40
+    },
+    "action": "重写一步",
+    "mechanism": "确定性边重写、稳定 ID 与预算停止",
+    "limit": "图重写实验，未复现某个 Notable Universe 或作物理预测。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2086133240273031290",
+        "title": "作者 X 原帖 · 2086133240273031290"
+      },
+      {
+        "url": "https://github.com/dilums/aisdk-threejs-starter/tree/8b182dc5314fc622e61f262fc6bc0301bc31e2c3",
+        "title": "aisdk-threejs-starter"
+      }
+    ],
+    "research": [
+      "图重写需要明确匹配与替换，而不只画一群点。初始有节点 0、1 和边 0→1，每次取最早的一条边，插入新的 c=nextId。",
+      "旧边替换为 a→c、c→b、c→((a+b)%c)，边记录每步增加 2，节点 ID 单调增加。位置使用固定黄金角螺旋，与重写语义分开；trace 记录主路径替换，第三条支边由规则定义。",
+      "预算控制 nextId 的上限，达到预算后保留上一张完整图。它是确定性的有向多重图教学规则，没有物理宇宙、Wolfram 模型求证或因果不变性结论；重复边允许存在。"
+    ]
+  },
+  {
+    "slug": "portable-microscope",
+    "title": "便携显微镜机构",
+    "subtitle": "调节镜筒、查看装配层，再核对示意量程。",
+    "category": "机械机构",
+    "article": "dilum-x-portable-microscope",
+    "parameter": {
+      "label": "镜筒位置",
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "value": 0.5
+    },
+    "action": "切换剖面",
+    "mechanism": "部件 ID、焦距示意与局部机构",
+    "limit": "显示模型不是可制造 CAD；没有真实光学、标定或 Raspberry Pi 控制。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2087583466301059567",
+        "title": "作者 X 原帖 · 2087583466301059567"
+      },
+      {
+        "url": "https://github.com/dilums/responsive-strandbeest/tree/4eb0e454bb4d089de4c40da21f51c4efacad4e24",
+        "title": "responsive-strandbeest"
+      }
+    ],
+    "research": [
+      "机械剖视先明确运动件。本例分为基座、立柱、镜筒滑台、物镜与样品台，参数只改镜筒滑台高度。",
+      "镜筒位置按 3+进度计算，剖面操作改变外罩显隐，其余部件保持。滑台与镜头属于同一 group，所以调焦位移不会只移动外罩。",
+      "这是一份程序化结构示意，未核对 CAD 尺寸、打印公差、导向间隙或光学焦距。看上去能滑动不代表实体可装配；原项目若提供 STEP/STL，应另外测包围盒、单位和运动间隙。"
+    ]
+  },
+  {
+    "slug": "protein-folding",
+    "title": "蛋白质构象过渡",
+    "subtitle": "从 PDB 1CRN 的 46 个 Cα 点构造示意过渡。",
+    "category": "科学可视化",
+    "article": "dilum-x-protein-folding",
+    "parameter": {
+      "label": "过渡进度",
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "value": 1
+    },
+    "action": "切换链表示",
+    "mechanism": "真实结构端点、残基映射与自建插值路径",
+    "limit": "端点来自 1CRN；过渡为人工插值，不是 MD 或真实折叠轨迹。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2087945482794668167",
+        "title": "作者 X 原帖 · 2087945482794668167"
+      },
+      {
+        "url": "https://github.com/dilums/dna-structure-animation-3d/tree/6acd2aed1538a48296ae4d3973a2244f2d5579f3",
+        "title": "dna-structure-animation-3d"
+      },
+      {
+        "url": "https://www.rcsb.org/structure/1CRN",
+        "title": "RCSB PDB 1CRN 原始结构"
+      }
+    ],
+    "research": [
+      "复现使用 RCSB 的 1CRN PDB 原件，提取链 A 的 46 个 Cα 坐标并保存来源 SHA-256。目标态因此有可查的结构来源，残基 ID 不来自任意造型编号。",
+      "将坐标居中后乘 0.15，并将 y 平移到 3；人为构造一条近直线作为起点。过渡按 p(t)=(1-t)p起+t p结构计算，45 条杆连接相邻残基。",
+      "插值期间键距会变化，路径未考虑碰撞、能量或溶剂。这是“形状过渡到实验结构”的展示，不能叫分子动力学或预测折叠。真实坐标终点与人为过渡路径是两种不同证据。"
+    ]
+  },
+  {
+    "slug": "jellyfish-robot",
+    "title": "水母机器人原型",
+    "subtitle": "伞体脉动、触须相位与晶格外观分别调整。",
+    "category": "机械机构",
+    "article": "dilum-x-jellyfish-robot",
+    "parameter": {
+      "label": "脉动幅度",
+      "min": 0.1,
+      "max": 0.8,
+      "step": 0.05,
+      "value": 0.35
+    },
+    "action": "显示晶格",
+    "mechanism": "参数化伞面与几何触须",
+    "limit": "外壳为展示晶格，没有纳米尺度、耐压或水动力证据。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2091568845463101550",
+        "title": "作者 X 原帖 · 2091568845463101550"
+      },
+      {
+        "url": "https://github.com/dilums/kinematic-creatures/tree/5cb2408262dd271b1f9ae1746c32161ee54e07dc",
+        "title": "kinematic-creatures"
+      }
+    ],
+    "research": [
+      "水母外形可拆成伞面与触须。伞面是部分球面，12 条触须分别维护 24 个顶点，随相位更新。",
+      "径向尺度为 1+A sinφ，垂直尺度为 1/sqrt(径向尺度)，使简单缩放的体积因子约保持 1。幅度上限 0.8 让径向尺度保持正值。晶格按钮展示球面的 WireframeGeometry。",
+      "体积缩放关系不是材料本构模型。触须是指定曲线，没有液体阻力、浮力、驱动器或真实晶格结构。显示线框只便于看几何，不说明微结构已生成或制造。"
+    ]
+  },
+  {
+    "slug": "v8-engine",
+    "title": "V8 曲柄连杆",
+    "subtitle": "一个曲轴角，驱动八组活塞和连杆。",
+    "category": "机械机构",
+    "article": "dilum-x-v8-engine",
+    "parameter": {
+      "label": "展示转速（RPM）",
+      "min": 10,
+      "max": 180,
+      "step": 10,
+      "value": 60
+    },
+    "action": "切换剖面",
+    "mechanism": "曲柄连杆位移公式与气缸相位",
+    "limit": "八缸运动学示意，无燃烧、扭矩或真实机型点火表。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2096280244663775423",
+        "title": "作者 X 原帖 · 2096280244663775423"
+      },
+      {
+        "url": "https://github.com/dilums/responsive-strandbeest/tree/4eb0e454bb4d089de4c40da21f51c4efacad4e24",
+        "title": "responsive-strandbeest"
+      }
+    ],
+    "research": [
+      "活塞运动采用曲柄滑块公式：s=r cosθ+sqrt(l²-r²sin²θ)。r=0.45，l=1.8，八个气缸共享驱动相位并配置相位偏移。",
+      "两侧气缸轴向为归一化 (0,1,±0.5)，曲柄销在该轴与垂直向量形成的平面内计算。连杆端点分别取曲柄销和滑块位置，再测量两点距离与 1.8 的差。这样能真正检查倾斜装配，而不是将同一公式相减后报告零。",
+      "这是八组曲柄滑块的展示，不是完整共轴 V8 曲轴、点火顺序、配气和燃烧模拟。RPM 是展示驱动速率，未给出真实扭矩、振动与机械效率。"
+    ]
+  },
+  {
+    "slug": "landing-gear",
+    "title": "起落架收放机构",
+    "subtitle": "同一驱动进度控制支撑杆、轮组与收放状态。",
+    "category": "机械机构",
+    "article": "dilum-x-landing-gear",
+    "parameter": {
+      "label": "收放进度",
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "value": 0
+    },
+    "action": "收起或展开",
+    "mechanism": "局部铰点与连杆几何",
+    "limit": "参考题材的原创机构，不是 Cessna 337 精确工程复刻。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2096642895134752922",
+        "title": "作者 X 原帖 · 2096642895134752922"
+      },
+      {
+        "url": "https://github.com/dilums/responsive-strandbeest/tree/4eb0e454bb4d089de4c40da21f51c4efacad4e24",
+        "title": "responsive-strandbeest"
+      }
+    ],
+    "research": [
+      "起落架使用铰链层级表达收放：安装座固定，支柱、轮轴与两只轮子随同一个 hinge 旋转。收放进度映射到 0–1.4 弧度。",
+      "按钮在展开与收起间设置目标，平滑插值到终点；手动拖动取消自动目标。侧撑杆连接固定点和支柱端点，其长度随动作变化，明确当作伸缩作动杆显示。",
+      "没有闭环锁止、载荷或液压求解，也没有采用某型飞机的实测几何。若把可伸缩杆称为定长连杆，就会对机构自由度产生错误解释；本例保留这个简化范围。"
+    ]
+  },
+  {
+    "slug": "schematic-transition",
+    "title": "二维到三维示意",
+    "subtitle": "同一部件在平面与空间之间过渡，选择保持。",
+    "category": "生成与资产",
+    "article": "dilum-x-schematic-to-3d",
+    "parameter": {
+      "label": "空间展开",
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "value": 0
+    },
+    "action": "切换维度",
+    "mechanism": "partId 映射、二维锚点与三维锚点插值",
+    "limit": "表示切换，不是从图片自动恢复真实尺寸或拓扑。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2097005668389802027",
+        "title": "作者 X 原帖 · 2097005668389802027"
+      },
+      {
+        "url": "https://github.com/dilums/aisdk-threejs-starter/tree/8b182dc5314fc622e61f262fc6bc0301bc31e2c3",
+        "title": "aisdk-threejs-starter"
+      }
+    ],
+    "research": [
+      "二维到三维转换应保持部件与连接身份。本例有六个 part-N 与五条固定连接，二维和三维只是一组不同坐标。",
+      "每个部件位置按两套坐标线性插值，连线端点每帧从部件位置读取，避免各自启动动画后出现脱节。按钮设置目标视图，滑块输入取消自动转换。",
+      "这没有转换 CAD 几何，也未从图片识别电路。用途是检查一个结构在不同呈现方式下能否仍被选中、关联和回位；拓扑与相机维度应分开讨论。"
+    ]
+  },
+  {
+    "slug": "warehouse-strategy",
+    "title": "仓库搬运策略",
+    "subtitle": "A* 找路径，货物和任务状态按事务更新。",
+    "category": "游戏与空间",
+    "article": "dilum-x-warehouse-game",
+    "parameter": {
+      "label": "搬运速度",
+      "min": 1,
+      "max": 8,
+      "step": 0.5,
+      "value": 3
+    },
+    "action": "搬运下一货箱",
+    "mechanism": "网格 A*、目标预留与 operationId",
+    "limit": "小规模本地游戏原型，不是生产仓储调度系统。",
+    "sources": [
+      {
+        "url": "https://x.com/DilumSanjaya/status/2106426962738880879",
+        "title": "作者 X 原帖 · 2106426962738880879"
+      },
+      {
+        "url": "https://github.com/dilums/customizable-react-dashboard-with-charts/tree/eac83918b76fe38b931a76a3e9882399663fbc0a",
+        "title": "customizable-react-dashboard-with-charts"
+      }
+    ],
+    "research": [
+      "仓库把世界分成 12×12 网格，三列货架占据明确格子。A* 使用四邻域、单位边代价与曼哈顿启发式，路径禁止穿过货架或边界。",
+      "任务先预约货物，到 (11,11) 取货，再规划到 (0,11) 卸货。机器人沿格段插值移动，货物在送货段跟随机器人。完成集合按 task-ID 去重，只有到达卸货点才增加库存并释放预约。",
+      "已有任务时重复命令不派新单，路径失败保留库存。它是单机器人、单货物的事务演示，没有多机器人调度、碰撞协商或实际仓储接口。场景像仓库与库存正确是两个需要分别验证的问题。"
+    ]
+  }
+]

@@ -1,0 +1,3 @@
+import {defineConfig} from '@playwright/test';
+const external=process.env.DEMO_BASE_URL;
+export default defineConfig({testDir:'./tests/browser',timeout:45000,expect:{timeout:10000},workers:process.env.CI?2:2,retries:0,reporter:[['list'],['json',{outputFile:'test-results/report.json'}]],use:{baseURL:external||'http://127.0.0.1:44173/threejs-demo/',headless:true,channel:process.env.CI?undefined:'chrome',launchOptions:{args:['--enable-unsafe-swiftshader']},trace:'retain-on-failure',screenshot:'only-on-failure'},webServer:external?undefined:{command:'npm run dev -- --port 44173',url:'http://127.0.0.1:44173/threejs-demo/',reuseExistingServer:!process.env.CI}});
