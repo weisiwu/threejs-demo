@@ -207,7 +207,6 @@ export function interfaces(ctx: SceneContext): Experiment {
       const stored = JSON.parse(localStorage.getItem(key) || 'null');
       if (
         Array.isArray(stored) &&
-        stored.length > 0 &&
         stored.length <= 6 &&
         new Set(stored).size === stored.length &&
         stored.every((v) => typeof v === 'string' && v.length < 40)
@@ -346,7 +345,10 @@ export function interfaces(ctx: SceneContext): Experiment {
           d.mesh.visible = i < Math.round(s.parameter);
           panel.querySelector<HTMLElement>('[data-device="' + d.id + '"]')!.hidden =
             !d.mesh.visible;
-          if (!d.mesh.visible) selected.delete(d.id);
+          if (!d.mesh.visible) {
+            selected.delete(d.id);
+            panel.querySelector<HTMLInputElement>('[aria-label="' + d.id + '"]')!.checked = false;
+          }
         });
         report({
           已选设备: selected.size,

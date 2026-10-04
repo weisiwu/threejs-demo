@@ -143,7 +143,7 @@ export function spaces(ctx: SceneContext): Experiment {
     terrain.rotation.x = -Math.PI / 2;
     g.add(terrain);
     const actor = humanoid(g, 0);
-    actor.scale.setScalar(0.35);
+    actor.scale.setScalar(0.55);
     actor.position.set(0, 0, 0);
     const trees = Array.from({ length: 16 }, (_, i) => {
       const x = ((i % 4) - 1.5) * 3.5,

@@ -5,9 +5,9 @@
     "file": "tests/mechanisms.test.ts"
   },
   "browserTests": {
-    "startTime": "2026-10-04T20:57:59.860Z",
-    "duration": 126584.408,
-    "expected": 93,
+    "startTime": "2026-10-04T21:10:44.794Z",
+    "duration": 132125.271,
+    "expected": 97,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
@@ -19,5 +19,47 @@
     "未核对原作逐帧视觉一致性",
     "未执行外部 AI 服务、真实设备、CFD 或分子动力学",
     "没有真实手机 GPU 帧率或功耗数据"
+  ],
+  "sourceFiles": [
+    {
+      "path": "tests/mechanisms.test.ts",
+      "sha256": "5ce03f1a5d909dc619c976859b21cf4310db2a056e2fa55b59c3b0b7367f0c81"
+    },
+    {
+      "path": "src/main.ts",
+      "sha256": "fddf8d909765b46c6526009ec71055577958bcb0396b8b1784ee590e91de92e5"
+    },
+    {
+      "path": "src/math.ts",
+      "sha256": "b7193024561eb9d551673c697d7c3671ccf6cdf0ea2ed3b3bc076bc4daa7fb46"
+    },
+    {
+      "path": "src/runtime.ts",
+      "sha256": "2535eb6cd5f6d2a12dbc31b7b29a9f6c0a1954291b76963a12ed65a3aad74293"
+    },
+    {
+      "path": "src/types.ts",
+      "sha256": "6ff9bc3e9fec2363cb473d2531505acac51427e4b22a3bb00d5825ec453e6583"
+    },
+    {
+      "path": "src/graphics.ts",
+      "sha256": "c95f9da4b94076be3873ec621e782d8c6faa6a37d9209db92d8f5b118579be92"
+    },
+    {
+      "path": "src/scenes/science.ts",
+      "sha256": "3972d515820db57c45c3d4ce0640c431dd684e404997287bfd2ca59edba79b04"
+    },
+    {
+      "path": "src/scenes/spaces.ts",
+      "sha256": "38b673f6d7b50d7ccb628a05d0b42dbf2732788594a9c51158175acaa4284997"
+    },
+    {
+      "path": "src/scenes/mechanics.ts",
+      "sha256": "07d2090ce0e75aa4b96c5e82ef80f4810e2594e38ee67ea8762f4d7f18bcb514"
+    },
+    {
+      "path": "tests/browser/experiments.spec.ts",
+      "sha256": "97952d347880a3f8371cbcc17c22b54081cfd3bde07aee40a57287f514bd7b88"
+    }
   ]
 }

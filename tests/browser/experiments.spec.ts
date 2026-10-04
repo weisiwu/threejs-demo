@@ -149,3 +149,82 @@ test('目录筛选与手机布局', async ({ page }) => {
   await expect(page.locator('.demo-card')).toHaveCount(1);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
+test('目标恢复和新网表不显示上一快照的残留字段', async ({ page }) => {
+  await page.goto('#/demo/industrial-arm');
+  const parameter = page.locator('#parameter');
+  await parameter.focus();
+  await parameter.press('End');
+  await expect(metric(page, '求解状态')).toHaveText('不可达');
+  await parameter.press('Home');
+  await expect(page.locator('#status')).toHaveText('目标求解成功');
+  await expect(metric(page, '求解状态')).toHaveCount(0);
+  await page.goto('#/demo/circuit-builder');
+  await page
+    .getByRole('textbox', { name: '电路网表', exact: true })
+    .fill(
+      JSON.stringify({
+        nodes: ['0', 'new'],
+        parts: [{ id: 'V', type: 'voltage-source', pins: ['new', '0'], value: 3 }],
+      }),
+    );
+  await page.locator('#action').click();
+  await expect(metric(page, '节点 new（V）')).toHaveText('3.0000');
+  await expect(metric(page, '节点 out（V）')).toHaveCount(0);
+});
+test('隐藏设备清除勾选，空布局保存后仍为空', async ({ page }) => {
+  await page.goto('#/demo/network-management');
+  await page.getByLabel('device-8', { exact: true }).check();
+  await page.locator('#parameter').focus();
+  await page.locator('#parameter').press('Home');
+  await expect(page.getByLabel('device-8', { exact: true })).toBeHidden();
+  await expect(metric(page, '已选设备')).toHaveText('0');
+  await page.locator('#parameter').press('End');
+  await expect(page.getByLabel('device-8', { exact: true })).not.toBeChecked();
+  await page.goto('#/demo/customizable-dashboard');
+  for (const id of ['revenue', 'orders', 'traffic'])
+    await page.getByRole('button', { name: '删除 ' + id, exact: true }).click();
+  await page.locator('#action').click();
+  await page.reload();
+  await expect(metric(page, '图表数量')).toHaveText('0');
+});
+test('采样门隐藏后停止计数，移动角色从同源地形采样高度', async ({ page }) => {
+  await page.goto('#/demo/visibility-dashboard');
+  await page.locator('#pause').click();
+  await page.locator('#step').click();
+  const samples = await metric(page, '样本数').textContent();
+  await page.locator('#action').click();
+  await page.locator('#step').click();
+  await expect(metric(page, '样本数')).toHaveText(samples!);
+  await page.goto('#/demo/world-environment');
+  await page.locator('#pause').click();
+  await page.keyboard.down('d');
+  await page.locator('#step').click();
+  await page.keyboard.up('d');
+  await expect(metric(page, '角色 X')).toHaveText('2.00');
+  await expect(metric(page, '地面高度')).toHaveText((Math.sin(2 * 0.55) * 0.6).toFixed(2));
+});
+test('保存桌面与手机阅读截图，目录预览均加载', async ({ page }) => {
+  await mkdir('test-results/visuals', { recursive: true });
+  await page.setViewportSize({ width: 1440, height: 1050 });
+  await page.goto('./');
+  await expect(page.locator('.demo-card')).toHaveCount(43);
+  await expect
+    .poll(() =>
+      page
+        .locator('.card-image img')
+        .evaluateAll(
+          (images) =>
+            images.filter(
+              (i) => (i as HTMLImageElement).complete && (i as HTMLImageElement).naturalWidth > 0,
+            ).length,
+        ),
+    )
+    .toBeGreaterThan(2);
+  await page.screenshot({ path: 'test-results/visuals/gallery-desktop.png' });
+  await page.goto('#/demo/circuit-builder');
+  await expect(metric(page, '节点 out（V）')).toHaveText('6.0000');
+  await page.locator('#pause').click();
+  await page.screenshot({ path: 'test-results/visuals/circuit-desktop.png', fullPage: true });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.screenshot({ path: 'test-results/visuals/circuit-mobile.png', fullPage: true });
+});

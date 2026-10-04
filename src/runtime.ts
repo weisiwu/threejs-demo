@@ -33,7 +33,7 @@ export function mountExperiment(spec: DemoSpec) {
   const camera = new T.PerspectiveCamera(45, 1, 0.1, 200);
   camera.position.set(10, 8, 12);
   const controls = new OrbitControls(camera, r.domElement);
-  controls.target.set(0, 2.4, 0);
+  controls.target.set(0, spec.slug === 'black-hole' ? 0 : 2.4, 0);
   controls.enableDamping = true;
   controls.minDistance = 3;
   controls.maxDistance = 40;
@@ -43,7 +43,8 @@ export function mountExperiment(spec: DemoSpec) {
   const light = new T.DirectionalLight(0xffe1b2, 3.2);
   light.position.set(4, 10, 6);
   scene.add(light);
-  floor(scene, 18);
+  // 这些例子自己提供地表，通用地板会遮住负高度区域。
+  if (!['world-environment', 'black-hole'].includes(spec.slug)) floor(scene, 18);
   const group = new T.Group();
   scene.add(group);
   const state: RuntimeState = {
@@ -57,6 +58,13 @@ export function mountExperiment(spec: DemoSpec) {
   };
   const fields = new Map<string, HTMLElement>();
   const report = (values: Record<string, string | number>) => {
+    // 每次报告是一份完整快照，删除旧模式遗留的字段。
+    for (const [key, cell] of fields) {
+      if (!(key in values)) {
+        cell.parentElement?.remove();
+        fields.delete(key);
+      }
+    }
     for (const [key, value] of Object.entries(values)) {
       let cell = fields.get(key);
       if (!cell) {
@@ -166,9 +174,13 @@ export function mountExperiment(spec: DemoSpec) {
       ),
       camera,
     );
+    const visible = (object: T.Object3D) => {
+      for (let o: T.Object3D | null = object; o; o = o.parent) if (!o.visible) return false;
+      return true;
+    };
     const hit = raycaster
       .intersectObject(group, true)
-      .find((h) => h.object.userData.entityId && h.object.visible);
+      .find((h) => h.object.userData.entityId && visible(h.object));
     if (hit) choose(hit.object.userData.entityId);
   };
   r.domElement.addEventListener('pointerdown', pointerDown);

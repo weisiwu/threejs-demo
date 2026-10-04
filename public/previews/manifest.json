@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-04T21:02:23.103974+00:00",
+  "capturedAt": "2026-10-04T21:13:45.433332+00:00",
   "images": [
     {
       "slug": "customizable-dashboard",
@@ -18,22 +18,22 @@
     {
       "slug": "solar-system-basics",
       "file": "solar-system-basics.png",
-      "sha256": "83c7c1956eddd2d85980324060ade3f83b74bd9bd0e35ebb3e18592eb7248982",
-      "bytes": 76840,
+      "sha256": "100b98819017fbcf92395e349a35d211eddc8f06c1f99770d2021898a0df55d5",
+      "bytes": 76927,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
       "slug": "solar-system-orbits",
       "file": "solar-system-orbits.png",
-      "sha256": "038e1a80021d9f928bc3d46bff649154d9909b0967f59905b49cd8340f278956",
-      "bytes": 118795,
+      "sha256": "7220fb86dbebac2a0d5954e795c23872a9c3bd9fc0609c44f302a2e657e0a54a",
+      "bytes": 119362,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
       "slug": "visibility-dashboard",
       "file": "visibility-dashboard.png",
-      "sha256": "bd59e09bb0e3b9527b3e7f0f290eb17a21b55370ff0ac0215cd9a96eb8e8bcf7",
-      "bytes": 35795,
+      "sha256": "c27fced523858b22da4eae23d21178b48fa68bb1eeab15e4e4f20dbcccb995f6",
+      "bytes": 38672,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
@@ -46,57 +46,57 @@
     {
       "slug": "scene-builder",
       "file": "scene-builder.png",
-      "sha256": "57c1415c6e5535726cc89d27a20dbcf435f75b093a0c61b57a3d370927600a7c",
-      "bytes": 34287,
+      "sha256": "817fee168543984ed6442a637c5d4b21437a38cc0dcf35ea2c629efa2d8563a7",
+      "bytes": 34294,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
       "slug": "hexapod-robot",
       "file": "hexapod-robot.png",
-      "sha256": "e5c99f92855a835df1e9f184308c7d158d31ef1c7ca4584411bcc85b84c28dc2",
-      "bytes": 45396,
+      "sha256": "418a87a86cdf73640c808fdc7ec96e763e966dd77e00c5ff2f5646a719f26f28",
+      "bytes": 46048,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
       "slug": "jet-engine",
       "file": "jet-engine.png",
-      "sha256": "c544508f4224d0a6028ee0ed32703f2a730ea1a933b07465bfa38f5eb048b086",
-      "bytes": 94779,
+      "sha256": "6c14037b176b469e13e5df309e621a90b03b1367b8afab0b7bcdb278e9e800ca",
+      "bytes": 94606,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
       "slug": "strandbeest",
       "file": "strandbeest.png",
-      "sha256": "cbb3774e52193683eb0fd8143c821078e64be9e117023d21627e32c9979dd7a8",
-      "bytes": 96843,
+      "sha256": "51879ae5fc9d7f54c521c27ca336c76f59ea270062f988fb0758bde5430e06f6",
+      "bytes": 96785,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
       "slug": "kinematic-creature",
       "file": "kinematic-creature.png",
-      "sha256": "11a58e1038ed0abad24b4f60bf4745103513b49cdb266ff262f8eba97643519b",
-      "bytes": 41598,
+      "sha256": "126afedde5969a5254dfc2f51dbc0f52474f4923557874e907a6fb510279ebce",
+      "bytes": 41838,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
       "slug": "dna-structure",
       "file": "dna-structure.png",
-      "sha256": "1f2d84ad8808c97607b2247eca1949ce6dcc77540682d8243df9f38589cbde94",
-      "bytes": 55152,
+      "sha256": "8e712af00d074e9788ada0ae7323239861914f14b52757a8fd2de60134949b5f",
+      "bytes": 55409,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
       "slug": "periodic-table",
       "file": "periodic-table.png",
-      "sha256": "5fb9f54088f22d1a14bc73fbf3ef11d8519c6b72bcb645e8d6a412a7e2199e6e",
-      "bytes": 41027,
+      "sha256": "71ea78f7ae7b05b19ff27e283e1aab37514fd17379d257ad2c846283f83f502e",
+      "bytes": 40984,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
       "slug": "aurora",
       "file": "aurora.png",
-      "sha256": "45c9703549857c009eeaf5b143f85dce6dbfc7dddfaffab60f64fa1617157eff",
-      "bytes": 46620,
+      "sha256": "f608f3090305ff3917e8cd7c98f7795d43028b11940fb9af4ade50dc4944756b",
+      "bytes": 46640,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
@@ -116,22 +116,22 @@
     {
       "slug": "character-selection",
       "file": "character-selection.png",
-      "sha256": "9888cbf58562360ac0f78247b99ab09795087d08f199d0776a2cf7bbe22b269b",
-      "bytes": 47755,
+      "sha256": "88f9d9a9c4e80de2a6918456877428ef3d5b08561742e92a08e54e5f2d8cf515",
+      "bytes": 47698,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
       "slug": "ornithopter",
       "file": "ornithopter.png",
-      "sha256": "e5f4601469ba6eebd9c27aad5e123c4983c18690a34f1e75dd918dca09501a70",
-      "bytes": 38698,
+      "sha256": "2f332dd4db02a648080f55046459e8e6ceddab2420475a19085e321685b56e82",
+      "bytes": 38084,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
       "slug": "ship-selection",
       "file": "ship-selection.png",
-      "sha256": "09f7035e0d62194c99aaaf813fd8f3982aec20e6dbab0e39d08f14de73de95be",
-      "bytes": 41515,
+      "sha256": "cac283379804b9db3925eed3b7845b85e9ad562999130ce84b5a3995c0abbc62",
+      "bytes": 41228,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
@@ -151,8 +151,8 @@
     {
       "slug": "world-environment",
       "file": "world-environment.png",
-      "sha256": "d029f9c9c33e0ad2e1a6afc7f8e0314c62ae5af10be048f489ceb87760a20581",
-      "bytes": 72462,
+      "sha256": "5966409da7751afc64d6f1c7e508ccd0c9975c4cdc1d1e5336f6f43468d6ff6f",
+      "bytes": 50930,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
@@ -179,22 +179,22 @@
     {
       "slug": "robot-roster",
       "file": "robot-roster.png",
-      "sha256": "57ddc63116b2e9099fab435050a814a7519012da94e6b7bf5c0696e07c4b95fa",
-      "bytes": 51279,
+      "sha256": "af855c918cb82469bbeb6fa61a9fe22e236b4531d28ae6cdc626aba381813ede",
+      "bytes": 51202,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
       "slug": "planet-explorer",
       "file": "planet-explorer.png",
-      "sha256": "d536e54e63539de1dbd6ed92b8f87bd3126230e092402d1492d2b90e01617b10",
-      "bytes": 86959,
+      "sha256": "85a189ad2376cf81a39a1edf1c2f4ec4d8d2d5141011f59a579dd84ddca49e7f",
+      "bytes": 87087,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
       "slug": "black-hole",
       "file": "black-hole.png",
-      "sha256": "71db14a7cfc8a8d947baf9c78e5eeb27cb3df26146c49592e82dc2ecfe79aaf0",
-      "bytes": 52613,
+      "sha256": "45af91641f74ddae3e98d8f5e6e9f7908a53cd885e0c6a3224c7df881ff976cd",
+      "bytes": 20816,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
@@ -207,8 +207,8 @@
     {
       "slug": "turbofan-airflow",
       "file": "turbofan-airflow.png",
-      "sha256": "1d3eee947c417c58549b1fece51ebe2505240f562e2ee2868368d59bba010a8f",
-      "bytes": 88633,
+      "sha256": "de7a4c30f152141e90c52fa9d7591411d8c40fb18dac389c15e30d26d42b0cba",
+      "bytes": 88785,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
@@ -235,8 +235,8 @@
     {
       "slug": "reactor-diagnostics",
       "file": "reactor-diagnostics.png",
-      "sha256": "a538fa712b5ffe719597e22ed50138f12e26cf4db42a9c5f4ddd15cf7e6dc800",
-      "bytes": 43045,
+      "sha256": "7c87b7836b41a24625b192e15190dd6d7bc7366eb232ebde4a108b815bab6f77",
+      "bytes": 43081,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
@@ -270,15 +270,15 @@
     {
       "slug": "jellyfish-robot",
       "file": "jellyfish-robot.png",
-      "sha256": "bae43dea3859719ef3687a3133aac7049e71ca236c310312313cd992fa66b482",
-      "bytes": 69942,
+      "sha256": "212e5cae5a8e59426c9a786eb90ee5e427995829e4ff396e8505ed5aa0c1981a",
+      "bytes": 69609,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
       "slug": "v8-engine",
       "file": "v8-engine.png",
-      "sha256": "d3eb9458a3f6f359051db41b004e00618ebd6cc4e9ee524d0aa849c01d0cf5d0",
-      "bytes": 49289,
+      "sha256": "d90dd0830c0a1b217b5efd4eb23c970a392509bfafbb7edfeccf9e06ce5c742a",
+      "bytes": 49082,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     },
     {
@@ -298,8 +298,8 @@
     {
       "slug": "warehouse-strategy",
       "file": "warehouse-strategy.png",
-      "sha256": "a742a0f0c4670cb2d627d1d1883632cb9c35fbb0e4fff71b360794d20812483f",
-      "bytes": 39585,
+      "sha256": "f1ab833515fc08bd6745ab093645e42ea7a926aaef994e31953df8ff2980cc46",
+      "bytes": 39589,
       "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
     }
   ]
