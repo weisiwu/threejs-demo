@@ -1,5 +1,5 @@
 ---
-title: "可见性仪表盘：机制与运行记录"
+title: '可见性仪表盘：机制与运行记录'
 type: reproduction-research
 created: 2026-10-05
 updated: 2026-10-05

@@ -1,16 +1,127 @@
 import * as T from 'three';
-import type {V3} from './math';
-export const COLORS={cyan:0x57dfdd,blue:0x678cff,gold:0xf2c37c,red:0xfa827b,purple:0xb98cf4,green:0x8cdbaf,white:0xe8f2ed,dark:0x162738};
-export function material(color:number,metalness=0.3,roughness=0.45){return new T.MeshStandardMaterial({color,metalness,roughness});}
-export function box(parent:T.Object3D,size:V3,position:V3,color=COLORS.cyan){const m=new T.Mesh(new T.BoxGeometry(...size),material(color));m.position.set(...position);parent.add(m);return m;}
-export function sphere(parent:T.Object3D,r:number,position:V3,color=COLORS.cyan){const m=new T.Mesh(new T.SphereGeometry(r,24,16),material(color));m.position.set(...position);parent.add(m);return m;}
-export function cylinder(parent:T.Object3D,r:number,height:number,position:V3,color=COLORS.cyan){const m=new T.Mesh(new T.CylinderGeometry(r,r,height,24),material(color));m.position.set(...position);parent.add(m);return m;}
-export function rod(parent:T.Object3D,a:V3,b:V3,r=0.06,color=COLORS.cyan){const m=new T.Mesh(new T.CylinderGeometry(r,r,1,10),material(color));setRod(m,a,b);parent.add(m);return m;}
-export function setRod(m:T.Mesh,a:V3,b:V3){const va=new T.Vector3(...a),vb=new T.Vector3(...b),dir=vb.clone().sub(va),len=dir.length();m.position.copy(va.add(vb).multiplyScalar(.5));m.scale.y=Math.max(len,1e-6);if(len>1e-8)m.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),dir.normalize());}
-export function torus(parent:T.Object3D,r:number,tube:number,position:V3,color=COLORS.gold){const m=new T.Mesh(new T.TorusGeometry(r,tube,10,80),material(color));m.position.set(...position);parent.add(m);return m;}
-export function line(parent:T.Object3D,points:V3[],color=COLORS.cyan,closed=false){const g=new T.BufferGeometry().setFromPoints(points.map(p=>new T.Vector3(...p)));const m=closed?new T.LineLoop(g,new T.LineBasicMaterial({color})):new T.Line(g,new T.LineBasicMaterial({color}));parent.add(m);return m;}
-export function tube(parent:T.Object3D,points:V3[],radius:number,color=COLORS.cyan){const curve=new T.CatmullRomCurve3(points.map(p=>new T.Vector3(...p)));const m=new T.Mesh(new T.TubeGeometry(curve,Math.max(24,points.length*2),radius,8,false),material(color));parent.add(m);return m;}
-export function clear(group:T.Object3D){const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>(),textures=new Set<T.Texture>();group.traverse(obj=>{const m=obj as T.Mesh;if(m.geometry)geometries.add(m.geometry);if(m.material)for(const mat of Array.isArray(m.material)?m.material:[m.material]){materials.add(mat);for(const v of Object.values(mat))if(v instanceof T.Texture)textures.add(v);}});for(const g of geometries)g.dispose();for(const m of materials)m.dispose();for(const t of textures)t.dispose();group.clear();}
-export function mark(object:T.Object3D,id:string,label=id){object.traverse(o=>{o.userData.entityId=id;o.userData.label=label;});return object;}
-export function highlight(group:T.Object3D,id:string){group.traverse(o=>{const m=o as T.Mesh;const mat=m.material as T.MeshStandardMaterial;if(mat?.emissive&&o.userData.entityId)mat.emissive.setHex(o.userData.entityId===id?0x214f48:0x000000);});}
-export function floor(group:T.Object3D,size=18){const grid=new T.GridHelper(size,Math.round(size),0x34505e,0x1a2d3c);group.add(grid);const p=new T.Mesh(new T.PlaneGeometry(size,size),new T.MeshStandardMaterial({color:0x101d29,roughness:1}));p.rotation.x=-Math.PI/2;p.position.y=-.03;group.add(p);}
+import type { V3 } from './math';
+export const COLORS = {
+  cyan: 0x57dfdd,
+  blue: 0x678cff,
+  gold: 0xf2c37c,
+  red: 0xfa827b,
+  purple: 0xb98cf4,
+  green: 0x8cdbaf,
+  white: 0xe8f2ed,
+  dark: 0x162738,
+};
+export function material(color: number, metalness = 0.3, roughness = 0.45) {
+  return new T.MeshStandardMaterial({ color, metalness, roughness });
+}
+export function box(parent: T.Object3D, size: V3, position: V3, color = COLORS.cyan) {
+  const m = new T.Mesh(new T.BoxGeometry(...size), material(color));
+  m.position.set(...position);
+  parent.add(m);
+  return m;
+}
+export function sphere(parent: T.Object3D, r: number, position: V3, color = COLORS.cyan) {
+  const m = new T.Mesh(new T.SphereGeometry(r, 24, 16), material(color));
+  m.position.set(...position);
+  parent.add(m);
+  return m;
+}
+export function cylinder(
+  parent: T.Object3D,
+  r: number,
+  height: number,
+  position: V3,
+  color = COLORS.cyan,
+) {
+  const m = new T.Mesh(new T.CylinderGeometry(r, r, height, 24), material(color));
+  m.position.set(...position);
+  parent.add(m);
+  return m;
+}
+export function rod(parent: T.Object3D, a: V3, b: V3, r = 0.06, color = COLORS.cyan) {
+  const m = new T.Mesh(new T.CylinderGeometry(r, r, 1, 10), material(color));
+  setRod(m, a, b);
+  parent.add(m);
+  return m;
+}
+export function setRod(m: T.Mesh, a: V3, b: V3) {
+  const va = new T.Vector3(...a),
+    vb = new T.Vector3(...b),
+    dir = vb.clone().sub(va),
+    len = dir.length();
+  m.position.copy(va.add(vb).multiplyScalar(0.5));
+  m.scale.y = Math.max(len, 1e-6);
+  if (len > 1e-8) m.quaternion.setFromUnitVectors(new T.Vector3(0, 1, 0), dir.normalize());
+}
+export function torus(
+  parent: T.Object3D,
+  r: number,
+  tube: number,
+  position: V3,
+  color = COLORS.gold,
+) {
+  const m = new T.Mesh(new T.TorusGeometry(r, tube, 10, 80), material(color));
+  m.position.set(...position);
+  parent.add(m);
+  return m;
+}
+export function line(parent: T.Object3D, points: V3[], color = COLORS.cyan, closed = false) {
+  const g = new T.BufferGeometry().setFromPoints(points.map((p) => new T.Vector3(...p)));
+  const m = closed
+    ? new T.LineLoop(g, new T.LineBasicMaterial({ color }))
+    : new T.Line(g, new T.LineBasicMaterial({ color }));
+  parent.add(m);
+  return m;
+}
+export function tube(parent: T.Object3D, points: V3[], radius: number, color = COLORS.cyan) {
+  const curve = new T.CatmullRomCurve3(points.map((p) => new T.Vector3(...p)));
+  const m = new T.Mesh(
+    new T.TubeGeometry(curve, Math.max(24, points.length * 2), radius, 8, false),
+    material(color),
+  );
+  parent.add(m);
+  return m;
+}
+export function clear(group: T.Object3D) {
+  const geometries = new Set<T.BufferGeometry>(),
+    materials = new Set<T.Material>(),
+    textures = new Set<T.Texture>();
+  group.traverse((obj) => {
+    const m = obj as T.Mesh;
+    if (m.geometry) geometries.add(m.geometry);
+    if (m.material)
+      for (const mat of Array.isArray(m.material) ? m.material : [m.material]) {
+        materials.add(mat);
+        for (const v of Object.values(mat)) if (v instanceof T.Texture) textures.add(v);
+      }
+  });
+  for (const g of geometries) g.dispose();
+  for (const m of materials) m.dispose();
+  for (const t of textures) t.dispose();
+  group.clear();
+}
+export function mark(object: T.Object3D, id: string, label = id) {
+  object.traverse((o) => {
+    o.userData.entityId = id;
+    o.userData.label = label;
+  });
+  return object;
+}
+export function highlight(group: T.Object3D, id: string) {
+  group.traverse((o) => {
+    const m = o as T.Mesh;
+    const mat = m.material as T.MeshStandardMaterial;
+    if (mat?.emissive && o.userData.entityId)
+      mat.emissive.setHex(o.userData.entityId === id ? 0x214f48 : 0x000000);
+  });
+}
+export function floor(group: T.Object3D, size = 18) {
+  const grid = new T.GridHelper(size, Math.round(size), 0x34505e, 0x1a2d3c);
+  group.add(grid);
+  const p = new T.Mesh(
+    new T.PlaneGeometry(size, size),
+    new T.MeshStandardMaterial({ color: 0x101d29, roughness: 1 }),
+  );
+  p.rotation.x = -Math.PI / 2;
+  p.position.y = -0.03;
+  group.add(p);
+}

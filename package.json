@@ -9,7 +9,9 @@
     "preview": "vite preview --host 127.0.0.1",
     "test": "tsx --test tests/mechanisms.test.ts",
     "test:e2e": "playwright test",
-    "check:catalog": "tsx scripts/check-catalog.ts"
+    "check:catalog": "tsx scripts/check-catalog.ts",
+    "format": "prettier --write src scripts tests *.ts *.html *.json docs README.md NOTICE.md .github/workflows/pages.yml",
+    "docs": "tsx scripts/generate-research.ts"
   },
   "dependencies": {
     "react": "19.2.8",
@@ -22,6 +24,7 @@
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "@types/three": "0.183.1",
+    "prettier": "3.9.9",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
     "vite": "8.3.2"

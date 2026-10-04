@@ -1,5 +1,5 @@
 ---
-title: "时空网格示意：机制与运行记录"
+title: '时空网格示意：机制与运行记录'
 type: reproduction-research
 created: 2026-10-05
 updated: 2026-10-05
