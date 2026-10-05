@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-05T02:58:36.065Z",
+  "capturedAt": "2026-10-05T03:10:24.908Z",
   "images": [
     {
       "slug": "customizable-dashboard",
@@ -154,10 +154,10 @@
     {
       "slug": "world-environment",
       "file": "world-environment.png",
-      "sha256": "1eeb77cfe8d6f614cd22162883060c7f082d52573fba3cb16ff851268bcc5886",
-      "bytes": 254731,
+      "sha256": "edc158c9b6b98fc30052ac438bbdab5d91be327b5ec05a49b80a02ef24e1c13d",
+      "bytes": 274751,
       "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体",
-      "capturedAt": "2026-10-05T02:58:36.065Z"
+      "capturedAt": "2026-10-05T03:10:24.908Z"
     },
     {
       "slug": "smart-home",

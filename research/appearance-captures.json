@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-05T02:58:36.064Z",
+  "capturedAt": "2026-10-05T03:10:24.907Z",
   "rows": [
     {
       "slug": "customizable-dashboard",
@@ -718,8 +718,8 @@
     {
       "slug": "world-environment",
       "path": "public/previews/world-environment.png",
-      "sha256": "1eeb77cfe8d6f614cd22162883060c7f082d52573fba3cb16ff851268bcc5886",
-      "bytes": 254731,
+      "sha256": "edc158c9b6b98fc30052ac438bbdab5d91be327b5ec05a49b80a02ef24e1c13d",
+      "bytes": 274751,
       "viewport": [
         1440,
         1080

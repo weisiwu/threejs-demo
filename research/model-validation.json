@@ -16,7 +16,7 @@
     "unexpected": 0,
     "flaky": 0
   },
-  "scope": "完整 111 项检查后，部件独立材质修订另复查 10 项模型用例；14 个 GLB 导出后由 GLTFLoader 回读。",
+  "scope": "完整 111 项检查后，部件独立材质修订另复查 10 项模型用例；14 个 GLB 导出后由 GLTFLoader 回读。 舱室镜头调整后另查 1 项场景与手机布局，重拍截图确认结构柱不遮挡角色。",
   "mechanismTests": 11,
   "models": 14,
   "scenes": 7,
@@ -36,7 +36,7 @@
     },
     {
       "path": "src/visuals/spatial.ts",
-      "sha256": "b55cc848beee5834c052313bd46e20aedb14a3e423f0e027a442c12b9bd03590"
+      "sha256": "f8079b6dd0645a8caaeb4d524b119bc5149f934eff4994702e26c00e89c4949b"
     },
     {
       "path": "src/runtime.ts",
@@ -50,5 +50,13 @@
       "path": "tests/browser/models.spec.ts",
       "sha256": "25aff2c91da4d07440b99ed957ad50b0c91eab5dc87348ff536748dbfc424513"
     }
-  ]
+  ],
+  "cameraFollowup": {
+    "startTime": "2026-10-05T03:10:25.638Z",
+    "duration": 5499.012000000001,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
 }

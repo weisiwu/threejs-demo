@@ -98,7 +98,7 @@ export function spatialAppearance(c: SceneContext): Appearance | undefined {
   }
   if (spec.slug === 'world-environment') {
     const old = hide(c);
-    frame(c, [7, 4.3, 11], [0, 2, 0], 0x0c161c);
+    frame(c, [0, 3.1, 9.5], [0, 1.9, 0], 0x0c161c);
     const hall = createModel('industrial-hangar');
     g.add(hall);
     const actor = old[0];
