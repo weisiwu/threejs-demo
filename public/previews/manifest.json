@@ -1,306 +1,306 @@
 {
-  "capturedAt": "2026-10-04T21:13:45.433332+00:00",
+  "capturedAt": "2026-10-05T01:08:17.074Z",
   "images": [
     {
       "slug": "customizable-dashboard",
       "file": "customizable-dashboard.png",
-      "sha256": "b87cd0468a6b3f9e950d335a325e384929be10aa974d6373d27d22073acfd53d",
-      "bytes": 35842,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "a9ee31c46f5b66051b4073de2f96330dbaf6ed92e78a7f6376409264588b374e",
+      "bytes": 34203,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "state-management",
       "file": "state-management.png",
-      "sha256": "390a4b8c7bdf4d4a90445cfcba128b659832e884ac25ebfa46ad80c4e2cb9327",
-      "bytes": 35153,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "b202140d60f9af194473f6111c7dbfdabac4e8e36a7396fe14e3376e5e84d203",
+      "bytes": 35670,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "solar-system-basics",
       "file": "solar-system-basics.png",
-      "sha256": "100b98819017fbcf92395e349a35d211eddc8f06c1f99770d2021898a0df55d5",
-      "bytes": 76927,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "f381e150868599797a1e7e50cf068bd62694e75697ddfbacd27e60674e46d380",
+      "bytes": 33369,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "solar-system-orbits",
       "file": "solar-system-orbits.png",
-      "sha256": "7220fb86dbebac2a0d5954e795c23872a9c3bd9fc0609c44f302a2e657e0a54a",
-      "bytes": 119362,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "c2fe09a8b9670a1903bb26c6a055898e97fc85464fde298102dca6746500b015",
+      "bytes": 33760,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "visibility-dashboard",
       "file": "visibility-dashboard.png",
-      "sha256": "c27fced523858b22da4eae23d21178b48fa68bb1eeab15e4e4f20dbcccb995f6",
-      "bytes": 38672,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "8a26c193010323db97f28558f21ff579d31369ec5b192dd6fafb11cb1ed1fcd5",
+      "bytes": 34367,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "network-management",
       "file": "network-management.png",
-      "sha256": "2c03cb177e76c6ba466ebfa95dd837efa261b4970f34adadc84495436c26574a",
-      "bytes": 37173,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "940672cc43bd7761eb502e104a5b0366607470112fbefb66f6603226f02d29fc",
+      "bytes": 36164,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "scene-builder",
       "file": "scene-builder.png",
-      "sha256": "817fee168543984ed6442a637c5d4b21437a38cc0dcf35ea2c629efa2d8563a7",
-      "bytes": 34294,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "8f727fb82b91312ea1f6e7e7b64187751c4de1ca98105d75fd837d3d4ce4bef4",
+      "bytes": 36016,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "hexapod-robot",
       "file": "hexapod-robot.png",
-      "sha256": "418a87a86cdf73640c808fdc7ec96e763e966dd77e00c5ff2f5646a719f26f28",
-      "bytes": 46048,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "e4ab576b6d918e21fa49abba16536d3e9d129b6fbab2f3d80416b285f0575423",
+      "bytes": 106468,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "jet-engine",
       "file": "jet-engine.png",
-      "sha256": "6c14037b176b469e13e5df309e621a90b03b1367b8afab0b7bcdb278e9e800ca",
-      "bytes": 94606,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "71dd13e4b717388d9b3119121d848a79b544ab5440479070d4522249c78165c9",
+      "bytes": 114193,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "strandbeest",
       "file": "strandbeest.png",
-      "sha256": "51879ae5fc9d7f54c521c27ca336c76f59ea270062f988fb0758bde5430e06f6",
-      "bytes": 96785,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "4914e6ce8f575a0b294a46481dcef45c59d19378dd497eeaf11655978b04bd92",
+      "bytes": 29480,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "kinematic-creature",
       "file": "kinematic-creature.png",
-      "sha256": "126afedde5969a5254dfc2f51dbc0f52474f4923557874e907a6fb510279ebce",
-      "bytes": 41838,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "f4a689f37b82cec2736fbf217ee41441506c7e0e8d8dce3b5bf98ffa32381fd9",
+      "bytes": 71423,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "dna-structure",
       "file": "dna-structure.png",
-      "sha256": "8e712af00d074e9788ada0ae7323239861914f14b52757a8fd2de60134949b5f",
-      "bytes": 55409,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "fd79d6a40f96c7caa8754ddf91668b720ae38c1fc5e97daa40b16d1273ab811a",
+      "bytes": 67444,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "periodic-table",
       "file": "periodic-table.png",
-      "sha256": "71ea78f7ae7b05b19ff27e283e1aab37514fd17379d257ad2c846283f83f502e",
-      "bytes": 40984,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "fecff04ad1dd6a263482699ee877e29f9756a5cded468857ddc7840622093176",
+      "bytes": 36741,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "aurora",
       "file": "aurora.png",
-      "sha256": "f608f3090305ff3917e8cd7c98f7795d43028b11940fb9af4ade50dc4944756b",
-      "bytes": 46640,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "6417ee0f0de255955978f09ee6fcc117d0c5b9cdf09499d1bdccb4a52c8571d1",
+      "bytes": 79434,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "anomaly-monitor",
       "file": "anomaly-monitor.png",
-      "sha256": "71bdb71f0bc398f10fb0c2606ecfed588001005b0301499e6ad8827b0944e8b0",
-      "bytes": 40794,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "51cbb6ed2852f1eab7d3bf4ccebce6b40ef7c3461169571aa39d7782736439cd",
+      "bytes": 187189,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "skeleton-explorer",
       "file": "skeleton-explorer.png",
-      "sha256": "660812ad5acc376ca954560f0f2d33da1037e4a299e485dda909b8f6e1227589",
-      "bytes": 34786,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "806e24b4ae20f647dc2764144a509d2cd394aa2a8147d2cb4899db2d9a4b212c",
+      "bytes": 43828,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "character-selection",
       "file": "character-selection.png",
-      "sha256": "88f9d9a9c4e80de2a6918456877428ef3d5b08561742e92a08e54e5f2d8cf515",
-      "bytes": 47698,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "3e81cf18732922eb426d92266b3fadd0764411d13eb66b340cf6f78d96d9bd19",
+      "bytes": 88000,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "ornithopter",
       "file": "ornithopter.png",
-      "sha256": "2f332dd4db02a648080f55046459e8e6ceddab2420475a19085e321685b56e82",
-      "bytes": 38084,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "b298a64e09b13ca9f4847f4aa9a773bf4ef3e16564e0789cbea9c2ae49fae6a8",
+      "bytes": 85654,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "ship-selection",
       "file": "ship-selection.png",
-      "sha256": "cac283379804b9db3925eed3b7845b85e9ad562999130ce84b5a3995c0abbc62",
-      "bytes": 41228,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "f12592d615faa86144e36f1404662bf515563ef90df8b53efd3c67b7e2df7d33",
+      "bytes": 69314,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "sales-timeline",
       "file": "sales-timeline.png",
-      "sha256": "59af5595b5ec738940be8d28812484f5c2110f01037c1649775b13de640f7e63",
-      "bytes": 38799,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "9e3f9bbec8fb2f945011375f9ac4f29459014ea4a360f2e5972d3280dddca09e",
+      "bytes": 67859,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "industrial-arm",
       "file": "industrial-arm.png",
-      "sha256": "6a5c779339dfa79561dc78e9f0749d51f6b547cf423b199befcb7d5759763c08",
-      "bytes": 39521,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "b722457783c0cb12b68280e9746b75c7805eeaac7f8791094a3dfa6006c8af41",
+      "bytes": 88188,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "world-environment",
       "file": "world-environment.png",
-      "sha256": "5966409da7751afc64d6f1c7e508ccd0c9975c4cdc1d1e5336f6f43468d6ff6f",
-      "bytes": 50930,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "b576c6d38dfd58a14d218861cf67d5cf5713d53fef6562d8dd700583ba74041e",
+      "bytes": 238312,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "smart-home",
       "file": "smart-home.png",
-      "sha256": "1b0af804f72f412298fdb4887798e24a8a2a1a9d0623d965324b3aee7e82c716",
-      "bytes": 38151,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "412c6db0be3fe5e329272fb3f52b5a385cb99e2e2f3fe48487328901e0ee0023",
+      "bytes": 71082,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "interactive-map",
       "file": "interactive-map.png",
-      "sha256": "3fbf432294f1921c6bf0299f3638c19e1e81a7b96fbc231f1214ff3d226d3ce2",
-      "bytes": 42944,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "fac0987994f7b8b3f9e7f45a7888007846b08443e8db2a46df4695fe342588a3",
+      "bytes": 73288,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "futuristic-interface",
       "file": "futuristic-interface.png",
-      "sha256": "59843dd35440cc223732d837265b3a7677cf903f7c29d6b63bc7ef02957f8a10",
-      "bytes": 42277,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "17ed171b4841f741cd44023f5d8d812a2e265e5b199ff7b72aece02a4a9605df",
+      "bytes": 85860,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "robot-roster",
       "file": "robot-roster.png",
-      "sha256": "af855c918cb82469bbeb6fa61a9fe22e236b4531d28ae6cdc626aba381813ede",
-      "bytes": 51202,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "781d3d7d39b684ca08fd627516f17da474d62e71728c0d90a8088e035fbe6913",
+      "bytes": 85837,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "planet-explorer",
       "file": "planet-explorer.png",
-      "sha256": "85a189ad2376cf81a39a1edf1c2f4ec4d8d2d5141011f59a579dd84ddca49e7f",
-      "bytes": 87087,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "900d39d2dfb55aa79c3bcfab62c38f6884a1c6d7b0b75cd7a11332e214425f0d",
+      "bytes": 98643,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "black-hole",
       "file": "black-hole.png",
-      "sha256": "45af91641f74ddae3e98d8f5e6e9f7908a53cd885e0c6a3224c7df881ff976cd",
-      "bytes": 20816,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "d4437d08c32b7cb8985abede19f4afcd15ff13c4106502b814e7e4be9a3fed9a",
+      "bytes": 103883,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "biological-structure",
       "file": "biological-structure.png",
-      "sha256": "1953ae43332b8e50f83acfbabf94d2bfde090b969cf6525e213765a846f16e5a",
-      "bytes": 40339,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "7addcf854553bf4e9c97679022bea7562900976ea330721a7234f43a79b9bff2",
+      "bytes": 66377,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "turbofan-airflow",
       "file": "turbofan-airflow.png",
-      "sha256": "de7a4c30f152141e90c52fa9d7591411d8c40fb18dac389c15e30d26d42b0cba",
-      "bytes": 88785,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "f7dcf29516154034766961a1797fc5e909e4dc41b25498eb7455c218da24355a",
+      "bytes": 141877,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "atomic-explorer",
       "file": "atomic-explorer.png",
-      "sha256": "b3d1fb4a05d09cfd226f2e69768bf06b32992c586f5d1545c42e79bc460cb757",
-      "bytes": 44359,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "ba638594874322a8d57f7632b404cd5d4f5702945cb2b4c1972369a8f7d8d975",
+      "bytes": 48267,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "molecular-structure",
       "file": "molecular-structure.png",
-      "sha256": "86ac96bc38e8e95e2625119078189297eb8ed00bcf2ace74f6ccdf178335b0dc",
-      "bytes": 42087,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "3f86081cd16754a4e0f7cc886dc8ae05b4f56e7ffe44eff26111c433326cf7b9",
+      "bytes": 70974,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "circuit-builder",
       "file": "circuit-builder.png",
-      "sha256": "ef6569999af59a89af702b505a3bd8fb2cb8f285616228bb5163ac6f292e3a1f",
-      "bytes": 39656,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "92e029cadc2b628a9d9ade95e04a3eab774e095cf69498e5e9d8db4c24acdd7b",
+      "bytes": 64274,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "reactor-diagnostics",
       "file": "reactor-diagnostics.png",
-      "sha256": "7c87b7836b41a24625b192e15190dd6d7bc7366eb232ebde4a108b815bab6f77",
-      "bytes": 43081,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "ce788b7b0976525d5bc2193fa6d8ee625b10a5d031cd30a495f7d7eac58b9123",
+      "bytes": 113329,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "kinetic-pavilion",
       "file": "kinetic-pavilion.png",
-      "sha256": "b0012895e52cbe34bcc950b5f57975826179dd984f4754231496c86231c517ab",
-      "bytes": 48005,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "98c7d6a403725f1f7f9dc2c37bbf9314cbae26048e559619099d89c98546e3fd",
+      "bytes": 146249,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "rule-universe",
       "file": "rule-universe.png",
-      "sha256": "83cde6d874b3cee97154c405d3fc625e60a2ed5d2591481e82ff69a2383e8528",
-      "bytes": 36055,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "9dfcb77c8482bc24f45b6296fafdf415f4a444102173b0fc77dc87a476938e24",
+      "bytes": 103109,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "portable-microscope",
       "file": "portable-microscope.png",
-      "sha256": "21070a8ba9cb7f4c1cbaa69c871cc294893c4f8a609475ec0c08dabd3afff702",
-      "bytes": 36079,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "7e1fcebb3b1c4c119b8b287b3702dcbac1daaca8f711fc26a0c19da95d4c86f0",
+      "bytes": 62634,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "protein-folding",
       "file": "protein-folding.png",
-      "sha256": "6084095b10c99c9a8c62e25753131f27c8ddf40684e5ee1c4593e2b5713233d6",
-      "bytes": 45164,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "324f361014a09cb02773a3d6b146415e2f45c4d5adb9a8fda68073c1faaba9d6",
+      "bytes": 55533,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "jellyfish-robot",
       "file": "jellyfish-robot.png",
-      "sha256": "212e5cae5a8e59426c9a786eb90ee5e427995829e4ff396e8505ed5aa0c1981a",
-      "bytes": 69609,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "945817c77979819525e0c0b394e449c4f5d4dcf62185bb8e13aa78bfbbd64cd4",
+      "bytes": 126762,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "v8-engine",
       "file": "v8-engine.png",
-      "sha256": "d90dd0830c0a1b217b5efd4eb23c970a392509bfafbb7edfeccf9e06ce5c742a",
-      "bytes": 49082,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "b71a6b17479f3537a672998254af2243363849dd2b07cb44e8c3e15436d5bf9b",
+      "bytes": 90005,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "landing-gear",
       "file": "landing-gear.png",
-      "sha256": "5b3f71bacde36e5f3e854a65708346c41189461f1d6edff6c7ff519f9f2fddf8",
-      "bytes": 42732,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "23666a64517563c4258fb9c2b7f72d74d3255d48b05375552f67f899d276286c",
+      "bytes": 45221,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "schematic-transition",
       "file": "schematic-transition.png",
-      "sha256": "b6dd173683a1706e526a6a559be53a7a97981a89dfed9bedc788147ee8a9bf5d",
-      "bytes": 38967,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "21bb52fd94481704f32da6d76ad356a63ebb6114c98221094c8f0720b653ae5c",
+      "bytes": 108335,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     },
     {
       "slug": "warehouse-strategy",
       "file": "warehouse-strategy.png",
-      "sha256": "f1ab833515fc08bd6745ab093645e42ea7a926aaef994e31953df8ff2980cc46",
-      "bytes": 39589,
-      "source": "本仓库桌面端浏览器运行截图；执行主操作、调整参数、暂停并推进一秒后捕获；非原帖画面"
+      "sha256": "df3cb35668558745533ed8bd1786cccffeadb3a47e00c409a134b9d99244af57",
+      "bytes": 82561,
+      "source": "本仓库实际渲染；默认参数，暂停后推进一秒；非原帖媒体"
     }
   ]
 }

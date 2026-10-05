@@ -1,0 +1,393 @@
+{
+  "reviewedAt": "2026-10-05",
+  "method": "逐项对照参考画面与本机实际渲染，不给虚构的相似度百分比。",
+  "demos": [
+    {
+      "slug": "customizable-dashboard",
+      "reference": "https://javascript.plainenglish.io/tired-of-boring-static-dashboards-lets-build-a-fully-customizable-dashboard-in-react-88cb5369cfe1",
+      "referenceMode": "固定源码与公开资料对照",
+      "observed": "浅色侧栏和多张可调整的二维图表。",
+      "implemented": "恢复白底卡片、折线与网格布局，卡片顺序跟随已保存的组件顺序。",
+      "remaining": "拖拽栅格和原作四类图表的完整组件尚未移植。",
+      "preview": "public/previews/customizable-dashboard.png"
+    },
+    {
+      "slug": "state-management",
+      "reference": "https://javascript.plainenglish.io/mastering-react-state-management-a-comprehensive-guide-5b21359ec76a",
+      "referenceMode": "固定源码与公开资料对照",
+      "observed": "表单、计数器与不同状态库的同一套应用。",
+      "implemented": "保留真实 React 更新和订阅计数，界面改为浅色状态卡片。",
+      "remaining": "当前只验证 React 和外部订阅，原作多种状态库的表单布局仍未完整复刻。",
+      "preview": "public/previews/state-management.png"
+    },
+    {
+      "slug": "solar-system-basics",
+      "reference": "https://medium.com/geekculture/build-3d-apps-with-react-animated-solar-system-part-1-c4c394a8574c",
+      "referenceMode": "固定源码与公开资料对照",
+      "observed": "黑色星空、带纹理的恒星与椭圆轨道。",
+      "implemented": "使用固定源码仓库中的七张纹理，恢复六颗行星和星空背景。",
+      "remaining": "行星随机种子、标签弹窗及尺寸与原工程不完全相同。",
+      "preview": "public/previews/solar-system-basics.png"
+    },
+    {
+      "slug": "solar-system-orbits",
+      "reference": "https://medium.com/geekculture/build-3d-apps-with-react-animated-solar-system-part-2-1186a5c8bd1",
+      "referenceMode": "固定源码与公开资料对照",
+      "observed": "同一星空系统，可点选行星读取信息。",
+      "implemented": "恢复纹理球体与椭圆轨道，保留点选和镜头聚焦。",
+      "remaining": "参数表只保留本例实际数据，原文随机生成的物性没有当成真实测量。",
+      "preview": "public/previews/solar-system-orbits.png"
+    },
+    {
+      "slug": "visibility-dashboard",
+      "reference": "https://logicvein.com/blog-and-news/boosting-dashboard-performance/",
+      "referenceMode": "固定源码与公开资料对照",
+      "observed": "文章中的可见性统计面板。",
+      "implemented": "用浅色统计卡片呈现实际采样门和计数。",
+      "remaining": "没有取得作者该页面的完整工程，版面仍是参考重建。",
+      "preview": "public/previews/visibility-dashboard.png"
+    },
+    {
+      "slug": "network-management",
+      "reference": "https://logicvein.com/blog-and-news/streamlining-network-management-with-a-thoughtfully-designed-ui/",
+      "referenceMode": "固定源码与公开资料对照",
+      "observed": "设备列表与批量操作界面。",
+      "implemented": "恢复设备表格，同时保留锁定项、批量回执和缩减列表后的选择清理。",
+      "remaining": "未连接真实网络设备，也未取得作者原始界面资产。",
+      "preview": "public/previews/network-management.png"
+    },
+    {
+      "slug": "scene-builder",
+      "reference": "https://github.com/dilums/aisdk-threejs-starter/tree/8b182dc5314fc622e61f262fc6bc0301bc31e2c3",
+      "referenceMode": "固定源码与公开资料对照",
+      "observed": "对话侧栏驱动的三维场景。",
+      "implemented": "保留深色编辑空间与可执行的场景命令。",
+      "remaining": "指令仍由用户编辑；未接入原作模型服务和流式工具调用。",
+      "preview": "public/previews/scene-builder.png"
+    },
+    {
+      "slug": "hexapod-robot",
+      "reference": "https://github.com/dilums/hexapod-robot-simulator/tree/f0e5dc24369a3c77d596eac5762e674403687373",
+      "referenceMode": "固定源码与公开资料对照",
+      "observed": "六足机器人与姿态、关节控制。",
+      "implemented": "补齐机身装甲、关节和六条腿，保留步态与逆运动学。",
+      "remaining": "腿型与原工程不完全相同，未复刻全部姿态参数。",
+      "preview": "public/previews/hexapod-robot.png"
+    },
+    {
+      "slug": "jet-engine",
+      "reference": "https://github.com/dilums/jet-engine-threejs/tree/b8601913ee2d524bac3d21758a9ca3c77818bfa5",
+      "referenceMode": "固定源码与公开资料对照",
+      "observed": "黑底蓝色发动机叶轮和粒子流。",
+      "implemented": "恢复蓝色多级叶轮、中央轴、半侧机匣与流路粒子。",
+      "remaining": "叶片曲面与原源码的车削轮廓仍有差异。",
+      "preview": "public/previews/jet-engine.png"
+    },
+    {
+      "slug": "strandbeest",
+      "reference": "https://github.com/dilums/responsive-strandbeest/tree/4eb0e454bb4d089de4c40da21f51c4efacad4e24",
+      "referenceMode": "固定源码与公开资料对照",
+      "observed": "灰蓝底色、绿色细杆和黄色关节点，正面双侧运动。",
+      "implemented": "撤去箱形机身和透视地板；三组腿各错开 120°，左右使用相反曲柄方向。",
+      "remaining": "Three.js 的线条抗锯齿与 Canvas 不同；原 dat.GUI 的腿数控制尚未补齐。",
+      "preview": "public/previews/strandbeest.png"
+    },
+    {
+      "slug": "kinematic-creature",
+      "reference": "https://github.com/dilums/kinematic-creatures/tree/5cb2408262dd271b1f9ae1746c32161ee54e07dc",
+      "referenceMode": "固定源码与公开资料对照",
+      "observed": "蓝黑渐变底色，多条黄色至黑色的柔软链条。",
+      "implemented": "将单根空间杆改成十六条平面圆片链，恢复固定根部和渐变体形。",
+      "remaining": "目标轨迹使用确定性函数，尚未使用原作 Perlin 噪声。",
+      "preview": "public/previews/kinematic-creature.png"
+    },
+    {
+      "slug": "dna-structure",
+      "reference": "https://github.com/dilums/dna-structure-animation-3d/tree/6acd2aed1538a48296ae4d3973a2244f2d5579f3",
+      "referenceMode": "固定源码与公开资料对照",
+      "observed": "黑底蓝色点云双螺旋，匀速转动。",
+      "implemented": "按原源码的一圈螺旋、120°相位和间隔横桥重建点云。",
+      "remaining": "采样使用固定种子；密度控制范围与原作常量不同。",
+      "preview": "public/previews/dna-structure.png"
+    },
+    {
+      "slug": "periodic-table",
+      "reference": "https://github.com/dilums/animated-periodic-table/tree/4a122495afcd6bbd4b2912f63dfda541ae3f90d8",
+      "referenceMode": "固定源码与公开资料对照",
+      "observed": "深灰背景上的完整六角元素表，格内有相态动画。",
+      "implemented": "恢复 118 项的六角排布、分类颜色和动态粒点。",
+      "remaining": "液面波动与气体格的原始 SVG 动画尚未逐项移植。",
+      "preview": "public/previews/periodic-table.png"
+    },
+    {
+      "slug": "aurora",
+      "reference": "https://github.com/dilums/van-allen-belts-auroras/tree/94fcad576ddf633c79a06d52a03cc0c4ddf50638",
+      "referenceMode": "固定源码与公开资料对照",
+      "observed": "太阳、地球、磁场线与路径粒子的二维图解。",
+      "implemented": "保留 MIT 原工程的 SVG 图形，恢复太阳风与极光的分阶段显示。",
+      "remaining": "时间线采用当前应用的暂停和单步控制，节拍不与原 GSAP 逐帧等同。",
+      "preview": "public/previews/aurora.png"
+    },
+    {
+      "slug": "anomaly-monitor",
+      "reference": "https://x.com/DilumSanjaya/status/1984665204840632681",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "黑紫色监测台，中间为紫色点阵地球。",
+      "implemented": "用 Natural Earth 地形绘制点阵球面，恢复侧栏与事件点。",
+      "remaining": "事件来自合成样本；没有原帖中的事件图片和完整信息卡。",
+      "preview": "public/previews/anomaly-monitor.png"
+    },
+    {
+      "slug": "skeleton-explorer",
+      "reference": "https://x.com/DilumSanjaya/status/2001697511850021167",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "黑底、带翼和长尾的兽类骨架。",
+      "implemented": "重建脊柱、肋骨、翼指、尾椎、头骨和四肢，恢复骨白材质。",
+      "remaining": "这是按封面构型重建的骨架，没有取得 TRELLIS 输出网格；骨形细节有明显差距。",
+      "preview": "public/previews/skeleton-explorer.png"
+    },
+    {
+      "slug": "character-selection",
+      "reference": "https://x.com/DilumSanjaya/status/2008584593222652057",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "浅灰选择页，左侧机甲卡，右侧绿黑银色装甲角色。",
+      "implemented": "增加主角色和缩略角色列、分块金属装甲、可切换配色与待机摆臂。",
+      "remaining": "没有 Hunyuan3D 原网格和原角色动画；装甲轮廓、脸部和姿态仍有差距。",
+      "preview": "public/previews/character-selection.png"
+    },
+    {
+      "slug": "ornithopter",
+      "reference": "https://x.com/DilumSanjaya/status/2013293638768562325",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "羊皮纸风格面板，木色机身和细长机械翅翼。",
+      "implemented": "补上机身、齿轮、翼膜和翼肋，保留连杆求解与拍翼动作。",
+      "remaining": "翼膜与原作镂空结构不同，驱动齿轮和传动拓扑没有完整复刻。",
+      "preview": "public/previews/ornithopter.png"
+    },
+    {
+      "slug": "ship-selection",
+      "reference": "https://x.com/DilumSanjaya/status/2016193959408836932",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "浅紫色机库，橙白货运艇、侧置发动机和底部缩略图。",
+      "implemented": "重建箱形船体、玻璃驾驶舱、双发动机、天线和小型船列。",
+      "remaining": "原模型的贴花、磨损和多款独立船型仍未取得。",
+      "preview": "public/previews/ship-selection.png"
+    },
+    {
+      "slug": "sales-timeline",
+      "reference": "https://x.com/DilumSanjaya/status/2018367621381620142",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "白底低多边形树林，蓝色销量柱和游戏封面牌。",
+      "implemented": "恢复树林、蓝柱和柱顶展示牌，排序仍按当前数据计算。",
+      "remaining": "封面用文字牌替代；数值为合成数据，未复刻原片的任天堂销量动画。",
+      "preview": "public/previews/sales-timeline.png"
+    },
+    {
+      "slug": "industrial-arm",
+      "reference": "https://x.com/DilumSanjaya/status/2027426781389897883",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "灰白工位、橙色关节机械臂、传送带与纸箱。",
+      "implemented": "恢复白色臂壳、关节、夹爪和辊道工位，并保留实际 IK 更新。",
+      "remaining": "尚未完成原作抓取、释放、传送带任务的整套动作序列。",
+      "preview": "public/previews/industrial-arm.png"
+    },
+    {
+      "slug": "world-environment",
+      "reference": "https://x.com/DilumSanjaya/status/2028877095968117240",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "工业舱室中的银色机器人，橙色灯、管线和金属墙。",
+      "implemented": "撤去森林，重建舱室、工作台、管线与机器人。",
+      "remaining": "没有原作高分辨率环境贴图；移动仍为本例碰撞沙盘。",
+      "preview": "public/previews/world-environment.png"
+    },
+    {
+      "slug": "smart-home",
+      "reference": "https://x.com/DilumSanjaya/status/2033950707947286861",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "浅蓝界面中央的俯视住宅，木地板和浅色家具。",
+      "implemented": "重建四个房间、床、桌、沙发、橱柜与盆栽，灯光跟随房间设备状态。",
+      "remaining": "房型和家具数量未与原作逐件对齐，设备没有接入真实家庭。",
+      "preview": "public/previews/smart-home.png"
+    },
+    {
+      "slug": "interactive-map",
+      "reference": "https://x.com/DilumSanjaya/status/2043734181314998677",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "浅色世界地图、路径连线和监测卡。",
+      "implemented": "引入真实大陆轮廓，恢复地图平面与事件标记。",
+      "remaining": "事件点位和路由仍为合成样本，原作的详细行政边界未补齐。",
+      "preview": "public/previews/interactive-map.png"
+    },
+    {
+      "slug": "futuristic-interface",
+      "reference": "https://x.com/DilumSanjaya/status/2045545685899153440",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "橙白工业面板中央的大型地球。",
+      "implemented": "恢复橙色边框、地形球面、侧栏与事件标记。",
+      "remaining": "原作地点图片、精细时间线与地图交互尚未完整实现。",
+      "preview": "public/previews/futuristic-interface.png"
+    },
+    {
+      "slug": "robot-roster",
+      "reference": "https://x.com/DilumSanjaya/status/2049169897029042176",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "浅紫机库中的红白武装机器人和左侧型号列表。",
+      "implemented": "重建分块金属机甲与型号缩略列，选择后改变主模型装甲颜色。",
+      "remaining": "武器和原始角色模型未取得；现有三个型号共用基础骨架。",
+      "preview": "public/previews/robot-roster.png"
+    },
+    {
+      "slug": "planet-explorer",
+      "reference": "https://x.com/DilumSanjaya/status/2050981225175928895",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "浅色探险界面，青橙条带星球、卫星与底部展示台。",
+      "implemented": "使用程序着色器恢复大气条带，补齐卫星轨道和展示台。",
+      "remaining": "纹理为本仓库生成，多颗星球暂时共用同一几何和着色器。",
+      "preview": "public/previews/planet-explorer.png"
+    },
+    {
+      "slug": "black-hole",
+      "reference": "https://x.com/DilumSanjaya/status/2052063467407057112",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "灰绿色工程面板，空间网格凹陷与线框球体。",
+      "implemented": "恢复网格、线框中心球和灰绿配色，保留深度调整。",
+      "remaining": "形变仍是径向展示函数，不能作为广义相对论求解。",
+      "preview": "public/previews/black-hole.png"
+    },
+    {
+      "slug": "biological-structure",
+      "reference": "https://x.com/DilumSanjaya/status/2053155739389378849",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "米色植物细胞工作台，绿色截面、蓝色液泡和紫色细胞核。",
+      "implemented": "补齐细胞壁、液泡、细胞核、内质网和带纹路的细胞器。",
+      "remaining": "原作细胞形状和微观表面更复杂；当前没有原始生物模型。",
+      "preview": "public/previews/biological-structure.png"
+    },
+    {
+      "slug": "turbofan-airflow",
+      "reference": "https://x.com/DilumSanjaya/status/2054968280864133585",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "白底彩色剖面发动机，红色大风扇及多级叶片。",
+      "implemented": "重建十一组彩色叶轮、半侧机匣、鼻锥与核心、外涵两组粒子。",
+      "remaining": "原作的详细导流叶片和燃烧室仍未完整重建，流场只用于展示流路。",
+      "preview": "public/previews/turbofan-airflow.png"
+    },
+    {
+      "slug": "atomic-explorer",
+      "reference": "https://x.com/DilumSanjaya/status/2061490330361589849",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "白底科普面板、彩色六角周期表与学习卡。",
+      "implemented": "扩至完整 118 项，选择任一元素后同步名称和控件。",
+      "remaining": "未移植原作发现史、百科和练习题数据。",
+      "preview": "public/previews/atomic-explorer.png"
+    },
+    {
+      "slug": "molecular-structure",
+      "reference": "https://x.com/DilumSanjaya/status/2063664615398240467",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "米色分子图鉴，咖啡因的黑、红、蓝、白球棍模型。",
+      "implemented": "默认模型改用 PubChem CID 2519 的 24 个三维原子，保留切换和尺度控制。",
+      "remaining": "原作分子目录更多；水、乙醇和苯仍为教学坐标，显示未表达全部键级。",
+      "preview": "public/previews/molecular-structure.png"
+    },
+    {
+      "slug": "circuit-builder",
+      "reference": "https://x.com/DilumSanjaya/status/2070187709361254669",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "米色工作台上的青绿面包板、红蓝跳线和有色电子元件。",
+      "implemented": "补齐板孔、跳线、电阻色环、电容、芯片外形与 LED。",
+      "remaining": "外观件不是完整求解电路；MNA 只求解正文列出的线性网表，未模拟 555 振荡器。",
+      "preview": "public/previews/circuit-builder.png"
+    },
+    {
+      "slug": "reactor-diagnostics",
+      "reference": "https://x.com/DilumSanjaya/status/2074537139329785891",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "黑色青蓝诊断台，正面圆盘反应堆和橙色线圈。",
+      "implemented": "将圆柱管束改成正面圆盘、十组线圈和发光核心。",
+      "remaining": "遥测为合成样本，未复刻原作全部操作按钮和诊断规则。",
+      "preview": "public/previews/reactor-diagnostics.png"
+    },
+    {
+      "slug": "kinetic-pavilion",
+      "reference": "https://x.com/DilumSanjaya/status/2081060174954188957",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "黄昏中的木质玻璃建筑，三层白色莲花瓣。",
+      "implemented": "重建木质圆台、玻璃围护和分层曲面花瓣，默认显示展开态。",
+      "remaining": "原作分层独立控制和内部家具尚未补齐；曲面为参考重建。",
+      "preview": "public/previews/kinetic-pavilion.png"
+    },
+    {
+      "slug": "rule-universe",
+      "reference": "https://x.com/DilumSanjaya/status/2086133240273031290",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "白色研究界面，密集的紫红色三维超图。",
+      "implemented": "默认先执行 158 次真实重写，形成 160 节点的图，再允许继续增长。",
+      "remaining": "当前是自定义有向多重图规则，与原帖选中的 Wolfram Universe 7862 不同。",
+      "preview": "public/previews/rule-universe.png"
+    },
+    {
+      "slug": "portable-microscope",
+      "reference": "https://x.com/DilumSanjaya/status/2087583466301059567",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "橙白便携箱，左侧屏幕、右侧镜组和前部控制台。",
+      "implemented": "撤去立式显微镜，补上便携箱、显示器、翻盖光学头与旋钮。",
+      "remaining": "屏幕细胞图为绘制示意，按钮、镜组机构与原件仍未逐个对齐。",
+      "preview": "public/previews/portable-microscope.png"
+    },
+    {
+      "slug": "protein-folding",
+      "reference": "https://x.com/DilumSanjaya/status/2087945482794668167",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "浅色蛋白质工作台，红色螺旋、蓝色折叠片和绿色线圈。",
+      "implemented": "以 1CRN 的真实 Cα 坐标生成带状结构，按 PDB 的 HELIX / SHEET 范围上色。",
+      "remaining": "原片展示另一种大型蛋白；本例只有 46 残基，过渡是坐标插值。",
+      "preview": "public/previews/protein-folding.png"
+    },
+    {
+      "slug": "jellyfish-robot",
+      "reference": "https://x.com/DilumSanjaya/status/2091568845463101550",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "灰绿工程面板，透明伞面、内部执行器和柔软触须。",
+      "implemented": "恢复透明网格伞面、中央驱动、八组执行器与摆动触须。",
+      "remaining": "执行器连接和游动动力学仍未复刻，只保留周期性形变。",
+      "preview": "public/previews/jellyfish-robot.png"
+    },
+    {
+      "slug": "v8-engine",
+      "reference": "https://x.com/DilumSanjaya/status/2096280244663775423",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "浅色机械工作台，黑色 V8 机架、活塞和顶部气门弹簧。",
+      "implemented": "补齐飞轮、气缸衬套和十六组弹簧，沿用八缸曲柄滑块运动。",
+      "remaining": "凸轮、配气正时和飞轮齿形尚未与原作完全对齐。",
+      "preview": "public/previews/v8-engine.png"
+    },
+    {
+      "slug": "landing-gear",
+      "reference": "https://x.com/DilumSanjaya/status/2096642895134752922",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "米色航空页面，橙色双弯腿、两主轮和白色中央安装架。",
+      "implemented": "撤去单柱双轮，重建双侧弯腿、主轮、中央支架与油缸外形。",
+      "remaining": "单执行器、齿轮箱与万向轴的完整传动仍未核验，收放动画保留简化铰链。",
+      "preview": "public/previews/landing-gear.png"
+    },
+    {
+      "slug": "schematic-transition",
+      "reference": "https://x.com/DilumSanjaya/status/2097005668389802027",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "米色图纸中的木框模块建筑、露台栏杆和绿化。",
+      "implemented": "重建叠层木框、玻璃、屋面、栏杆与植物，转换到俯视线框。",
+      "remaining": "原作完整设计、标注和构件数量未取得。",
+      "preview": "public/previews/schematic-transition.png"
+    },
+    {
+      "slug": "warehouse-strategy",
+      "reference": "https://x.com/DilumSanjaya/status/2106426962738880879",
+      "referenceMode": "视频封面已查看；整段动作未核验",
+      "observed": "浅蓝管理页面中的蓝色仓房、纸箱、黄叉车和绿树。",
+      "implemented": "重建仓房、卷帘门、瓦楞屋顶、货堆与叉车，保留寻路和库存去重。",
+      "remaining": "建筑布局与原作不同，原片装卸与多车调度没有全部实现。",
+      "preview": "public/previews/warehouse-strategy.png"
+    }
+  ]
+}

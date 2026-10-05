@@ -5,18 +5,18 @@
     "file": "tests/mechanisms.test.ts"
   },
   "browserTests": {
-    "startTime": "2026-10-04T21:10:44.794Z",
-    "duration": 132125.271,
-    "expected": 97,
+    "startTime": "2026-10-05T01:08:03.980Z",
+    "duration": 149248.28100000002,
+    "expected": 100,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
   },
   "browserEnvironment": "macOS Chrome / headless WebGL",
-  "scope": "43 路由桌面和 390px 布局；业务失败与资源释放另有断言",
+  "scope": "43 路由桌面和 390px 布局，共 100 项浏览器断言；另查看 29 张原帖预览，逐项记录外观差异",
   "screenshots": "public/previews/manifest.json",
   "limitations": [
-    "未核对原作逐帧视觉一致性",
+    "已对照原帖预览图；原视频未成功播放，连续动作与原作逐帧一致性未核对",
     "未执行外部 AI 服务、真实设备、CFD 或分子动力学",
     "没有真实手机 GPU 帧率或功耗数据"
   ],
@@ -27,7 +27,7 @@
     },
     {
       "path": "src/main.ts",
-      "sha256": "fddf8d909765b46c6526009ec71055577958bcb0396b8b1784ee590e91de92e5"
+      "sha256": "da10ddafa1569d3eeb22c473bd8857a9d23ee833b59d5ded97555aeb65137223"
     },
     {
       "path": "src/math.ts",
@@ -35,11 +35,11 @@
     },
     {
       "path": "src/runtime.ts",
-      "sha256": "2535eb6cd5f6d2a12dbc31b7b29a9f6c0a1954291b76963a12ed65a3aad74293"
+      "sha256": "3d1f0d7af131c7cb5e115bd782365596e0ada448b97b16c7c8490f6909d2c258"
     },
     {
       "path": "src/types.ts",
-      "sha256": "6ff9bc3e9fec2363cb473d2531505acac51427e4b22a3bb00d5825ec453e6583"
+      "sha256": "950624dca10d36661e907ab4a769918e41c5be776f8af2d7af63486a663a2952"
     },
     {
       "path": "src/graphics.ts",
@@ -47,7 +47,7 @@
     },
     {
       "path": "src/scenes/science.ts",
-      "sha256": "3972d515820db57c45c3d4ce0640c431dd684e404997287bfd2ca59edba79b04"
+      "sha256": "4257b11998dbf3c9c69ad773f26d5f881f9607a06bb343f4685b42a7efb5c8e6"
     },
     {
       "path": "src/scenes/spaces.ts",
@@ -55,11 +55,37 @@
     },
     {
       "path": "src/scenes/mechanics.ts",
-      "sha256": "07d2090ce0e75aa4b96c5e82ef80f4810e2594e38ee67ea8762f4d7f18bcb514"
+      "sha256": "da6fb12f110b1ca9654f8d99753375458aff7a71afb3feef46787752d433f7eb"
     },
     {
       "path": "tests/browser/experiments.spec.ts",
-      "sha256": "97952d347880a3f8371cbcc17c22b54081cfd3bde07aee40a57287f514bd7b88"
+      "sha256": "609544bcfb23571b83c8901e7aa8d95e0b66da386f737351af97237b974866a9"
+    }
+  ],
+  "appearanceFiles": [
+    {
+      "path": "src/presentation.ts",
+      "sha256": "c3a67ae0dd2d8fd4d4eb711204d32323c3056868e1b6f3cbf95b6db2c98c4a1a"
+    },
+    {
+      "path": "src/visuals/helpers.ts",
+      "sha256": "80d69ca0cdd89487f77d47177c12deebc09048758801191d0a31b8b50e967509"
+    },
+    {
+      "path": "src/visuals/interfaces.ts",
+      "sha256": "11a3b85d42adf56f0ae33f175a5d40777c1e258ca552c105791ef36135588cb8"
+    },
+    {
+      "path": "src/visuals/mechanical.ts",
+      "sha256": "320e56987451ee7223152a38845a652f520aa1112f2e063befa891d9177b35b0"
+    },
+    {
+      "path": "src/visuals/scientific.ts",
+      "sha256": "060a8e9b5b63f3bd0aa21bcef257bc4a22465c1da763005070b54a4a0d6239cc"
+    },
+    {
+      "path": "src/visuals/spatial.ts",
+      "sha256": "0db86ddf51ee16049c46893758df60825d03d2790a3cc907f4d4b6fc3af39208"
     }
   ]
 }

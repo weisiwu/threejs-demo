@@ -129,7 +129,7 @@ export function mechanics(ctx: SceneContext): Experiment {
         }
         s.status = fail ? '存在无解装配' : '杆长约束有效';
         report({
-          装配分支: s.variant % 2 ? '镜像' : '默认',
+          显示侧数: s.variant % 2 ? 1 : 2,
           曲柄相位: phase.toFixed(2),
           杆长最大残差: error.toExponential(2),
           无解数: fail,
@@ -352,11 +352,15 @@ export function mechanics(ctx: SceneContext): Experiment {
     const casing = box(g, [0.8, 2.8, 1], [-1.1, 2, 0], C.dark);
     return {
       update() {
-        carriage.position.y = 3 + s.parameter;
+        carriage.position.y = 1.8 + 0.3 * s.parameter;
         carriage.children.forEach((c) => ((c as T.Mesh).visible = true));
         casing.visible = s.variant % 2 === 0;
         stage.rotation.y = 0.15;
-        report({ 镜筒示意高度: (3 + s.parameter).toFixed(2), 展示部件: 6, 制造文件: '未提供' });
+        report({
+          镜筒示意高度: (1.8 + 0.3 * s.parameter).toFixed(2),
+          展示部件: 6,
+          制造文件: '未提供',
+        });
       },
       action() {
         s.variant++;

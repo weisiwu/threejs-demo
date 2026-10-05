@@ -1,0 +1,736 @@
+{
+  "capturedAt": "2026-10-05T01:08:17.074Z",
+  "rows": [
+    {
+      "slug": "customizable-dashboard",
+      "path": "public/previews/customizable-dashboard.png",
+      "sha256": "a9ee31c46f5b66051b4073de2f96330dbaf6ed92e78a7f6376409264588b374e",
+      "bytes": 34203,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "state-management",
+      "path": "public/previews/state-management.png",
+      "sha256": "b202140d60f9af194473f6111c7dbfdabac4e8e36a7396fe14e3376e5e84d203",
+      "bytes": 35670,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "solar-system-basics",
+      "path": "public/previews/solar-system-basics.png",
+      "sha256": "f381e150868599797a1e7e50cf068bd62694e75697ddfbacd27e60674e46d380",
+      "bytes": 33369,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "solar-system-orbits",
+      "path": "public/previews/solar-system-orbits.png",
+      "sha256": "c2fe09a8b9670a1903bb26c6a055898e97fc85464fde298102dca6746500b015",
+      "bytes": 33760,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "visibility-dashboard",
+      "path": "public/previews/visibility-dashboard.png",
+      "sha256": "8a26c193010323db97f28558f21ff579d31369ec5b192dd6fafb11cb1ed1fcd5",
+      "bytes": 34367,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "network-management",
+      "path": "public/previews/network-management.png",
+      "sha256": "940672cc43bd7761eb502e104a5b0366607470112fbefb66f6603226f02d29fc",
+      "bytes": 36164,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "scene-builder",
+      "path": "public/previews/scene-builder.png",
+      "sha256": "8f727fb82b91312ea1f6e7e7b64187751c4de1ca98105d75fd837d3d4ce4bef4",
+      "bytes": 36016,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "hexapod-robot",
+      "path": "public/previews/hexapod-robot.png",
+      "sha256": "e4ab576b6d918e21fa49abba16536d3e9d129b6fbab2f3d80416b285f0575423",
+      "bytes": 106468,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "jet-engine",
+      "path": "public/previews/jet-engine.png",
+      "sha256": "71dd13e4b717388d9b3119121d848a79b544ab5440479070d4522249c78165c9",
+      "bytes": 114193,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "strandbeest",
+      "path": "public/previews/strandbeest.png",
+      "sha256": "4914e6ce8f575a0b294a46481dcef45c59d19378dd497eeaf11655978b04bd92",
+      "bytes": 29480,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "kinematic-creature",
+      "path": "public/previews/kinematic-creature.png",
+      "sha256": "f4a689f37b82cec2736fbf217ee41441506c7e0e8d8dce3b5bf98ffa32381fd9",
+      "bytes": 71423,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "dna-structure",
+      "path": "public/previews/dna-structure.png",
+      "sha256": "fd79d6a40f96c7caa8754ddf91668b720ae38c1fc5e97daa40b16d1273ab811a",
+      "bytes": 67444,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "periodic-table",
+      "path": "public/previews/periodic-table.png",
+      "sha256": "fecff04ad1dd6a263482699ee877e29f9756a5cded468857ddc7840622093176",
+      "bytes": 36741,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "aurora",
+      "path": "public/previews/aurora.png",
+      "sha256": "6417ee0f0de255955978f09ee6fcc117d0c5b9cdf09499d1bdccb4a52c8571d1",
+      "bytes": 79434,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "anomaly-monitor",
+      "path": "public/previews/anomaly-monitor.png",
+      "sha256": "51cbb6ed2852f1eab7d3bf4ccebce6b40ef7c3461169571aa39d7782736439cd",
+      "bytes": 187189,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "skeleton-explorer",
+      "path": "public/previews/skeleton-explorer.png",
+      "sha256": "806e24b4ae20f647dc2764144a509d2cd394aa2a8147d2cb4899db2d9a4b212c",
+      "bytes": 43828,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "character-selection",
+      "path": "public/previews/character-selection.png",
+      "sha256": "3e81cf18732922eb426d92266b3fadd0764411d13eb66b340cf6f78d96d9bd19",
+      "bytes": 88000,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "ornithopter",
+      "path": "public/previews/ornithopter.png",
+      "sha256": "b298a64e09b13ca9f4847f4aa9a773bf4ef3e16564e0789cbea9c2ae49fae6a8",
+      "bytes": 85654,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "ship-selection",
+      "path": "public/previews/ship-selection.png",
+      "sha256": "f12592d615faa86144e36f1404662bf515563ef90df8b53efd3c67b7e2df7d33",
+      "bytes": 69314,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "sales-timeline",
+      "path": "public/previews/sales-timeline.png",
+      "sha256": "9e3f9bbec8fb2f945011375f9ac4f29459014ea4a360f2e5972d3280dddca09e",
+      "bytes": 67859,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "industrial-arm",
+      "path": "public/previews/industrial-arm.png",
+      "sha256": "b722457783c0cb12b68280e9746b75c7805eeaac7f8791094a3dfa6006c8af41",
+      "bytes": 88188,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "world-environment",
+      "path": "public/previews/world-environment.png",
+      "sha256": "b576c6d38dfd58a14d218861cf67d5cf5713d53fef6562d8dd700583ba74041e",
+      "bytes": 238312,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "smart-home",
+      "path": "public/previews/smart-home.png",
+      "sha256": "412c6db0be3fe5e329272fb3f52b5a385cb99e2e2f3fe48487328901e0ee0023",
+      "bytes": 71082,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "interactive-map",
+      "path": "public/previews/interactive-map.png",
+      "sha256": "fac0987994f7b8b3f9e7f45a7888007846b08443e8db2a46df4695fe342588a3",
+      "bytes": 73288,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "futuristic-interface",
+      "path": "public/previews/futuristic-interface.png",
+      "sha256": "17ed171b4841f741cd44023f5d8d812a2e265e5b199ff7b72aece02a4a9605df",
+      "bytes": 85860,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "robot-roster",
+      "path": "public/previews/robot-roster.png",
+      "sha256": "781d3d7d39b684ca08fd627516f17da474d62e71728c0d90a8088e035fbe6913",
+      "bytes": 85837,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "planet-explorer",
+      "path": "public/previews/planet-explorer.png",
+      "sha256": "900d39d2dfb55aa79c3bcfab62c38f6884a1c6d7b0b75cd7a11332e214425f0d",
+      "bytes": 98643,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "black-hole",
+      "path": "public/previews/black-hole.png",
+      "sha256": "d4437d08c32b7cb8985abede19f4afcd15ff13c4106502b814e7e4be9a3fed9a",
+      "bytes": 103883,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "biological-structure",
+      "path": "public/previews/biological-structure.png",
+      "sha256": "7addcf854553bf4e9c97679022bea7562900976ea330721a7234f43a79b9bff2",
+      "bytes": 66377,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "turbofan-airflow",
+      "path": "public/previews/turbofan-airflow.png",
+      "sha256": "f7dcf29516154034766961a1797fc5e909e4dc41b25498eb7455c218da24355a",
+      "bytes": 141877,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "atomic-explorer",
+      "path": "public/previews/atomic-explorer.png",
+      "sha256": "ba638594874322a8d57f7632b404cd5d4f5702945cb2b4c1972369a8f7d8d975",
+      "bytes": 48267,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "molecular-structure",
+      "path": "public/previews/molecular-structure.png",
+      "sha256": "3f86081cd16754a4e0f7cc886dc8ae05b4f56e7ffe44eff26111c433326cf7b9",
+      "bytes": 70974,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "circuit-builder",
+      "path": "public/previews/circuit-builder.png",
+      "sha256": "92e029cadc2b628a9d9ade95e04a3eab774e095cf69498e5e9d8db4c24acdd7b",
+      "bytes": 64274,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "reactor-diagnostics",
+      "path": "public/previews/reactor-diagnostics.png",
+      "sha256": "ce788b7b0976525d5bc2193fa6d8ee625b10a5d031cd30a495f7d7eac58b9123",
+      "bytes": 113329,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "kinetic-pavilion",
+      "path": "public/previews/kinetic-pavilion.png",
+      "sha256": "98c7d6a403725f1f7f9dc2c37bbf9314cbae26048e559619099d89c98546e3fd",
+      "bytes": 146249,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "rule-universe",
+      "path": "public/previews/rule-universe.png",
+      "sha256": "9dfcb77c8482bc24f45b6296fafdf415f4a444102173b0fc77dc87a476938e24",
+      "bytes": 103109,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "portable-microscope",
+      "path": "public/previews/portable-microscope.png",
+      "sha256": "7e1fcebb3b1c4c119b8b287b3702dcbac1daaca8f711fc26a0c19da95d4c86f0",
+      "bytes": 62634,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "protein-folding",
+      "path": "public/previews/protein-folding.png",
+      "sha256": "324f361014a09cb02773a3d6b146415e2f45c4d5adb9a8fda68073c1faaba9d6",
+      "bytes": 55533,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "jellyfish-robot",
+      "path": "public/previews/jellyfish-robot.png",
+      "sha256": "945817c77979819525e0c0b394e449c4f5d4dcf62185bb8e13aa78bfbbd64cd4",
+      "bytes": 126762,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "v8-engine",
+      "path": "public/previews/v8-engine.png",
+      "sha256": "b71a6b17479f3537a672998254af2243363849dd2b07cb44e8c3e15436d5bf9b",
+      "bytes": 90005,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "landing-gear",
+      "path": "public/previews/landing-gear.png",
+      "sha256": "23666a64517563c4258fb9c2b7f72d74d3255d48b05375552f67f899d276286c",
+      "bytes": 45221,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "schematic-transition",
+      "path": "public/previews/schematic-transition.png",
+      "sha256": "21bb52fd94481704f32da6d76ad356a63ebb6114c98221094c8f0720b653ae5c",
+      "bytes": 108335,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "warehouse-strategy",
+      "path": "public/previews/warehouse-strategy.png",
+      "sha256": "df3cb35668558745533ed8bd1786cccffeadb3a47e00c409a134b9d99244af57",
+      "bytes": 82561,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    }
+  ]
+}

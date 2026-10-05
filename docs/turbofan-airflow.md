@@ -1,14 +1,26 @@
 ---
-title: '涡扇气流分支：机制与运行记录'
+title: '涡扇气流分支：外观复现与运行记录'
 type: reproduction-research
 created: 2026-10-05
 updated: 2026-10-05
 tags: [threejs, reproduction, research]
 ---
 
-# 涡扇气流分支：机制与运行记录
+# 涡扇气流分支：外观复现与运行记录
 
 [打开交互实验](https://weisiwu.github.io/threejs-demo/#/demo/turbofan-airflow) · [阅读相关文章](https://imgen.baoganai.com/knowledge/read/dilum-x-turbofan-flow)
+
+## 对照原画面
+
+参考画面：白底彩色剖面发动机，红色大风扇及多级叶片。
+
+重建十一组彩色叶轮、半侧机匣、鼻锥与核心、外涵两组粒子。
+
+![本仓库实际运行截图](../public/previews/turbofan-airflow.png)
+
+原作的详细导流叶片和燃烧室仍未完整重建，流场只用于展示流路。
+
+[逐项对照记录](../research/appearance-review.json) · [外观代码](../src/visuals/)
 
 ## 先看机制
 
@@ -20,7 +32,7 @@ tags: [threejs, reproduction, research]
 
 轮换三种支路，读数应为 8000、4000、4000；暂停与剖面空间观察不会改变归属。
 
-通用控件可以暂停、推进一秒和重置。推进一秒实际调用二十次 0.05 秒更新，因此机构约束与任务状态仍经过正常更新流程；它不是只把时间显示改大一秒。浏览器页签隐藏时不积累缺席时间，自动单步长上限为 0.05 秒。
+通用控件可以暂停、推进一秒和重置。推进一秒分为二十次 0.05 秒更新，机构约束与任务状态继续经过同一更新流程。浏览器页签隐藏时不积累缺席时间，自动单步长上限为 0.05 秒。
 
 ## 源码入口
 
@@ -29,7 +41,7 @@ tags: [threejs, reproduction, research]
 - [运行时](../src/runtime.ts)：单个渲染器、镜头、暂停、拾取、resize 和资源回收。
 - [浏览器检查](../tests/browser/experiments.spec.ts)：桌面与 390px 手机加载、操作、参数、暂停和重置；另有网表失败、库存去重、布局持久化与资源切换用例。
 
-读数随当前场景计算，不是写在页面里的预设成功结果。测试范围见 [验证说明](validation.md)；浏览器检查通过不能代替真实设备、科学精度或外部模型调用验收。
+页面读数来自当前场景计算。测试范围见 [验证说明](validation.md)；浏览器检查通过不能代替真实设备、科学精度或外部模型调用验收。
 
 ## 原资料与复现范围
 
@@ -37,7 +49,7 @@ tags: [threejs, reproduction, research]
 
 路径示意，非 CFD；不计算推力、压比或效率。
 
-原帖文字说明了作者公开展示的方向。后面的仓库用于研究相近机制，除非正文另有说明，不能把它当成该条原帖的完整源码。原帖视频未在这一轮逐帧观看，原型对应的资产和执行参数也未完整取得。
+原帖文字说明了作者公开展示的方向。后面的仓库用于研究相近机制，除非正文另有说明，不能把它当成该条原帖的完整源码。本轮查看了视频封面并按画面重建。视频播放器未成功加载，完整动作与资产仍未核验。
 
 1. [作者 X 原帖 · 2054968280864133585](https://x.com/DilumSanjaya/status/2054968280864133585)
 2. [jet-engine-threejs](https://github.com/dilums/jet-engine-threejs/tree/b8601913ee2d524bac3d21758a9ca3c77818bfa5)

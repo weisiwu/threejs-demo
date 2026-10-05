@@ -14,12 +14,12 @@ const escape = (value: string) =>
 const repo = 'https://github.com/weisiwu/threejs-demo',
   base = import.meta.env.BASE_URL;
 function nav() {
-  return `<nav class="topnav"><a class="brand" href="#/">THREE<span>·</span>LAB</a><span class="nav-note">可操作的图形实验</span><a href="${repo}" target="_blank" rel="noreferrer">GitHub ↗</a></nav>`;
+  return `<nav class="topnav"><a class="brand" href="#/">THREE<span>·</span>LAB</a><span class="nav-note">可操作的视觉复现</span><a href="${repo}" target="_blank" rel="noreferrer">GitHub ↗</a></nav>`;
 }
 function gallery() {
   root.innerHTML =
     nav() +
-    `<main><header class="gallery-hero"><div><p class="eyebrow">GEOMETRY / MOTION / SYSTEMS</p><h1>让原理<br><span>在屏幕上运转。</span></h1><p class="lead">43 个 Three.js 实验。转动机构、修改网表、调节参数，观察每一次操作如何改变场景。</p><a class="primary" href="#/demo/strandbeest">打开连杆实验 <span>↗</span></a></div><div class="hero-art" aria-hidden="true"><div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div><div class="core"></div><span class="art-label">LIVE MECHANISMS<br>43 EXPERIMENTS</span></div></header><section class="catalogue"><div class="section-title"><h2>实验目录 <small>43</small></h2><label class="search">搜索实验<input id="search" placeholder="例如：连杆、电路、蛋白质" type="search"></label></div><div class="filters"><button class="active" data-filter="全部">全部</button>${categories.map((c) => `<button data-filter="${c}">${c}</button>`).join('')}</div><div id="cards" class="cards"></div><p id="empty" hidden>没有符合条件的实验。</p></section><footer>原创机制复现 · 每篇说明保留来源和验证范围 · <a href="https://imgen.baoganai.com/knowledge/read/dilum-sanjaya-analysis-index">阅读专题文章 ↗</a></footer></main>`;
+    `<main><header class="gallery-hero"><div><p class="eyebrow">GEOMETRY / MOTION / SYSTEMS</p><h1>把画面与动作<br><span>一起还原。</span></h1><p class="lead">43 个可操作的复现尝试。按原例子的造型、配色和构图重建场景，再用控件检查运动与状态变化。</p><a class="primary" href="#/demo/strandbeest">打开 Strandbeest <span>↗</span></a></div><div class="hero-art" aria-hidden="true"><div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div><div class="core"></div><span class="art-label">LIVE MECHANISMS<br>43 EXPERIMENTS</span></div></header><section class="catalogue"><div class="section-title"><h2>实验目录 <small>43</small></h2><label class="search">搜索实验<input id="search" placeholder="例如：连杆、电路、蛋白质" type="search"></label></div><div class="filters"><button class="active" data-filter="全部">全部</button>${categories.map((c) => `<button data-filter="${c}">${c}</button>`).join('')}</div><div id="cards" class="cards"></div><p id="empty" hidden>没有符合条件的实验。</p></section><footer>逐例视觉重建 · 每篇说明保留来源和差异 · <a href="https://imgen.baoganai.com/knowledge/read/dilum-sanjaya-analysis-index">阅读专题文章 ↗</a></footer></main>`;
   let selected = '全部';
   const search = document.querySelector<HTMLInputElement>('#search')!;
   const draw = () => {

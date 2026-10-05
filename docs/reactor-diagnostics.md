@@ -1,14 +1,26 @@
 ---
-title: '反应堆诊断台：机制与运行记录'
+title: '反应堆诊断台：外观复现与运行记录'
 type: reproduction-research
 created: 2026-10-05
 updated: 2026-10-05
 tags: [threejs, reproduction, research]
 ---
 
-# 反应堆诊断台：机制与运行记录
+# 反应堆诊断台：外观复现与运行记录
 
 [打开交互实验](https://weisiwu.github.io/threejs-demo/#/demo/reactor-diagnostics) · [阅读相关文章](https://imgen.baoganai.com/knowledge/read/dilum-x-arc-reactor-diagnostics)
+
+## 对照原画面
+
+参考画面：黑色青蓝诊断台，正面圆盘反应堆和橙色线圈。
+
+将圆柱管束改成正面圆盘、十组线圈和发光核心。
+
+![本仓库实际运行截图](../public/previews/reactor-diagnostics.png)
+
+遥测为合成样本，未复刻原作全部操作按钮和诊断规则。
+
+[逐项对照记录](../research/appearance-review.json) · [外观代码](../src/visuals/)
 
 ## 先看机制
 
@@ -20,7 +32,7 @@ tags: [threejs, reproduction, research]
 
 提高负载后注入故障，对照颜色、温度与事件版本；清除故障后同一快照同步恢复。
 
-通用控件可以暂停、推进一秒和重置。推进一秒实际调用二十次 0.05 秒更新，因此机构约束与任务状态仍经过正常更新流程；它不是只把时间显示改大一秒。浏览器页签隐藏时不积累缺席时间，自动单步长上限为 0.05 秒。
+通用控件可以暂停、推进一秒和重置。推进一秒分为二十次 0.05 秒更新，机构约束与任务状态继续经过同一更新流程。浏览器页签隐藏时不积累缺席时间，自动单步长上限为 0.05 秒。
 
 ## 源码入口
 
@@ -29,7 +41,7 @@ tags: [threejs, reproduction, research]
 - [运行时](../src/runtime.ts)：单个渲染器、镜头、暂停、拾取、resize 和资源回收。
 - [浏览器检查](../tests/browser/experiments.spec.ts)：桌面与 390px 手机加载、操作、参数、暂停和重置；另有网表失败、库存去重、布局持久化与资源切换用例。
 
-读数随当前场景计算，不是写在页面里的预设成功结果。测试范围见 [验证说明](validation.md)；浏览器检查通过不能代替真实设备、科学精度或外部模型调用验收。
+页面读数来自当前场景计算。测试范围见 [验证说明](validation.md)；浏览器检查通过不能代替真实设备、科学精度或外部模型调用验收。
 
 ## 原资料与复现范围
 
@@ -37,7 +49,7 @@ tags: [threejs, reproduction, research]
 
 虚构设备诊断，不是实物工程或真实传感器。
 
-原帖文字说明了作者公开展示的方向。后面的仓库用于研究相近机制，除非正文另有说明，不能把它当成该条原帖的完整源码。原帖视频未在这一轮逐帧观看，原型对应的资产和执行参数也未完整取得。
+原帖文字说明了作者公开展示的方向。后面的仓库用于研究相近机制，除非正文另有说明，不能把它当成该条原帖的完整源码。本轮查看了视频封面并按画面重建。视频播放器未成功加载，完整动作与资产仍未核验。
 
 1. [作者 X 原帖 · 2074537139329785891](https://x.com/DilumSanjaya/status/2074537139329785891)
 2. [customizable-react-dashboard-with-charts](https://github.com/dilums/customizable-react-dashboard-with-charts/tree/eac83918b76fe38b931a76a3e9882399663fbc0a)

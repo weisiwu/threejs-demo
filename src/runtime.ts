@@ -1,6 +1,8 @@
 import * as T from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { floor, clear, highlight } from './graphics';
+import { clear, highlight } from './graphics';
+import { present } from './presentation';
 import { mechanics, mechanicsIds } from './scenes/mechanics';
 import { science, scienceIds } from './scenes/science';
 import { interfaces, interfaceIds } from './scenes/interfaces';
@@ -9,6 +11,7 @@ import { clamp } from './math';
 import type { DemoSpec, RuntimeState, Experiment } from './types';
 
 let renderer: T.WebGLRenderer | undefined;
+let environment: T.Texture | undefined;
 export function mountExperiment(spec: DemoSpec) {
   const host = document.querySelector<HTMLElement>('#viewport')!,
     panel = document.querySelector<HTMLElement>('#experiment-panel')!,
@@ -23,12 +26,21 @@ export function mountExperiment(spec: DemoSpec) {
     renderer.outputColorSpace = T.SRGBColorSpace;
     renderer.toneMapping = T.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.3;
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = T.PCFShadowMap;
+    const room = new RoomEnvironment();
+    const pmrem = new T.PMREMGenerator(renderer);
+    environment = pmrem.fromScene(room, 0.04).texture;
+    room.dispose();
+    pmrem.dispose();
   }
   const r = renderer;
   host.append(r.domElement);
   r.domElement.setAttribute('aria-label', spec.title + ' 三维场景');
   r.domElement.setAttribute('role', 'img');
   const scene = new T.Scene();
+  scene.environment = environment!;
+  scene.environmentIntensity = 0.7;
   scene.background = new T.Color(0x0d1924);
   const camera = new T.PerspectiveCamera(45, 1, 0.1, 200);
   camera.position.set(10, 8, 12);
@@ -43,8 +55,6 @@ export function mountExperiment(spec: DemoSpec) {
   const light = new T.DirectionalLight(0xffe1b2, 3.2);
   light.position.set(4, 10, 6);
   scene.add(light);
-  // 这些例子自己提供地表，通用地板会遮住负高度区域。
-  if (!['world-environment', 'black-hole'].includes(spec.slug)) floor(scene, 18);
   const group = new T.Group();
   scene.add(group);
   const state: RuntimeState = {
@@ -82,13 +92,15 @@ export function mountExperiment(spec: DemoSpec) {
       if (cell.textContent !== text) cell.textContent = text;
     }
   };
-  const context = { spec, scene, group, state, panel, report, camera };
+  const context = { spec, scene, group, state, panel, report, camera, target: controls.target };
   let experiment: Experiment;
   if (mechanicsIds.has(spec.slug)) experiment = mechanics(context);
   else if (scienceIds.has(spec.slug)) experiment = science(context);
   else if (interfaceIds.has(spec.slug)) experiment = interfaces(context);
   else if (spaceIds.has(spec.slug)) experiment = spaces(context);
   else throw Error('未注册场景：' + spec.slug);
+  experiment = present(context, experiment);
+  controls.update();
   let frame = 0,
     alive = true,
     last = performance.now(),

@@ -30,6 +30,7 @@ export interface SceneContext {
   panel: HTMLElement;
   report: (fields: Record<string, string | number>) => void;
   camera: THREE.PerspectiveCamera;
+  target: THREE.Vector3;
 }
 export interface Experiment {
   update: (dt: number) => void;

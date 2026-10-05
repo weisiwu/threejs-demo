@@ -159,14 +159,12 @@ test('目标恢复和新网表不显示上一快照的残留字段', async ({ pa
   await expect(page.locator('#status')).toHaveText('目标求解成功');
   await expect(metric(page, '求解状态')).toHaveCount(0);
   await page.goto('#/demo/circuit-builder');
-  await page
-    .getByRole('textbox', { name: '电路网表', exact: true })
-    .fill(
-      JSON.stringify({
-        nodes: ['0', 'new'],
-        parts: [{ id: 'V', type: 'voltage-source', pins: ['new', '0'], value: 3 }],
-      }),
-    );
+  await page.getByRole('textbox', { name: '电路网表', exact: true }).fill(
+    JSON.stringify({
+      nodes: ['0', 'new'],
+      parts: [{ id: 'V', type: 'voltage-source', pins: ['new', '0'], value: 3 }],
+    }),
+  );
   await page.locator('#action').click();
   await expect(metric(page, '节点 new（V）')).toHaveText('3.0000');
   await expect(metric(page, '节点 out（V）')).toHaveCount(0);
@@ -227,4 +225,29 @@ test('保存桌面与手机阅读截图，目录预览均加载', async ({ page 
   await page.screenshot({ path: 'test-results/visuals/circuit-desktop.png', fullPage: true });
   await page.setViewportSize({ width: 390, height: 844 });
   await page.screenshot({ path: 'test-results/visuals/circuit-mobile.png', fullPage: true });
+});
+
+test('周期表包含完整 118 项，选中 Og 后读数和控件保持一致', async ({ page }) => {
+  await page.goto('#/demo/atomic-explorer');
+  await expect(page.locator('.element-grid button')).toHaveCount(118);
+  await page.locator('[data-select="element-118"]').click();
+  await expect(metric(page, '元素')).toHaveText('Og');
+  await expect(page.locator('#parameter')).toHaveValue('118');
+});
+test('复杂初始图仍能继续重写，节点预算与重置一致', async ({ page }) => {
+  await page.goto('#/demo/rule-universe');
+  await expect(metric(page, '节点数')).toHaveText('160');
+  await page.locator('#action').click();
+  await expect(metric(page, '节点数')).toHaveText('161');
+  await page.locator('#reset').click();
+  await expect(metric(page, '节点数')).toHaveText('160');
+  await expect(page.locator('#parameter')).toHaveValue('512');
+});
+test('咖啡因使用 24 个真实坐标原子，切换后显示当前分子', async ({ page }) => {
+  await page.goto('#/demo/molecular-structure');
+  await expect(metric(page, '分子')).toContainText('CID 2519');
+  await expect(metric(page, '原子数')).toHaveText('24');
+  await page.locator('#action').click();
+  await expect(metric(page, '分子')).toHaveText('水 H₂O');
+  await expect(metric(page, '原子数')).toHaveText('3');
 });

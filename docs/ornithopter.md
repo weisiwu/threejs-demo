@@ -1,14 +1,26 @@
 ---
-title: '扑翼机构：机制与运行记录'
+title: '扑翼机构：外观复现与运行记录'
 type: reproduction-research
 created: 2026-10-05
 updated: 2026-10-05
 tags: [threejs, reproduction, research]
 ---
 
-# 扑翼机构：机制与运行记录
+# 扑翼机构：外观复现与运行记录
 
 [打开交互实验](https://weisiwu.github.io/threejs-demo/#/demo/ornithopter) · [阅读相关文章](https://imgen.baoganai.com/knowledge/read/dilum-x-ornithopter)
+
+## 对照原画面
+
+参考画面：羊皮纸风格面板，木色机身和细长机械翅翼。
+
+补上机身、齿轮、翼膜和翼肋，保留连杆求解与拍翼动作。
+
+![本仓库实际运行截图](../public/previews/ornithopter.png)
+
+翼膜与原作镂空结构不同，驱动齿轮和传动拓扑没有完整复刻。
+
+[逐项对照记录](../research/appearance-review.json) · [外观代码](../src/visuals/)
 
 ## 先看机制
 
@@ -20,7 +32,7 @@ tags: [threejs, reproduction, research]
 
 慢速推进观察左右对称，再切分支；改变翼幅后，杆长残差仍应接近浮点误差。
 
-通用控件可以暂停、推进一秒和重置。推进一秒实际调用二十次 0.05 秒更新，因此机构约束与任务状态仍经过正常更新流程；它不是只把时间显示改大一秒。浏览器页签隐藏时不积累缺席时间，自动单步长上限为 0.05 秒。
+通用控件可以暂停、推进一秒和重置。推进一秒分为二十次 0.05 秒更新，机构约束与任务状态继续经过同一更新流程。浏览器页签隐藏时不积累缺席时间，自动单步长上限为 0.05 秒。
 
 ## 源码入口
 
@@ -29,7 +41,7 @@ tags: [threejs, reproduction, research]
 - [运行时](../src/runtime.ts)：单个渲染器、镜头、暂停、拾取、resize 和资源回收。
 - [浏览器检查](../tests/browser/experiments.spec.ts)：桌面与 390px 手机加载、操作、参数、暂停和重置；另有网表失败、库存去重、布局持久化与资源切换用例。
 
-读数随当前场景计算，不是写在页面里的预设成功结果。测试范围见 [验证说明](validation.md)；浏览器检查通过不能代替真实设备、科学精度或外部模型调用验收。
+页面读数来自当前场景计算。测试范围见 [验证说明](validation.md)；浏览器检查通过不能代替真实设备、科学精度或外部模型调用验收。
 
 ## 原资料与复现范围
 
@@ -37,7 +49,7 @@ tags: [threejs, reproduction, research]
 
 运动学原型，无气动、驱动器或飞行验收。
 
-原帖文字说明了作者公开展示的方向。后面的仓库用于研究相近机制，除非正文另有说明，不能把它当成该条原帖的完整源码。原帖视频未在这一轮逐帧观看，原型对应的资产和执行参数也未完整取得。
+原帖文字说明了作者公开展示的方向。后面的仓库用于研究相近机制，除非正文另有说明，不能把它当成该条原帖的完整源码。本轮查看了视频封面并按画面重建。视频播放器未成功加载，完整动作与资产仍未核验。
 
 1. [作者 X 原帖 · 2013293638768562325](https://x.com/DilumSanjaya/status/2013293638768562325)
 2. [responsive-strandbeest](https://github.com/dilums/responsive-strandbeest/tree/4eb0e454bb4d089de4c40da21f51c4efacad4e24)

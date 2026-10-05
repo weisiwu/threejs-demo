@@ -13,9 +13,9 @@ tags: [threejs, demos, research]
 
 ![连杆实验运行截图](public/previews/strandbeest.png)
 
-实现使用 TypeScript、Three.js 和 Vite。状态管理实验单独使用 React；大部分场景直接维护 Three.js 对象。模型与材质由代码生成，蛋白质目标态使用 RCSB 1CRN 的 Cα 坐标。没有 API 密钥、付费模型调用或原帖媒体。
+实现使用 TypeScript、Three.js 和 Vite。状态管理实验单独使用 React；大部分场景直接维护 Three.js 对象。场景按原画面重建；太阳系使用 MIT 原仓库纹理，极光保留原 SVG，其他模型主要由代码生成。蛋白质目标态使用 RCSB 1CRN 的 Cα 坐标，咖啡因使用 PubChem 三维坐标。没有 API 密钥、付费模型调用或原帖媒体。
 
-这些实验用于检查文章所讨论的机制。它们是按公开资料独立编写的机制复现；生成资产、原作完整视觉和科学求解仍有明确缺口，逐篇记录在研究文档中。
+本轮按用户反馈恢复原例子的外观与构图。Strandbeest 回到平面绿色细杆；起落架、便携显微镜、莲花建筑、彩色发动机和蓝色仓库分别重建专属造型。机甲、细胞和飞船仍缺原始模型，细节差异见 [逐项对照](research/appearance-review.json)。
 
 ## 本地运行
 

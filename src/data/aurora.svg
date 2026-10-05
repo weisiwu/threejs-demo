@@ -1,0 +1,209 @@
+<svg id="svg" viewBox="0 0 1280 800">
+        <defs>
+          <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color: #ec4646; stop-opacity: 1"></stop>
+            <stop offset="100%" style="stop-color: #ffe227; stop-opacity: 0"></stop>
+          </radialGradient>
+          <radialGradient id="grad2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color: #ffe227; stop-opacity: 1"></stop>
+            <stop offset="100%" style="stop-color: #f88f01; stop-opacity: 0"></stop>
+          </radialGradient>
+          <radialGradient id="grad3" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color: #f88f01; stop-opacity: 1"></stop>
+            <stop offset="100%" style="stop-color: #e27802; stop-opacity: 0"></stop>
+          </radialGradient>
+      
+          <radialGradient id="grad4" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color: #111f46; stop-opacity: 1" id="aurora-stop-1"></stop>
+            <stop offset="100%" style="stop-color: #111f46; stop-opacity: 0.2" id="aurora-stop-2"></stop>
+          </radialGradient>
+      
+          <radialGradient id="grad5" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color: #d3e0ea; stop-opacity: 1" id="cxx"></stop>
+            <stop offset="100%" style="stop-color: #d3e0ea; stop-opacity: 0" id="cxx2"></stop>
+          </radialGradient>
+        </defs>
+        <rect x="0" y="0" width="1280" height="800" fill="#111f46"></rect>
+        <g>
+          <rect width="1280" height="300" fill="#05102c" stroke="none" id="sky"></rect>
+          <circle cx="133.98568875202156" cy="198.75639805406715" fill="url(#grad5)" stroke="none" r="1.5284343532879316"></circle>
+          <circle cx="282.167361210396" cy="45.49542600062168" fill="url(#grad5)" stroke="none" r="0.6199522682163205"></circle>
+          <circle cx="851.4766015763282" cy="197.81048627657188" fill="url(#grad5)" stroke="none" r="0.057492235454552176"></circle>
+          <circle cx="793.1550711306073" cy="189.404140212519" fill="url(#grad5)" stroke="none" r="0.3988069039353612"></circle>
+          <circle cx="184.5274824812645" cy="233.23377934807155" fill="url(#grad5)" stroke="none" r="0.570350074398313"></circle>
+          <circle cx="548.1661268067946" cy="175.89927505505315" fill="url(#grad5)" stroke="none" r="1.3250861454531264"></circle>
+          <circle cx="1259.2291666581239" cy="67.26179157119549" fill="url(#grad5)" stroke="none" r="1.8426499753561418"></circle>
+          <circle cx="826.2793278521239" cy="15.235512004047973" fill="url(#grad5)" stroke="none" r="0.7055386184056911"></circle>
+          <circle cx="1187.1814362026525" cy="78.15687160888577" fill="url(#grad5)" stroke="none" r="0.5815911487767669"></circle>
+          <circle cx="414.5441965829261" cy="35.718541810278424" fill="url(#grad5)" stroke="none" r="1.98496467592118"></circle>
+          <circle cx="780.1187333413516" cy="31.564670985934107" fill="url(#grad5)" stroke="none" r="0.5250563577933594"></circle>
+          <circle cx="257.48520194243076" cy="257.09034637588513" fill="url(#grad5)" stroke="none" r="1.5951181755099835"></circle>
+          <circle cx="1006.7654959553328" cy="112.58850116792712" fill="url(#grad5)" stroke="none" r="0.6127005267439467"></circle>
+          <circle cx="361.41866069519904" cy="66.75990229227794" fill="url(#grad5)" stroke="none" r="0.4562767232012743"></circle>
+          <circle cx="396.4884819052395" cy="109.57319098188555" fill="url(#grad5)" stroke="none" r="1.1972419055724484"></circle>
+          <circle cx="790.9931555615236" cy="146.4578451276225" fill="url(#grad5)" stroke="none" r="0.026001016553714562"></circle>
+          <circle cx="1098.675711501904" cy="17.048791823124517" fill="url(#grad5)" stroke="none" r="0.24690554617730975"></circle>
+          <circle cx="880.4215264421908" cy="154.4379755282752" fill="url(#grad5)" stroke="none" r="1.1299673500819667"></circle>
+          <circle cx="573.0906038225114" cy="137.69808250484363" fill="url(#grad5)" stroke="none" r="1.5811615732641844"></circle>
+          <circle cx="644.5246515220113" cy="119.21999610487036" fill="url(#grad5)" stroke="none" r="0.6675741332240079"></circle>
+          <circle cx="902.441468606147" cy="267.5936935430635" fill="url(#grad5)" stroke="none" r="0.44016460129055335"></circle>
+          <circle cx="939.0306696067046" cy="85.4447894393272" fill="url(#grad5)" stroke="none" r="1.4926252130198592"></circle>
+          <circle cx="578.7361324762023" cy="154.33216040054498" fill="url(#grad5)" stroke="none" r="1.928606592451427"></circle>
+          <circle cx="281.04427905850963" cy="112.45678325471282" fill="url(#grad5)" stroke="none" r="1.7573255904169145"></circle>
+          <circle cx="108.12118810892898" cy="131.50459393143092" fill="url(#grad5)" stroke="none" r="1.0198743764402756"></circle>
+          <circle cx="939.2687077213606" cy="186.58314484052872" fill="url(#grad5)" stroke="none" r="1.5608233859325795"></circle>
+          <circle cx="446.1017664572876" cy="226.8906189217784" fill="url(#grad5)" stroke="none" r="0.2776589677915744"></circle>
+          <circle cx="405.16525969482046" cy="94.18518169618699" fill="url(#grad5)" stroke="none" r="0.25058515519342994"></circle>
+          <circle cx="361.4330519518168" cy="273.832016898341" fill="url(#grad5)" stroke="none" r="0.03230902387665813"></circle>
+          <circle cx="623.0179469909127" cy="173.56528721274617" fill="url(#grad5)" stroke="none" r="1.8945919901095047"></circle>
+          <circle cx="827.8010044075736" cy="139.7750111875268" fill="url(#grad5)" stroke="none" r="0.06420303610110323"></circle>
+          <circle cx="344.01704645374264" cy="88.42744811105965" fill="url(#grad5)" stroke="none" r="1.300111889210924"></circle>
+          <circle cx="471.5589624565288" cy="71.66235361667705" fill="url(#grad5)" stroke="none" r="1.1527957177170958"></circle>
+          <circle cx="111.69581207830096" cy="64.71070734158705" fill="url(#grad5)" stroke="none" r="1.021004356943558"></circle>
+          <circle cx="1000.5567000445305" cy="27.825880553920417" fill="url(#grad5)" stroke="none" r="1.4411765359781754"></circle>
+          <circle cx="502.4648110277755" cy="42.86775171102242" fill="url(#grad5)" stroke="none" r="1.9865599880994524"></circle>
+          <circle cx="486.997026398403" cy="240.87749983527152" fill="url(#grad5)" stroke="none" r="1.976613373992367"></circle>
+          <circle cx="1175.1636701200766" cy="228.27970105045057" fill="url(#grad5)" stroke="none" r="0.21231938074780343"></circle>
+          <circle cx="66.45996299725448" cy="267.58057978431356" fill="url(#grad5)" stroke="none" r="1.2351281427494432"></circle>
+          <circle cx="785.1644948205035" cy="238.05516907251737" fill="url(#grad5)" stroke="none" r="1.0528202325228675"></circle>
+          <circle cx="340.09556429477897" cy="174.02992125124734" fill="url(#grad5)" stroke="none" r="1.9213288643609208"></circle>
+          <circle cx="153.68189730702235" cy="162.88029621357865" fill="url(#grad5)" stroke="none" r="0.4052296202816297"></circle>
+          <circle cx="224.4180696997492" cy="58.6815123121025" fill="url(#grad5)" stroke="none" r="1.8952475463334082"></circle>
+          <circle cx="1056.1961249810702" cy="208.6523951685311" fill="url(#grad5)" stroke="none" r="0.9579747608208629"></circle>
+          <circle cx="805.1772007270713" cy="215.66840055963706" fill="url(#grad5)" stroke="none" r="0.08641360498327133"></circle>
+          <circle cx="634.585177828312" cy="151.663117795665" fill="url(#grad5)" stroke="none" r="1.7857728800694759"></circle>
+          <circle cx="305.6594961839288" cy="276.4135732938425" fill="url(#grad5)" stroke="none" r="1.1693890743158404"></circle>
+          <circle cx="95.15265139325753" cy="67.15745743207793" fill="url(#grad5)" stroke="none" r="1.0741134222665163"></circle>
+          <circle cx="965.3230855642258" cy="279.8946162740012" fill="url(#grad5)" stroke="none" r="0.013376121787016304"></circle>
+          <circle cx="1088.1232943783784" cy="91.97195375380174" fill="url(#grad5)" stroke="none" r="0.8059626354215612"></circle>
+          <rect width="1280" height="300" fill="url(#grad4)" stroke="none" id="sky"></rect>
+          <path d="M-0.3,124.2l70.1,76.1l110.1,9.9l50-70.1l80,100l170-120l60,60l90-49.8l120,120.2h170l90-110.5l50,30l69.8-80l149.8,100v80.5H0C0,270.5,0.5,124.2-0.3,124.2z" fill="#0c193d" stroke="none" id="mountain-back"></path>
+          <path d="M-0.3,260.4l150.1-120.2l50.1,79.9l120-100.1l130,130l70-50l110,50l110-90l40,20l70-90l60,90l40-20l60,50c0,0,78.3-31.7,80-30s79.8,60,79.8,60l109.8-95.7v256.2H0C0,400.5-0.3,259.2-0.3,260.4z" fill="#111f46" stroke="none" id="mountain-front"></path>
+          <circle id="sun-circ-1" fill="url(#grad3)" stroke="none" cx="241" cy="551" r="124"></circle>
+          <circle id="sun-circ-2" fill="url(#grad2)" stroke="none" cx="241" cy="551" r="94"></circle>
+          <circle id="sun-circ-3" fill="url(#grad1)" stroke="none" cx="241" cy="551" r="69"></circle>
+          <circle id="earth" fill="#d6b0b1" stroke="none" cx="981" cy="550" r="26"></circle>
+          <path d="M1280,324.70000000000005C1227,331.70000000000005 818.3,296.70000000000005 818.3,549.7C818,802.7,1226.7,767.7,1280,774.7" fill="#21315c" stroke="#21315c" id="bow-shock-outer"></path>
+          <path d="M1280,369.70000000000005C1072.3,372.70000000000005 840.3,380.40000000000003 840.3,549.7C840,719,1072,726.7,1279.7,729.7" fill="#111f46" stroke="#21315c" id="bow-shock-inner"></path>
+          <path d="M269.5,539.5L751,541c47.3-1.5,60.3-12,116-84c40.8-50.9,122.8-72.2,170.3-79.7" fill="none" stroke="none" id="solar-wind-1"></path>
+          <path d="M269.8,520.5l468.8,1.5c47.3-1.5,72.8-38.3,129.2-94.3c45.3-49.5,158.9-72.8,203-74.7" fill="none" stroke="none" id="solar-wind-2"></path>
+          <path d="M269.5,500.2l446.8,1.5c46.3-1.4,78.9-33,155.8-102c74.1-62.8,203.8-68.8,234.3-71.5" fill="none" stroke="none" id="solar-wind-3"></path>
+          <path d="M269.5,480.2l418.2,1.5c45.1,0.4,97.2-38.2,160.3-95.7c83-80,272.3-81,289-79.7" fill="none" stroke="none" id="solar-wind-4"></path>
+          <path d="M269.5,560.9l481.5-1.5c47.3,1.5,60.3,12,116,84c40.8,50.9,122.8,72.2,170.3,79.7" fill="none" stroke="none" id="solar-wind-5"></path>
+          <path d="M269.8,579.9l468.8-1.5c47.3,1.5,72.8,38.3,129.2,94.3c45.3,49.5,158.9,72.8,203,74.7" fill="none" stroke="none" id="solar-wind-6"></path>
+          <path d="M269.5,600.2l446.8-1.5c46.3,1.4,78.9,33,155.8,102c74.1,62.8,203.8,68.8,234.3,71.5" fill="none" stroke="none" id="solar-wind-7"></path>
+          <path d="M269.5,620.2l418.2-1.5c45.1-0.4,97.2,38.2,160.3,95.7c83,80,272.3,81,289,79.7" fill="none" stroke="none" id="solar-wind-8"></path>
+          <path d="M887.3,447.3c35-20.3,59.1,18.8,77.5,50" fill="none" stroke="none" id="particle-path-1"></path>
+          <path d="M985.3,402.8c-43.8,7.4-41,45-20.7,94" fill="none" stroke="none" id="particle-path-2"></path>
+          <path d="M887.9,652.8c35,20.3,59.1-18.8,77.5-50" fill="none" stroke="none" id="particle-path-3"></path>
+          <path d="M986,697.3c-43.8-7.4-41-45-20.7-94" fill="none" stroke="none" id="particle-path-4"></path>
+          <path d="M1280,377.1C1128.3,379.1 966.3,388.5 959.5999999999999,458.40000000000003C954.3,497.00000000000006 987,512.4000000000001 980.3,550.7C987,588.3,954.3,603.7,959.5999999999999,642.3C966.3,712.1999999999999,1128.3,721.5999999999999,1280,723.5999999999999" fill="#9cbfce33" stroke="none" id="magnetic-field-back"></path>
+          <path d="M985,549.8C962,443.79999999999995 847.5,435.29999999999995 847.5,550.3C847.3,666,961.8,657.5,984.8,551.5" fill="#9cbfce44" stroke="#487e95" id="magnetic-field-1"></path>
+          <path d="M984.8,549.7C959.5999999999999,461.5 868.3,471.5 868.3,550C868,629.8,959.3,639.8,984.5,551.5999999999999" fill="none" stroke="#487e95" id="magnetic-field-2"></path>
+          <path d="M984.5999999999999,549.8C967.8,489.49999999999994 884.3,488.49999999999994 884.3,550.3C884,612.8,967.5,611.8,984.3,551.5" fill="none" stroke="#487e95" id="magnetic-field-3"></path>
+          <path d="M985,549.7C969.7,501.50000000000006,907.5,498.00000000000006,907.5,550.4000000000001C907.3,603.3000000000001 969.5,599.8000000000001 984.8,551.6" fill="none" stroke="#487e95" id="magnetic-field-4"></path>
+          <path d="M985,549.8C974.2,514.5 932.7,506.29999999999995 932.7,550.3C932.4,594.9,973.9,586.6999999999999,984.6999999999999,551.4" fill="none" stroke="#487e95" id="magnetic-field-5"></path>
+          <path d="M984.5,550.0999999999999C975.9000000000001,517.5 945.7,515.8 945.7,550.3C945.4,585.4,975.6,583.6999999999999,984.1999999999999,551.1" fill="none" stroke="#487e95" id="magnetic-field-6"></path>
+          <path d="M985,549.5C989,519.5,1018.5,523.2,1018.5,549.8C1018.3,578.0999999999999 988.8,581.8 984.8,551.8" fill="none" stroke="#487e95" id="magnetic-field-7"></path>
+          <path d="M985,549.8C991.7,514,1031.8,518.3,1031.8,549.8C1031.6,582.9 991.5,587.1999999999999 984.8,551.4" fill="none" stroke="#487e95" id="magnetic-field-8"></path>
+          <path d="M984.7,550.7C990.9000000000001,499.50000000000006,1052,502.40000000000003,1052,550C1051.7,598.9 990.6,601.8000000000001 984.4,550.6" fill="none" stroke="#487e95" id="magnetic-field-9"></path>
+          <path d="M984.8,549.8C992.0999999999999,500.49999999999994,1052,501.79999999999995,1052,550.3C1051.8,599.4 991.9,600.6999999999999 984.6,551.4" fill="none" stroke="#487e95" id="magnetic-field-10"></path>
+          <path d="M984.7,550.2C989.4000000000001,493.70000000000005,1075.2,488.70000000000005,1075.2,550.2C1074.9,612.6 989.1,607.6 984.4,551.1" fill="none" stroke="#487e95" id="magnetic-field-11"></path>
+          <path d="M984.3,550.7C993.6999999999999,451.90000000000003,1153.5,530.9000000000001,1153.5,550.3000000000001C1153.3,570.4 993.5,649.4 984.1,550.6" fill="none" stroke="#487e95" id="magnetic-field-12"></path>
+          <path d="M984.5,550.6C945.4,389.1,1252.8,506.5,1252.8,550.1C1252.6,594.3000000000001 945.3,711.7 984.4,550.2" fill="none" stroke="#487e95" id="magnetic-field-13"></path>
+          <path d="M980.3,550.7C987,512.4000000000001,954.3,497.00000000000006,959.5999999999999,458.40000000000003C966.3,388.5,1128.3,379.1,1280,377.1" fill="none" stroke="#487e95" id="magnetic-field-14"></path>
+          <path d="M980.7,550C984.4000000000001,511,966.9000000000001,488.2,978.4000000000001,458C1001.7,406.5,1165.2,409.2,1280,403" fill="none" stroke="#487e95" id="magnetic-field-15"></path>
+          <path d="M980.8,549.7C980.0999999999999,513.9000000000001,975.3,488.00000000000006,999,465.00000000000006C1037.3,429.70000000000005,1153.5,436.00000000000006,1280,435.50000000000006" fill="none" stroke="#487e95" id="magnetic-field-16"></path>
+          <path d="M1280,723.5999999999999C1128.3,721.5999999999999 966.3,712.1999999999999 959.5999999999999,642.3C954.3,603.7 987,588.3 980.3,550" fill="none" stroke="#487e95" id="magnetic-field-17"></path>
+          <path d="M1280,697.7C1165.2,691.5 1001.7,694.2 978.4000000000001,642.7C966.9000000000001,612.5 984.4000000000001,589.7 980.7,550.7" fill="none" stroke="#487e95" id="magnetic-field-18"></path>
+          <path d="M1280,665.2C1153.5,664.7 1037.3,671 999,635.7C975.3,612.7 980.0999999999999,586.8 980.8,551" fill="none" stroke="#487e95" id="magnetic-field-19"></path>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <polyline points="-3,-3, 0,0, -3,3" stroke-width="1" stroke="#487e95" fill="none" stroke-linecap="round" class="magnetic-field-indicator"></polyline>
+          <circle cx="981.3" cy="550" r="26.3" fill="#111d5e"></circle>
+          <polygon points="969.8,535 970.2,532.2 970.3,529.7 971.2,528.7 973.5,527.7 978,527.8 980.3,528 982.3,528.3 
+        981.5,532.2 980.7,533.3 981.2,535.5 982.3,534.8 983.2,533.7 984.3,533.5 986,533.3 987.8,535 988.7,538.2 985.2,540.3 
+        984.3,540.3 982.7,543.3 981.7,544.3 982.2,546.7 980.3,547 977.7,545.7 975.5,545.2 973.8,545.7 974,548.2 975.7,549.3 
+        977.2,548.5 978.8,549 978.8,550 978,551.3 979.8,553.8 981.8,554.7 986.7,553.7 990.3,553.8 992.2,556.2 994.2,558 996.5,558.8 
+        997.3,559.8 993.3,565.7 990.2,566.2 989.7,568.2 981.7,571.8 980.8,572 980.5,570.2 983,567 983.2,564.3 981.3,562.5 980.2,560.3 
+        980.8,558.2 981.3,557 979.5,555.3 976,552.2 974.8,550.7 972.5,550.7 970.5,548.8 968.8,543.8 967.7,543.3 967.2,538 	" stroke="none" fill="green"></polygon>
+          <polygon points="1004.8,551.7 1002,552.3 1001.8,547.8 1002.2,544.8 1001.8,539.8 1000,535.5 1000.2,534 1002,535.8 
+        1005,540.8 1006.2,544.7 1006.8,549.7 1006,551.2 	" stroke="none" fill="green"></polygon>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-4,0, 4,0" stroke-width="4" stroke="#ffd56b" fill="none" stroke-linecap="round" class="wind-particle"></polyline>
+          <polyline points="-3,0, 3,0" stroke-width="3" stroke="#6930c3" fill="none" stroke-linecap="round" class="particle"></polyline>
+          <polyline points="-3,0, 3,0" stroke-width="3" stroke="#6930c3" fill="none" stroke-linecap="round" class="particle"></polyline>
+          <polyline points="-3,0, 3,0" stroke-width="3" stroke="#6930c3" fill="none" stroke-linecap="round" class="particle"></polyline>
+          <polyline points="-3,0, 3,0" stroke-width="3" stroke="#6930c3" fill="none" stroke-linecap="round" class="particle"></polyline>
+          <polyline points="-3,0, 3,0" stroke-width="3" stroke="#16c79a" fill="none" stroke-linecap="round" class="particle"></polyline>
+          <polyline points="-3,0, 3,0" stroke-width="3" stroke="#16c79a" fill="none" stroke-linecap="round" class="particle"></polyline>
+          <polyline points="-3,0, 3,0" stroke-width="3" stroke="#6930c3" fill="none" stroke-linecap="round" class="particle"></polyline>
+          <polyline points="-3,0, 3,0" stroke-width="3" stroke="#6930c3" fill="none" stroke-linecap="round" class="particle"></polyline>
+          <polyline points="-3,0, 3,0" stroke-width="3" stroke="#6930c3" fill="none" stroke-linecap="round" class="particle"></polyline>
+          <polyline points="-3,0, 3,0" stroke-width="3" stroke="#16c79a" fill="none" stroke-linecap="round" class="particle"></polyline>
+          <polyline points="-3,0, 3,0" stroke-width="3" stroke="#16c79a" fill="none" stroke-linecap="round" class="particle"></polyline>
+          <polyline points="-3,0, 3,0" stroke-width="3" stroke="#6930c3" fill="none" stroke-linecap="round" class="particle"></polyline>
+          <text transform="matrix(1 0 0 1 245.0002 710.667)" fill="#d3e0ea" style="text-anchor: middle">
+            Sun
+          </text>
+          <text transform="matrix(1 0 0 1 531.6667 469.6664)" fill="#d3e0ea" style="text-anchor: middle">
+            Solar Wind
+          </text>
+          <text transform="matrix(1 0 0 1 1175 544.3337)" fill="#d3e0ea" style="text-anchor: middle">
+            Magnetic-field
+          </text>
+          <text transform="matrix(1 0 0 1 1175 560.3337)" fill="#d3e0ea" style="text-anchor: middle">
+            Lines
+          </text>
+          <text transform="matrix(1 0 0 1 988.667 595.0003)" fill="#d3e0ea" style="text-anchor: middle">
+            Earth
+          </text>
+          <text transform="matrix(1 0 0 1 1186.667 354.9998)" fill="#d3e0ea" style="text-anchor: middle">
+            Magnetoheath
+          </text>
+          <text transform="matrix(1 0 0 1 910 463.3333)" fill="#d3e0ea" style="text-anchor: middle">
+            Polar Cusp
+          </text>
+          <text transform="matrix(4.489659e-011 -1 1 4.489659e-011 833.7188 552.3428)" fill="#d3e0ea" style="text-anchor: middle">
+            Bow Shock
+          </text>
+        </g>
+      </svg>

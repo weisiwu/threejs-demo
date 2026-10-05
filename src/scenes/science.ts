@@ -31,26 +31,8 @@ export const scienceIds = new Set([
   'protein-folding',
   'rule-universe',
 ]);
-const elements = [
-  'H',
-  'He',
-  'Li',
-  'Be',
-  'B',
-  'C',
-  'N',
-  'O',
-  'F',
-  'Ne',
-  'Na',
-  'Mg',
-  'Al',
-  'Si',
-  'P',
-  'S',
-  'Cl',
-  'Ar',
-];
+import { symbols as elements } from '../data/elements';
+import caffeine from '../data/caffeine.json';
 export function science(ctx: SceneContext): Experiment {
   const { group: g, state: s, spec, report, panel } = ctx;
   let phase = 0;
@@ -225,8 +207,8 @@ export function science(ctx: SceneContext): Experiment {
       const nucleus = sphere(holder, 0.45, [0, 2.6, 0], C.gold);
       mark(nucleus, 'element-' + number, elements[number - 1]);
       let left = number;
-      const capacities = [2, 8, 8];
-      for (let shell = 0; left > 0 && shell < 3; shell++) {
+      const capacities = [2, 8, 18, 32, 32, 18, 8];
+      for (let shell = 0; left > 0 && shell < capacities.length; shell++) {
         const count = Math.min(left, capacities[shell]),
           r = 1.1 + shell * 0.7,
           orbit = torus(holder, r, 0.02, [0, 2.6, 0], C.dark);
@@ -308,7 +290,7 @@ export function science(ctx: SceneContext): Experiment {
       },
       select(id) {
         const n = Number(id.split('-')[1]);
-        if (n >= 1 && n <= 18) {
+        if (n >= 1 && n <= elements.length) {
           number = n;
           if (spec.slug === 'atomic-explorer') s.parameter = n;
           s.selection = id;
@@ -511,7 +493,27 @@ export function science(ctx: SceneContext): Experiment {
   return graphScene(ctx);
 }
 
+const caffeineRecord = caffeine.PC_Compounds[0];
+const caffeineConformer = caffeineRecord.coords[0].conformers[0];
 const molecules = [
+  {
+    name: '咖啡因 C₈H₁₀N₄O₂ / PubChem CID 2519',
+    atoms: caffeineRecord.atoms.aid.map((id, i) => ({
+      id: String(id),
+      element: ({ 1: 'H', 6: 'C', 7: 'N', 8: 'O' } as Record<number, string>)[
+        caffeineRecord.atoms.element[i]
+      ],
+      p: [
+        caffeineConformer.x[i] * 0.52,
+        3 + caffeineConformer.y[i] * 0.52,
+        caffeineConformer.z[i] * 0.52,
+      ] as V3,
+    })),
+    bonds: caffeineRecord.bonds.aid1.map((id, i) => [
+      caffeineRecord.atoms.aid.indexOf(id),
+      caffeineRecord.atoms.aid.indexOf(caffeineRecord.bonds.aid2[i]),
+    ]),
+  },
   {
     name: '水 H₂O',
     atoms: [
@@ -576,14 +578,20 @@ function molecular(ctx: SceneContext): Experiment {
   let bonds: T.Mesh[] = [];
   const rebuild = () => {
     clear(holder);
-    const m = molecules[s.variant % 3];
+    const m = molecules[s.variant % molecules.length];
     atoms = m.atoms.map((a) =>
       mark(
         sphere(
           holder,
           a.element === 'H' ? 0.17 : 0.3,
           a.p,
-          a.element === 'O' ? C.red : a.element === 'H' ? C.white : C.dark,
+          a.element === 'O'
+            ? 0xc84b42
+            : a.element === 'N'
+              ? 0x436eb4
+              : a.element === 'H'
+                ? 0xe8e6de
+                : 0x363a39,
         ),
         'atom-' + a.id,
         a.element + ' ' + a.id,
@@ -603,7 +611,7 @@ function molecular(ctx: SceneContext): Experiment {
   return {
     update() {
       if (current !== s.variant) rebuild();
-      const m = molecules[s.variant % 3],
+      const m = molecules[s.variant % molecules.length],
         pts = m.atoms.map(
           (a) => [a.p[0] * s.parameter, 3 + (a.p[1] - 3) * s.parameter, a.p[2] * s.parameter] as V3,
         );
@@ -614,7 +622,8 @@ function molecular(ctx: SceneContext): Experiment {
         原子数: m.atoms.length,
         键记录数: m.bonds.length,
         选择: s.selection || '未选择',
-        坐标性质: '教学摆放',
+        坐标性质:
+          s.variant % molecules.length === 0 ? 'PubChem CID 2519 三维坐标（缩放显示）' : '教学摆放',
       });
     },
     action() {
@@ -632,6 +641,7 @@ import { rewrite, type RewriteGraph } from '../math';
 function graphScene(ctx: SceneContext): Experiment {
   const { group: g, state: s, report } = ctx;
   let graph: RewriteGraph = { nextId: 2, edges: [[0, 1]], steps: 0, trace: [] };
+  for (let i = 0; i < 158; i++) graph = rewrite(graph, 512);
   const holder = new T.Group();
   g.add(holder);
   let dirty = true;
@@ -641,15 +651,15 @@ function graphScene(ctx: SceneContext): Experiment {
         clear(holder);
         const p = Array.from({ length: graph.nextId }, (_, i) => {
           const angle = i * 2.39996,
-            r = Math.sqrt(i) * 0.55;
+            r = Math.sqrt(i) * 0.2;
           return [
             r * Math.cos(angle),
-            1.8 + (i / Math.max(1, graph.nextId - 1)) * 2,
+            1.2 + (i / Math.max(1, graph.nextId - 1)) * 4,
             r * Math.sin(angle),
           ] as V3;
         });
-        p.forEach((q, i) => mark(sphere(holder, 0.12, q, i === 0 ? C.gold : C.cyan), 'node-' + i));
-        graph.edges.forEach(([a, b]) => rod(holder, p[a], p[b], 0.025, C.purple));
+        p.forEach((q, i) => mark(sphere(holder, 0.045, q, i === 0 ? C.gold : C.cyan), 'node-' + i));
+        graph.edges.forEach(([a, b]) => rod(holder, p[a], p[b], 0.007, C.purple));
         dirty = false;
       }
       report({
