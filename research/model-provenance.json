@@ -1,0 +1,302 @@
+{
+  "createdAt": "2026-10-05T02:55:52.493Z",
+  "method": "参考已查看画面编写简版模型；demo 与 GLB 使用同一源模型工厂。",
+  "originalAuthorMeshesObtained": false,
+  "sourceSha256": "2f3f2851fe44d48a5dbbf462df39b33a6e2935d566b571c84674517767b69efc",
+  "models": [
+    {
+      "id": "winged-skeleton",
+      "name": "翼兽骨架",
+      "file": "winged-skeleton.glb",
+      "scenes": ["skeleton-explorer"],
+      "meshCount": 10,
+      "triangles": 48464,
+      "animations": [],
+      "bounds": {
+        "min": [-3.7253799438476562, 0.13206937909126282, -3.08611798286438],
+        "max": [3.049999952316284, 5.045380115509033, 3.08611798286438]
+      },
+      "author": "weisiwu",
+      "license": "MIT",
+      "source": "src/models/model-kit.ts",
+      "kind": "reference-based simplified reconstruction",
+      "embeddedTextures": 0,
+      "externalFiles": 0,
+      "bytes": 4661148,
+      "sha256": "a8a3e4593641e53c363bfac09eb56b3a5958d7524d13ee8d5a759585d1172f26"
+    },
+    {
+      "id": "cyber-scout",
+      "name": "绿甲侦察角色",
+      "file": "cyber-scout.glb",
+      "scenes": ["character-selection"],
+      "meshCount": 25,
+      "triangles": 5860,
+      "animations": ["idle-arm-left", "idle-arm-right"],
+      "bounds": {
+        "min": [-2.1266786057725615, 0.0450000095367431, -0.3400000035762787],
+        "max": [2.1266786057725615, 4.247046256065369, 0.5249999761581421]
+      },
+      "author": "weisiwu",
+      "license": "MIT",
+      "source": "src/models/model-kit.ts",
+      "kind": "reference-based simplified reconstruction",
+      "embeddedTextures": 0,
+      "externalFiles": 0,
+      "bytes": 523060,
+      "sha256": "9e89ef2fd6aade3c5337e111d69fd47d01c9ddb78338b9aead598f4737b6d66b"
+    },
+    {
+      "id": "cyber-engineer",
+      "name": "紫甲工程角色",
+      "file": "cyber-engineer.glb",
+      "scenes": ["character-selection"],
+      "meshCount": 25,
+      "triangles": 6452,
+      "animations": ["idle-arm-left", "idle-arm-right"],
+      "bounds": {
+        "min": [-1.278786264901158, 0.0450000095367431, -0.800000011920929],
+        "max": [1.278786264901158, 4.247046256065369, 0.5249999761581421]
+      },
+      "author": "weisiwu",
+      "license": "MIT",
+      "source": "src/models/model-kit.ts",
+      "kind": "reference-based simplified reconstruction",
+      "embeddedTextures": 0,
+      "externalFiles": 0,
+      "bytes": 579744,
+      "sha256": "dd8762afac92afa21d086146c1eacebdb65279317ebc9b549bab1694bdcf2497"
+    },
+    {
+      "id": "cyber-guardian",
+      "name": "蓝甲守卫角色",
+      "file": "cyber-guardian.glb",
+      "scenes": ["character-selection"],
+      "meshCount": 25,
+      "triangles": 6268,
+      "animations": ["idle-arm-left", "idle-arm-right"],
+      "bounds": {
+        "min": [-1.393980403065406, 0.0450000095367431, -0.7049999833106995],
+        "max": [1.393980403065406, 4.247046256065369, 0.5249999761581421]
+      },
+      "author": "weisiwu",
+      "license": "MIT",
+      "source": "src/models/model-kit.ts",
+      "kind": "reference-based simplified reconstruction",
+      "embeddedTextures": 0,
+      "externalFiles": 0,
+      "bytes": 562060,
+      "sha256": "deca71875606a7fef611b631e2bc542257270b9b015298f36713800d533c8be0"
+    },
+    {
+      "id": "robot-assault",
+      "name": "双炮突击机器人",
+      "file": "robot-assault.glb",
+      "scenes": ["robot-roster"],
+      "meshCount": 31,
+      "triangles": 7900,
+      "animations": ["idle-arm-left", "idle-arm-right"],
+      "bounds": {
+        "min": [-1.3906310840800606, 0.0450000095367431, -0.7049999833106995],
+        "max": [1.3906310840800606, 4.247046256065369, 1.5918713142749614]
+      },
+      "author": "weisiwu",
+      "license": "MIT",
+      "source": "src/models/model-kit.ts",
+      "kind": "reference-based simplified reconstruction",
+      "embeddedTextures": 0,
+      "externalFiles": 0,
+      "bytes": 646012,
+      "sha256": "d09817c917af2388cbd016a6aa83f0d3656dfd81aaa3cc3f92a35b3567d62eab"
+    },
+    {
+      "id": "robot-sentry",
+      "name": "重装哨兵机器人",
+      "file": "robot-sentry.glb",
+      "scenes": ["robot-roster"],
+      "meshCount": 31,
+      "triangles": 7116,
+      "animations": ["idle-arm-left", "idle-arm-right"],
+      "bounds": {
+        "min": [-1.293562890260775, 0.0450000095367431, -0.5249999761581421],
+        "max": [1.293562890260775, 4.247046256065369, 1.5759237730920095]
+      },
+      "author": "weisiwu",
+      "license": "MIT",
+      "source": "src/models/model-kit.ts",
+      "kind": "reference-based simplified reconstruction",
+      "embeddedTextures": 0,
+      "externalFiles": 0,
+      "bytes": 568204,
+      "sha256": "704748eff010faf19b66230168842eea4630be0d408772c7d9d8f380c5e05ae8"
+    },
+    {
+      "id": "robot-engineer",
+      "name": "三臂悬浮维修机器人",
+      "file": "robot-engineer.glb",
+      "scenes": ["robot-roster"],
+      "meshCount": 12,
+      "triangles": 1936,
+      "animations": [],
+      "bounds": {
+        "min": [-0.7564315795898438, 0.8585693836212158, -1.1273002659138738],
+        "max": [1.33143150806427, 3.07, 1.1273002659138742]
+      },
+      "author": "weisiwu",
+      "license": "MIT",
+      "source": "src/models/model-kit.ts",
+      "kind": "reference-based simplified reconstruction",
+      "embeddedTextures": 0,
+      "externalFiles": 0,
+      "bytes": 127688,
+      "sha256": "ec7a4026270ff16591ba209265cfd76bfb56c7f30abbc898129cdf513bab7b5f"
+    },
+    {
+      "id": "ship-hauler",
+      "name": "标准货运艇",
+      "file": "ship-hauler.glb",
+      "scenes": ["ship-selection"],
+      "meshCount": 20,
+      "triangles": 5184,
+      "animations": [],
+      "bounds": {
+        "min": [-3.1405224800109863, 0.9850000143051147, -1.8749999761581422],
+        "max": [2.2850000858306885, 3.4200000762939453, 1.8749999761581422]
+      },
+      "author": "weisiwu",
+      "license": "MIT",
+      "source": "src/models/model-kit.ts",
+      "kind": "reference-based simplified reconstruction",
+      "embeddedTextures": 0,
+      "externalFiles": 0,
+      "bytes": 500860,
+      "sha256": "9ac3b3bd9ac1e6674d8a2f3bf2cb44acdfe97166efe9c9bbdd7133a9e34c93d9"
+    },
+    {
+      "id": "ship-freighter",
+      "name": "重载货运艇",
+      "file": "ship-freighter.glb",
+      "scenes": ["ship-selection"],
+      "meshCount": 26,
+      "triangles": 5580,
+      "animations": [],
+      "bounds": {
+        "min": [-3.1405224800109863, 0.6500000059604645, -1.8749999761581422],
+        "max": [2.2850000858306885, 3.4200000762939453, 1.8749999761581422]
+      },
+      "author": "weisiwu",
+      "license": "MIT",
+      "source": "src/models/model-kit.ts",
+      "kind": "reference-based simplified reconstruction",
+      "embeddedTextures": 0,
+      "externalFiles": 0,
+      "bytes": 543140,
+      "sha256": "8d0571f165c12f5396a83226cb1f7f2aa6af9cf7790c23ce0a4e290e24d03b94"
+    },
+    {
+      "id": "ship-explorer",
+      "name": "双翼探索艇",
+      "file": "ship-explorer.glb",
+      "scenes": ["ship-selection"],
+      "meshCount": 20,
+      "triangles": 5236,
+      "animations": [],
+      "bounds": {
+        "min": [-3.1405224800109863, 0.9850000143051147, -2.424999976158142],
+        "max": [2.2850000858306885, 3.4200000762939453, 2.424999976158142]
+      },
+      "author": "weisiwu",
+      "license": "MIT",
+      "source": "src/models/model-kit.ts",
+      "kind": "reference-based simplified reconstruction",
+      "embeddedTextures": 0,
+      "externalFiles": 0,
+      "bytes": 505924,
+      "sha256": "18d113fea950a6689077e8db57b68562cae08a03ee0f99ac409be72a8843a500"
+    },
+    {
+      "id": "industrial-robot",
+      "name": "工业舱室机器人",
+      "file": "industrial-robot.glb",
+      "scenes": ["world-environment"],
+      "meshCount": 25,
+      "triangles": 5860,
+      "animations": ["idle-arm-left", "idle-arm-right"],
+      "bounds": {
+        "min": [-1.1636955010600538, 0.0450000095367431, -0.3400000035762787],
+        "max": [1.1636955010600538, 4.247046256065369, 0.5249999761581421]
+      },
+      "author": "weisiwu",
+      "license": "MIT",
+      "source": "src/models/model-kit.ts",
+      "kind": "reference-based simplified reconstruction",
+      "embeddedTextures": 0,
+      "externalFiles": 0,
+      "bytes": 522968,
+      "sha256": "1c5aa89aea33629fd8417292aaafac318c599996a77fee6f33864a1208aaba91"
+    },
+    {
+      "id": "industrial-hangar",
+      "name": "工业舱室",
+      "file": "industrial-hangar.glb",
+      "scenes": ["world-environment"],
+      "meshCount": 124,
+      "triangles": 6864,
+      "animations": [],
+      "bounds": {
+        "min": [-6.000000000745058, -0.2149999976158142, -9],
+        "max": [6.000000000745058, 7, 9.300000190734863]
+      },
+      "author": "weisiwu",
+      "license": "MIT",
+      "source": "src/models/model-kit.ts",
+      "kind": "reference-based simplified reconstruction",
+      "embeddedTextures": 0,
+      "externalFiles": 0,
+      "bytes": 708912,
+      "sha256": "33f283fedba1604df303e4b6fd8c86f762dd08e712e852a5bde97f403e8c56d6"
+    },
+    {
+      "id": "plant-cell",
+      "name": "植物细胞剖面",
+      "file": "plant-cell.glb",
+      "scenes": ["biological-structure"],
+      "meshCount": 17,
+      "triangles": 39100,
+      "animations": [],
+      "bounds": {
+        "min": [-3.629842519760132, 0.0799999999999994, -2.7716751098632812],
+        "max": [3.685093402862549, 2.74, 2.621812343597412]
+      },
+      "author": "weisiwu",
+      "license": "MIT",
+      "source": "src/models/model-kit.ts",
+      "kind": "reference-based simplified reconstruction",
+      "embeddedTextures": 0,
+      "externalFiles": 0,
+      "bytes": 3647384,
+      "sha256": "a3203a65831dca2d6dbb10f39ae127dd385a570214f7c10fe814ccf83ac7f387"
+    },
+    {
+      "id": "timber-house",
+      "name": "木框模块建筑",
+      "file": "timber-house.glb",
+      "scenes": ["schematic-transition"],
+      "meshCount": 85,
+      "triangles": 21708,
+      "animations": [],
+      "bounds": {
+        "min": [-4.025000047683716, 0.04000000283122063, -1.4700000286102295],
+        "max": [4.5, 5.5599999986588955, 2.925000047683716]
+      },
+      "author": "weisiwu",
+      "license": "MIT",
+      "source": "src/models/model-kit.ts",
+      "kind": "reference-based simplified reconstruction",
+      "embeddedTextures": 0,
+      "externalFiles": 0,
+      "bytes": 2148020,
+      "sha256": "8f5db67afe8c5129b1f49b0b3fe3201576d392eafef71c3fc5b1a57dd7cda07c"
+    }
+  ]
+}

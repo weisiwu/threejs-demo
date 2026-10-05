@@ -15,7 +15,7 @@ tags: [threejs, demos, research]
 
 实现使用 TypeScript、Three.js 和 Vite。状态管理实验单独使用 React；大部分场景直接维护 Three.js 对象。场景按原画面重建；太阳系使用 MIT 原仓库纹理，极光保留原 SVG，其他模型主要由代码生成。蛋白质目标态使用 RCSB 1CRN 的 Cα 坐标，咖啡因使用 PubChem 三维坐标。没有 API 密钥、付费模型调用或原帖媒体。
 
-本轮按用户反馈恢复原例子的外观与构图。Strandbeest 回到平面绿色细杆；起落架、便携显微镜、莲花建筑、彩色发动机和蓝色仓库分别重建专属造型。机甲、细胞和飞船仍缺原始模型，细节差异见 [逐项对照](research/appearance-review.json)。
+本轮按用户反馈恢复原例子的外观与构图。Strandbeest 回到平面绿色细杆；起落架、便携显微镜、莲花建筑、彩色发动机和蓝色仓库分别重建专属造型。本次为七个场景补齐 14 份简版 GLB，涵盖翼兽骨架、三款角色、三款机器人、三款飞船、工业舱室与机器人、植物细胞和木框建筑。各场景可下载模型，切换型号会改变实际轮廓；它们是本仓库重建模型。[模型清单](public/models/manifest.json)保留面数、动画和原件哈希，细节差异见 [逐项对照](research/appearance-review.json)。
 
 ## 本地运行
 
@@ -59,7 +59,7 @@ npm run test:e2e
 | [飞船整备舱](https://weisiwu.github.io/threejs-demo/#/demo/ship-selection)            | 游戏与空间 | [研究与源码](docs/ship-selection.md)         |
 | [销量数据时间轴](https://weisiwu.github.io/threejs-demo/#/demo/sales-timeline)        | 科学可视化 | [研究与源码](docs/sales-timeline.md)         |
 | [机械臂 IK 工作站](https://weisiwu.github.io/threejs-demo/#/demo/industrial-arm)      | 机械机构   | [研究与源码](docs/industrial-arm.md)         |
-| [三维地形探索](https://weisiwu.github.io/threejs-demo/#/demo/world-environment)       | 游戏与空间 | [研究与源码](docs/world-environment.md)      |
+| [工业舱室探索](https://weisiwu.github.io/threejs-demo/#/demo/world-environment)       | 游戏与空间 | [研究与源码](docs/world-environment.md)      |
 | [智能家居沙盘](https://weisiwu.github.io/threejs-demo/#/demo/smart-home)              | 界面与状态 | [研究与源码](docs/smart-home.md)             |
 | [交互地图实验](https://weisiwu.github.io/threejs-demo/#/demo/interactive-map)         | 界面与状态 | [研究与源码](docs/interactive-map.md)        |
 | [未来控制界面](https://weisiwu.github.io/threejs-demo/#/demo/futuristic-interface)    | 界面与状态 | [研究与源码](docs/futuristic-interface.md)   |

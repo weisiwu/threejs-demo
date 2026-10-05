@@ -11,7 +11,8 @@
     "test:e2e": "playwright test",
     "check:catalog": "tsx scripts/check-catalog.ts",
     "format": "prettier --write src scripts tests *.ts *.html *.json docs README.md NOTICE.md .github/workflows/pages.yml",
-    "docs": "tsx scripts/generate-research.ts"
+    "docs": "tsx scripts/generate-research.ts",
+    "models": "node scripts/export-models.mjs"
   },
   "dependencies": {
     "react": "19.2.8",

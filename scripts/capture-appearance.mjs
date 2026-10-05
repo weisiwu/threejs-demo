@@ -1,7 +1,12 @@
 import { chromium } from 'playwright';
 import { readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
-const specs = JSON.parse(await readFile('src/catalog.json', 'utf8'));
+const selected = process.env.CAPTURE_SCENES?.split(',');
+const specs = JSON.parse(await readFile('src/catalog.json', 'utf8')).filter(
+  (s) => !selected || selected.includes(s.slug),
+);
+const previous = JSON.parse(await readFile('research/appearance-captures.json', 'utf8'));
+const manifest = JSON.parse(await readFile('public/previews/manifest.json', 'utf8'));
 const browser = await chromium.launch({
   channel: 'chrome',
   headless: true,
@@ -36,8 +41,25 @@ try {
   }
   await writeFile(
     'research/appearance-captures.json',
-    JSON.stringify({ capturedAt: new Date().toISOString(), rows }, null, 2) + '\n',
+    JSON.stringify(
+      {
+        capturedAt: new Date().toISOString(),
+        rows: [...previous.rows.filter((r) => !rows.some((n) => n.slug === r.slug)), ...rows],
+      },
+      null,
+      2,
+    ) + '\n',
   );
+  for (const row of rows) {
+    const entry = manifest.images.find((r) => r.slug === row.slug);
+    Object.assign(entry, {
+      sha256: row.sha256,
+      bytes: row.bytes,
+      capturedAt: new Date().toISOString(),
+    });
+  }
+  manifest.capturedAt = new Date().toISOString();
+  await writeFile('public/previews/manifest.json', JSON.stringify(manifest, null, 2) + '\n');
 } finally {
   await browser.close();
 }

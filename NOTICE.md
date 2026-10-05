@@ -22,3 +22,5 @@ Strandbeest 参考 responsive-strandbeest 的杆长、平面构图和配色，�
 依赖 Three.js、React、Vite、Playwright、TypeScript 与 tsx 由 package-lock.json 固定，保留其安装包内的许可。原仓库是否有许可记录在来源清单中；hexapod-robot-simulator 与 aisdk-threejs-starter 的根许可未取得，未镜像它们的源码。
 
 公开仓库不包含原帖视频、会员文件、生成角色、生成环境、商业系统数据、账户会话或模型密钥。
+
+本仓库新增的 14 份简版 GLB 由 `src/models/model-kit.ts` 按参考画面重建，采用本仓库 MIT 许可。它们不是原作者的 TRELLIS、Hunyuan3D 或 World Labs 输出。几何、材质、动画、轴向与哈希见 `public/models/manifest.json`。

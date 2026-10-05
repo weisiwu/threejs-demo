@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <body>
+    <script type="module">
+      import { createModel, modelIds } from '../src/models/model-kit.ts';
+      import { modelNames, sceneModels } from '../src/models/entries.ts';
+      import * as T from 'three';
+      import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
+      import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+      window.ids = modelIds;
+      window.exportOne = async (id) => {
+        const root = createModel(id);
+        const animations = [];
+        for (const name of ['arm-left', 'arm-right']) {
+          const arm = root.getObjectByName(name);
+          if (!arm) continue;
+          const base = arm.rotation.z,
+            sign = name === 'arm-left' ? -1 : 1,
+            values = [];
+          for (const t of [0, 1, 2, 3, 4]) {
+            const q = new T.Quaternion().setFromEuler(
+              new T.Euler(
+                arm.rotation.x,
+                arm.rotation.y,
+                base + sign * Math.sin((t * Math.PI) / 2) * 0.1,
+              ),
+            );
+            values.push(...q.toArray());
+          }
+          animations.push(
+            new T.AnimationClip('idle-' + name, 4, [
+              new T.QuaternionKeyframeTrack(name + '.quaternion', [0, 1, 2, 3, 4], values),
+            ]),
+          );
+        }
+        const data = await new GLTFExporter().parseAsync(root, {
+          binary: true,
+          onlyVisible: false,
+          animations,
+        });
+        const loaded = await new GLTFLoader().parseAsync(data, '');
+        let triangles = 0,
+          meshes = 0;
+        loaded.scene.traverse((o) => {
+          if (o.isMesh) {
+            meshes++;
+            triangles +=
+              (o.geometry.index ? o.geometry.index.count : o.geometry.attributes.position.count) /
+              3;
+          }
+        });
+        const bounds = new T.Box3().setFromObject(loaded.scene);
+        const file = id + '.glb';
+        const row = {
+          id,
+          name: modelNames[id],
+          file,
+          scenes: Object.entries(sceneModels)
+            .filter(([_, ids]) => ids.includes(id))
+            .map(([scene]) => scene),
+          meshCount: meshes,
+          triangles,
+          animations: loaded.animations.map((a) => a.name),
+          bounds: { min: bounds.min.toArray(), max: bounds.max.toArray() },
+          author: 'weisiwu',
+          license: 'MIT',
+          source: 'src/models/model-kit.ts',
+          kind: 'reference-based simplified reconstruction',
+          embeddedTextures: 0,
+          externalFiles: 0,
+        };
+        root.traverse((o) => {
+          o.geometry?.dispose();
+        });
+        loaded.scene.traverse((o) => {
+          o.geometry?.dispose();
+        });
+        return { bytes: Array.from(new Uint8Array(data)), row };
+      };
+    </script>
+  </body>
+</html>

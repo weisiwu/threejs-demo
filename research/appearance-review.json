@@ -142,18 +142,20 @@
       "reference": "https://x.com/DilumSanjaya/status/2001697511850021167",
       "referenceMode": "视频封面已查看；整段动作未核验",
       "observed": "黑底、带翼和长尾的兽类骨架。",
-      "implemented": "重建脊柱、肋骨、翼指、尾椎、头骨和四肢，恢复骨白材质。",
-      "remaining": "这是按封面构型重建的骨架，没有取得 TRELLIS 输出网格；骨形细节有明显差距。",
-      "preview": "public/previews/skeleton-explorer.png"
+      "implemented": "翼兽骨架已补成九个可选部件：颅骨、颈椎、脊柱、肋笼、尾椎、双翼和双侧腿骨。颅骨有眼眶、弯角和上下颌，翼指与尾椎沿关节连接；拆解滑块移动这些实际部件，隔离按钮也作用于同一模型。",
+      "remaining": "骨形与参考画面仍有差异，当前为重建的简版翼兽骨架；没有把它当成 TRELLIS 原始输出或医学结构。",
+      "preview": "public/previews/skeleton-explorer.png",
+      "models": ["winged-skeleton"]
     },
     {
       "slug": "character-selection",
       "reference": "https://x.com/DilumSanjaya/status/2008584593222652057",
       "referenceMode": "视频封面已查看；整段动作未核验",
       "observed": "浅灰选择页，左侧机甲卡，右侧绿黑银色装甲角色。",
-      "implemented": "增加主角色和缩略角色列、分块金属装甲、可切换配色与待机摆臂。",
-      "remaining": "没有 Hunyuan3D 原网格和原角色动画；装甲轮廓、脸部和姿态仍有差距。",
-      "preview": "public/previews/character-selection.png"
+      "implemented": "新增三款独立的角色模型：绿甲侦察角色采用抬臂姿态，紫甲工程角色带头罩和背包，蓝甲守卫角色加宽肩甲。选择不同卡片会切换主模型，确认身份与模型 ID 保持对应。",
+      "remaining": "装甲表面和原角色动画仍为简化处理；这三款是本仓库重建模型，不是 Hunyuan3D 原始网格。",
+      "preview": "public/previews/character-selection.png",
+      "models": ["cyber-scout", "cyber-engineer", "cyber-guardian"]
     },
     {
       "slug": "ornithopter",
@@ -169,9 +171,10 @@
       "reference": "https://x.com/DilumSanjaya/status/2016193959408836932",
       "referenceMode": "视频封面已查看；整段动作未核验",
       "observed": "浅紫色机库，橙白货运艇、侧置发动机和底部缩略图。",
-      "implemented": "重建箱形船体、玻璃驾驶舱、双发动机、天线和小型船列。",
-      "remaining": "原模型的贴花、磨损和多款独立船型仍未取得。",
-      "preview": "public/previews/ship-selection.png"
+      "implemented": "新增标准货运艇、重载货运艇和双翼探索艇。默认货运艇补齐座舱窗框、橙白箱式船体、面板分缝、底部挂件和两侧发动机；重载型增加货箱，探索型增加翼面。切换艇型会显示对应模型，发动机装备开关分别保留。",
+      "remaining": "磨损用少量几何色块表达，原作贴图、完整船型库与飞行动画仍未取得；当前三款是本仓库简版重建。",
+      "preview": "public/previews/ship-selection.png",
+      "models": ["ship-hauler", "ship-freighter", "ship-explorer"]
     },
     {
       "slug": "sales-timeline",
@@ -196,9 +199,10 @@
       "reference": "https://x.com/DilumSanjaya/status/2028877095968117240",
       "referenceMode": "视频封面已查看；整段动作未核验",
       "observed": "工业舱室中的银色机器人，橙色灯、管线和金属墙。",
-      "implemented": "撤去森林，重建舱室、工作台、管线与机器人。",
-      "remaining": "没有原作高分辨率环境贴图；移动仍为本例碰撞沙盘。",
-      "preview": "public/previews/world-environment.png"
+      "implemented": "新增可独立导出的工业舱室和银色机器人。舱室包括重复结构肋、管路、工作台、屏幕、后舱门、顶棚和圆形展示台；机器人仍可用 WASD 移动。角色高度取自展示台或地板，工作台区域限制通行，照明滑块与昼夜按钮改变同一盏灯。",
+      "remaining": "舱室没有原环境的高分辨率纹理，碰撞采用简化边界，未调用 World Labs 或 Hunyuan3D。新增 GLB 由本仓库重建。",
+      "preview": "public/previews/world-environment.png",
+      "models": ["industrial-robot", "industrial-hangar"]
     },
     {
       "slug": "smart-home",
@@ -232,9 +236,10 @@
       "reference": "https://x.com/DilumSanjaya/status/2049169897029042176",
       "referenceMode": "视频封面已查看；整段动作未核验",
       "observed": "浅紫机库中的红白武装机器人和左侧型号列表。",
-      "implemented": "重建分块金属机甲与型号缩略列，选择后改变主模型装甲颜色。",
-      "remaining": "武器和原始角色模型未取得；现有三个型号共用基础骨架。",
-      "preview": "public/previews/robot-roster.png"
+      "implemented": "新增双炮突击、重装哨兵和三臂悬浮维修三款机器人。两款人形模型保留肩肘层级与待机动作，维修型采用悬浮球体和三个工具臂；三者的轮廓、武器与结构各不相同。",
+      "remaining": "当前只有预览与选择交互，未实现战斗、武器射击或原作完整动画。简版模型由本仓库重建。",
+      "preview": "public/previews/robot-roster.png",
+      "models": ["robot-assault", "robot-sentry", "robot-engineer"]
     },
     {
       "slug": "planet-explorer",
@@ -259,9 +264,10 @@
       "reference": "https://x.com/DilumSanjaya/status/2053155739389378849",
       "referenceMode": "视频封面已查看；整段动作未核验",
       "observed": "米色植物细胞工作台，绿色截面、蓝色液泡和紫色细胞核。",
-      "implemented": "补齐细胞壁、液泡、细胞核、内质网和带纹路的细胞器。",
-      "remaining": "原作细胞形状和微观表面更复杂；当前没有原始生物模型。",
-      "preview": "public/previews/biological-structure.png"
+      "implemented": "新增多边形植物细胞剖面模型，包含细胞壁、中央液泡、细胞核、内质网、叶绿体、线粒体、高尔基体和核糖体八组部件。叶绿体有堆叠结构，线粒体有内部折线；选择、隐藏细胞壁和拆解均作用于这些部件。",
+      "remaining": "细胞比例、表面和形态为科普展示的简化重建，不来自实验成像，也不是原作者生成网格。",
+      "preview": "public/previews/biological-structure.png",
+      "models": ["plant-cell"]
     },
     {
       "slug": "turbofan-airflow",
@@ -376,9 +382,10 @@
       "reference": "https://x.com/DilumSanjaya/status/2097005668389802027",
       "referenceMode": "视频封面已查看；整段动作未核验",
       "observed": "米色图纸中的木框模块建筑、露台栏杆和绿化。",
-      "implemented": "重建叠层木框、玻璃、屋面、栏杆与植物，转换到俯视线框。",
-      "remaining": "原作完整设计、标注和构件数量未取得。",
-      "preview": "public/previews/schematic-transition.png"
+      "implemented": "新增可导出的木框模块建筑，补齐楼板分缝、柱梁、玻璃分格、露台栏杆、家具、花槽和侧部楼梯。六个模块保留 part ID，拆解与俯视线框继续使用同一套模型。",
+      "remaining": "原作的完整建筑设计与尺寸资料未取得；本仓库简版用于展示模块关系，不能作为施工或结构计算模型。",
+      "preview": "public/previews/schematic-transition.png",
+      "models": ["timber-house"]
     },
     {
       "slug": "warehouse-strategy",

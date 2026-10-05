@@ -2,6 +2,7 @@ import * as T from 'three';
 import { COLORS as C, box, sphere, rod, setRod, cylinder, torus, mark, clear } from '../graphics';
 import { TAU, lerp, astar, type V3 } from '../math';
 import type { SceneContext, Experiment } from '../types';
+import { createModel, type ModelId } from '../models/model-kit';
 export const spaceIds = new Set([
   'skeleton-explorer',
   'character-selection',
@@ -25,17 +26,18 @@ function choices(
     panel.append(b);
   });
 }
-function humanoid(parent: T.Object3D, i: number) {
-  const g = new T.Group();
-  parent.add(g);
-  const c = [C.cyan, C.gold, C.purple][i % 3];
-  box(g, [0.9, 1.3, 0.6], [0, 2.4, 0], c);
-  sphere(g, 0.4, [0, 3.5, 0], c);
-  for (const side of [-1, 1]) {
-    rod(g, [side * 0.55, 2.8, 0], [side * 0.85, 1.6, 0.1], 0.12, C.white);
-    rod(g, [side * 0.3, 1.8, 0], [side * 0.4, 0.3, 0], 0.15, c);
-  }
-  return g;
+function markComponent(root: T.Object3D, id: string) {
+  const copies = new Map<T.Material, T.Material>();
+  root.traverse((o) => {
+    const m = o as T.Mesh;
+    if (!m.material) return;
+    const clone = (mat: T.Material) => {
+      if (!copies.has(mat)) copies.set(mat, mat.clone());
+      return copies.get(mat)!;
+    };
+    m.material = Array.isArray(m.material) ? m.material.map(clone) : clone(m.material);
+  });
+  mark(root, id);
 }
 
 export function spaces(ctx: SceneContext): Experiment {
@@ -43,13 +45,13 @@ export function spaces(ctx: SceneContext): Experiment {
   if (spec.slug === 'character-selection' || spec.slug === 'robot-roster') {
     const ids = ['scout', 'engineer', 'guardian'],
       names = ['侦察型', '工程型', '守卫型'];
+    const assetIds: ModelId[] =
+      spec.slug === 'robot-roster'
+        ? ['robot-assault', 'robot-sentry', 'robot-engineer']
+        : ['cyber-scout', 'cyber-engineer', 'cyber-guardian'];
     const models = ids.map((id, i) => {
-      const model = humanoid(g, i);
-      model.position.x = (i - 1) * 3.2;
-      if (spec.slug === 'robot-roster') {
-        box(model, [1.3, 0.3, 0.8], [0, 2.8, 0], C.dark);
-        torus(model, 0.38, 0.08, [0, 3.5, 0.3], C.gold);
-      }
+      const model = createModel(assetIds[i]);
+      g.add(model);
       mark(model, id);
       return model;
     });
@@ -75,7 +77,7 @@ export function spaces(ctx: SceneContext): Experiment {
         report({
           '预览 ID': s.selection,
           '已确认 ID': confirmed,
-          资源来源: '程序化几何',
+          资源来源: '本仓库简版模型 / 可下载 GLB',
           材质粗糙度: spec.slug === 'robot-roster' ? s.parameter : '默认',
         });
       },
@@ -90,25 +92,23 @@ export function spaces(ctx: SceneContext): Experiment {
   }
   if (spec.slug === 'ship-selection') {
     const ids = ['arrow', 'freighter', 'drifter'];
-    const thrusters = new Map<string, T.Mesh[]>();
+    const thrusters = new Map<string, T.Object3D[]>();
+    const assetIds: ModelId[] = ['ship-hauler', 'ship-freighter', 'ship-explorer'];
     const models = ids.map((id, i) => {
-      const m = new T.Group();
-      m.position.x = (i - 1) * 3.8;
+      const m = createModel(assetIds[i]);
       g.add(m);
-      box(m, [1.2, 0.45, 2.8], [0, 2, 0], [C.cyan, C.gold, C.purple][i]);
-      const nose = sphere(m, 0.5, [0, 2, -1.4], C.white);
-      nose.scale.z = 1.5;
-      box(m, [2.8, 0.12, 0.9], [0, 1.9, 0.5], C.dark);
-      const parts = [sphere(m, 0.25, [-0.4, 2, 1.6], C.red), sphere(m, 0.25, [0.4, 2, 1.6], C.red)];
-      thrusters.set(id, parts);
       mark(m, id);
+      thrusters.set(
+        id,
+        ['engine-left', 'engine-right'].map((name) => m.getObjectByName(name)!),
+      );
       return m;
     });
     const equipment = new Map(ids.map((id) => [id, true]));
     s.selection = ids[0];
     choices(
       panel,
-      ids.map((id, i) => ({ id, name: ['箭形艇', '货运艇', '漂移艇'][i] })),
+      ids.map((id, i) => ({ id, name: ['标准货运艇', '重载货运艇', '探索艇'][i] })),
       (id) => (s.selection = id),
     );
     return {
@@ -136,59 +136,25 @@ export function spaces(ctx: SceneContext): Experiment {
     };
   }
   if (spec.slug === 'world-environment') {
-    const terrain = new T.Mesh(
-      new T.PlaneGeometry(16, 16, 48, 48),
-      new T.MeshStandardMaterial({ color: 0x315352, roughness: 1, side: T.DoubleSide }),
-    );
-    terrain.rotation.x = -Math.PI / 2;
-    g.add(terrain);
-    const actor = humanoid(g, 0);
-    actor.scale.setScalar(0.55);
-    actor.position.set(0, 0, 0);
-    const trees = Array.from({ length: 16 }, (_, i) => {
-      const x = ((i % 4) - 1.5) * 3.5,
-        z = (Math.floor(i / 4) - 1.5) * 3.5;
-      const t = new T.Group();
-      t.position.set(x, 0, z);
-      g.add(t);
-      cylinder(t, 0.15, 1.1, [0, 0.55, 0], C.gold);
-      const crown = new T.Mesh(
-        new T.ConeGeometry(0.65, 1.8, 8),
-        new T.MeshStandardMaterial({ color: 0x6eaa8d }),
-      );
-      crown.position.y = 1.9;
-      t.add(crown);
-      return t;
-    });
-    const height = (x: number, z: number) => Math.sin(x * 0.55) * Math.cos(z * 0.4) * s.parameter;
-    let old = NaN;
+    const actor = createModel('industrial-robot');
+    g.add(actor);
     const keys = new Set<string>();
     const down = (e: KeyboardEvent) => {
-        if ((e.target as HTMLElement).matches('input,textarea')) return;
-        if (
-          ['w', 'a', 's', 'd', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)
-        ) {
-          keys.add(e.key);
-          e.preventDefault();
-        }
-      },
-      up = (e: KeyboardEvent) => keys.delete(e.key),
+      if ((e.target as HTMLElement).matches('input,textarea')) return;
+      if (['w', 'a', 's', 'd', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+        keys.add(e.key);
+        e.preventDefault();
+      }
+    };
+    const up = (e: KeyboardEvent) => keys.delete(e.key),
       blur = () => keys.clear();
     window.addEventListener('keydown', down);
     window.addEventListener('keyup', up);
     window.addEventListener('blur', blur);
-    panel.textContent =
-      '使用 W A S D 或方向键移动。角色脚底与地形使用同一个高度函数，树木有圆形碰撞范围。';
+    panel.textContent = 'W A S D 或方向键移动。工业舱室的地板、展示台与工作台使用对应碰撞边界。';
+    const height = (x: number, z: number) => (Math.hypot(x, z) < 1.8 ? 0.16 : 0);
     return {
       update(dt) {
-        if (old !== s.parameter) {
-          old = s.parameter;
-          const p = terrain.geometry.getAttribute('position');
-          for (let i = 0; i < p.count; i++) p.setZ(i, height(p.getX(i), -p.getY(i)));
-          p.needsUpdate = true;
-          terrain.geometry.computeVertexNormals();
-          trees.forEach((t) => (t.position.y = height(t.position.x, t.position.z)));
-        }
         const dx =
             (Number(keys.has('d') || keys.has('ArrowRight')) -
               Number(keys.has('a') || keys.has('ArrowLeft'))) *
@@ -199,27 +165,25 @@ export function spaces(ctx: SceneContext): Experiment {
               Number(keys.has('w') || keys.has('ArrowUp'))) *
             dt *
             2;
-        const x = Math.max(-7.4, Math.min(7.4, actor.position.x + dx)),
-          z = Math.max(-7.4, Math.min(7.4, actor.position.z + dz));
-        if (!trees.some((t) => Math.hypot(x - t.position.x, z - t.position.z) < 0.7)) {
+        const x = Math.max(-5.15, Math.min(5.15, actor.position.x + dx)),
+          z = Math.max(-7.5, Math.min(7.5, actor.position.z + dz));
+        if (Math.abs(x) < 4.15) {
           actor.position.x = x;
           actor.position.z = z;
         }
         actor.position.y = height(actor.position.x, actor.position.z);
-        (terrain.material as T.MeshStandardMaterial).color.setHex(
-          s.variant % 2 ? 0x1e333e : 0x315352,
-        );
+        if (dx || dz) actor.rotation.y = Math.atan2(dx, dz);
         report({
           '角色 X': actor.position.x.toFixed(2),
           '角色 Z': actor.position.z.toFixed(2),
           地面高度: actor.position.y.toFixed(2),
-          场景: s.variant % 2 ? '夜间色调' : '日间色调',
-          素材: '程序化 / 无图像生成调用',
+          场景: s.variant % 2 ? '夜间照明' : '日间照明',
+          素材: '简版舱室与机器人 / 可下载 GLB',
         });
       },
       action() {
         s.variant++;
-        s.status = '环境色调已切换';
+        s.status = '环境照明已切换';
       },
       dispose() {
         window.removeEventListener('keydown', down);
@@ -229,51 +193,46 @@ export function spaces(ctx: SceneContext): Experiment {
     };
   }
   if (spec.slug === 'skeleton-explorer') {
-    const parts: { id: string; mesh: T.Object3D; base: T.Vector3; offset: T.Vector3 }[] = [];
-    const add = (id: string, m: T.Object3D, offset: T.Vector3) => {
-      mark(m, id);
-      parts.push({ id, mesh: m, base: m.position.clone(), offset });
+    const model = createModel('winged-skeleton');
+    g.add(model);
+    const offsets: Record<string, V3> = {
+      skull: [1, 0.6, 0],
+      neck: [0.45, 0.25, 0],
+      spine: [0, 0.45, 0],
+      ribcage: [0, 0, 0.55],
+      tail: [-1, 0, 0],
+      'left-wing': [0, 0.4, -1],
+      'right-wing': [0, 0.4, 1],
+      'left-leg': [0, -0.3, -0.5],
+      'right-leg': [0, -0.3, 0.5],
     };
-    add('skull', sphere(g, 0.5, [0, 4.9, 0], C.white), new T.Vector3(0, 1, 0));
-    for (let i = 0; i < 8; i++)
-      add('vertebra-' + i, sphere(g, 0.16, [0, 2 + i * 0.32, 0], C.gold), new T.Vector3(0, 0, 0.4));
-    for (let i = 0; i < 6; i++) {
-      const rib = torus(g, 0.65 - i * 0.04, 0.055, [0, 3.2 + i * 0.18, 0], C.white);
-      rib.rotation.x = Math.PI / 2;
-      rib.scale.z = 0.6;
-      add('rib-' + i, rib, new T.Vector3(0, 0, 1));
-    }
-    for (const side of [-1, 1]) {
-      const id = side < 0 ? 'left' : 'right';
-      add(
-        id + '-arm',
-        rod(g, [side * 0.7, 4.4, 0], [side * 1.1, 2.3, 0], 0.1, C.white),
-        new T.Vector3(side, 0, 0),
-      );
-      add(
-        id + '-leg',
-        rod(g, [side * 0.3, 2, 0], [side * 0.45, 0.3, 0], 0.14, C.white),
-        new T.Vector3(side * 0.5, -0.3, 0),
-      );
-    }
+    const parts = model.children.map((mesh) => ({
+      id: mesh.name,
+      mesh,
+      base: mesh.position.clone(),
+      offset: new T.Vector3(...(offsets[mesh.name] ?? ([0, 0, 0] as V3))),
+    }));
+    parts.forEach((p) => markComponent(p.mesh, p.id));
     choices(
       panel,
-      parts.slice(0, 9).map((o) => ({ id: o.id, name: o.id })),
+      parts.map((p) => ({ id: p.id, name: p.id })),
       (id) => (s.selection = id),
     );
     return {
       update() {
-        parts.forEach((p) => p.mesh.position.copy(p.base).addScaledVector(p.offset, s.parameter));
+        parts.forEach((p) => {
+          p.mesh.position.copy(p.base).addScaledVector(p.offset, s.parameter);
+          p.mesh.visible = s.variant % 2 === 0 || p.id === s.selection;
+        });
         report({
           部件数: parts.length,
           选中部件: s.selection || '无',
           模式: s.variant % 2 ? '仅选中' : '整体',
-          结构范围: '教学几何 / 非医学模型',
+          结构范围: '简版翼兽骨架 / 可下载 GLB / 非医学模型',
         });
-        parts.forEach((p) => (p.mesh.visible = s.variant % 2 === 0 || p.id === s.selection));
       },
       select(id) {
-        s.selection = id;
+        if (parts.some((p) => p.id === id)) s.selection = id;
       },
       action() {
         if (!s.selection) s.selection = 'skull';
@@ -283,56 +242,43 @@ export function spaces(ctx: SceneContext): Experiment {
     };
   }
   if (spec.slug === 'biological-structure') {
-    const parts = [
-      {
-        id: 'shell',
-        name: '外膜',
-        mesh: sphere(g, 2, [0, 2.5, 0], C.cyan),
-        offset: [0, 0, 0] as V3,
-      },
-      {
-        id: 'nucleus',
-        name: '核区',
-        mesh: sphere(g, 0.75, [0, 2.5, 0], C.purple),
-        offset: [-2, 0, 0] as V3,
-      },
-      {
-        id: 'organelle-1',
-        name: '细胞器 A',
-        mesh: sphere(g, 0.5, [1, 2.1, 0.4], C.gold),
-        offset: [2, 0, 0] as V3,
-      },
-      {
-        id: 'organelle-2',
-        name: '细胞器 B',
-        mesh: sphere(g, 0.45, [-0.7, 2.8, 0.8], C.red),
-        offset: [0, 1.5, 0] as V3,
-      },
-    ];
-    const shell = parts[0].mesh.material as T.MeshStandardMaterial;
-    shell.transparent = true;
-    shell.opacity = 0.18;
-    shell.depthWrite = false;
-    const bases = parts.map((p) => p.mesh.position.clone());
-    parts.forEach((p) => mark(p.mesh, p.id));
+    const model = createModel('plant-cell');
+    g.add(model);
+    const names: Record<string, string> = {
+      shell: '细胞壁',
+      vacuole: '中央液泡',
+      nucleus: '细胞核',
+      'endoplasmic-reticulum': '内质网',
+      'organelle-1': '叶绿体',
+      'organelle-2': '线粒体',
+      golgi: '高尔基体',
+      ribosomes: '核糖体',
+    };
+    const parts = model.children
+      .filter((m) => m instanceof T.Group)
+      .map((mesh, i) => ({
+        id: mesh.name,
+        name: names[mesh.name],
+        mesh,
+        base: mesh.position.clone(),
+        offset: new T.Vector3(Math.cos(i * 2.4) * 1.2, i === 0 ? 0 : 0.35, Math.sin(i * 2.4) * 1.2),
+      }));
+    parts.forEach((p) => markComponent(p.mesh, p.id));
     choices(panel, parts, (id) => (s.selection = id));
     return {
       update() {
-        parts.forEach((p, i) =>
-          p.mesh.position
-            .copy(bases[i])
-            .add(new T.Vector3(...p.offset).multiplyScalar(s.parameter)),
-        );
-        parts[0].mesh.visible = s.variant % 2 === 0;
+        parts.forEach((p) => p.mesh.position.copy(p.base).addScaledVector(p.offset, s.parameter));
+        model.getObjectByName('shell')!.visible = s.variant % 2 === 0;
         report({
-          结构: s.selection || '整体',
+          结构: names[s.selection] || '植物细胞',
           拆解比例: s.parameter,
           外膜: s.variant % 2 ? '隐藏' : '显示',
-          数据来源: '原创概念几何 / 未接实验数据',
+          部件数: parts.length,
+          数据来源: '参考画面重建的简版 GLB / 非实验数据',
         });
       },
       select(id) {
-        s.selection = id;
+        if (parts.some((p) => p.id === id)) s.selection = id;
       },
       action() {
         s.variant++;

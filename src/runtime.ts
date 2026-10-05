@@ -9,6 +9,7 @@ import { interfaces, interfaceIds } from './scenes/interfaces';
 import { spaces, spaceIds } from './scenes/spaces';
 import { clamp } from './math';
 import type { DemoSpec, RuntimeState, Experiment } from './types';
+import { sceneModels, modelNames } from './models/entries';
 
 let renderer: T.WebGLRenderer | undefined;
 let environment: T.Texture | undefined;
@@ -101,6 +102,21 @@ export function mountExperiment(spec: DemoSpec) {
   else if (spaceIds.has(spec.slug)) experiment = spaces(context);
   else throw Error('未注册场景：' + spec.slug);
   experiment = present(context, experiment);
+  const modelIds = sceneModels[spec.slug] ?? [];
+  r.domElement.dataset.modelIds = modelIds.join(',');
+  if (modelIds.length) {
+    const links = document.createElement('p');
+    links.className = 'model-downloads';
+    links.append('本次重建的简版模型（GLB）：');
+    for (const id of modelIds) {
+      const a = document.createElement('a');
+      a.href = import.meta.env.BASE_URL + 'models/' + id + '.glb';
+      a.download = id + '.glb';
+      a.textContent = modelNames[id];
+      links.append(a);
+    }
+    panel.append(links);
+  }
   controls.update();
   let frame = 0,
     alive = true,
@@ -142,6 +158,13 @@ export function mountExperiment(spec: DemoSpec) {
     r.domElement.dataset.calls = String(r.info.render.calls);
     r.domElement.dataset.geometries = String(r.info.memory.geometries);
     r.domElement.dataset.textures = String(r.info.memory.textures);
+    const activeModels: string[] = [];
+    group.traverse((o) => {
+      if (!o.userData.modelId || o.userData.miniature) return;
+      for (let p: T.Object3D | null = o; p; p = p.parent) if (!p.visible) return;
+      activeModels.push(o.userData.modelId);
+    });
+    r.domElement.dataset.activeModels = activeModels.join(',');
     document.querySelector('#pause')!.textContent = state.paused ? '继续' : '暂停';
   };
   const step = (dt: number) => {

@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-05T01:50:05.487Z",
+  "capturedAt": "2026-10-05T02:58:36.064Z",
   "rows": [
     {
       "slug": "customizable-dashboard",
@@ -257,61 +257,10 @@
       "errors": []
     },
     {
-      "slug": "skeleton-explorer",
-      "path": "public/previews/skeleton-explorer.png",
-      "sha256": "2d295d8d188699f4da631abce076762af7c3d9b4d0815898115c59df007e9ee4",
-      "bytes": 44145,
-      "viewport": [
-        1440,
-        1080
-      ],
-      "stage": {
-        "x": 95,
-        "y": 402.78125,
-        "width": 934,
-        "height": 600
-      },
-      "errors": []
-    },
-    {
-      "slug": "character-selection",
-      "path": "public/previews/character-selection.png",
-      "sha256": "cd63c1a2d4658797e3d4b289ada237c0bc3b97272f0bc3c2185e0e8663239966",
-      "bytes": 88502,
-      "viewport": [
-        1440,
-        1080
-      ],
-      "stage": {
-        "x": 95,
-        "y": 402.78125,
-        "width": 934,
-        "height": 600
-      },
-      "errors": []
-    },
-    {
       "slug": "ornithopter",
       "path": "public/previews/ornithopter.png",
       "sha256": "eeefdb5b55e9c2c9ad9e1aceb6ed391921e3087e662b8a9c4f8b549fda8b8e73",
       "bytes": 85441,
-      "viewport": [
-        1440,
-        1080
-      ],
-      "stage": {
-        "x": 95,
-        "y": 402.78125,
-        "width": 934,
-        "height": 600
-      },
-      "errors": []
-    },
-    {
-      "slug": "ship-selection",
-      "path": "public/previews/ship-selection.png",
-      "sha256": "27bf25b35592b849aa747cf7249418dc493e33e69137a42e255ddabccd0d2283",
-      "bytes": 69420,
       "viewport": [
         1440,
         1080
@@ -346,23 +295,6 @@
       "path": "public/previews/industrial-arm.png",
       "sha256": "c9032ba7ab866b9606877814231140476c7133e0466162e37c2966aca5d6bb1f",
       "bytes": 88171,
-      "viewport": [
-        1440,
-        1080
-      ],
-      "stage": {
-        "x": 95,
-        "y": 402.78125,
-        "width": 934,
-        "height": 600
-      },
-      "errors": []
-    },
-    {
-      "slug": "world-environment",
-      "path": "public/previews/world-environment.png",
-      "sha256": "166285d2fa59166e6676f4f149c3a342618cf194bcff39d928f8880dee55cb85",
-      "bytes": 238074,
       "viewport": [
         1440,
         1080
@@ -427,23 +359,6 @@
       "errors": []
     },
     {
-      "slug": "robot-roster",
-      "path": "public/previews/robot-roster.png",
-      "sha256": "432492051815ca4328ab6da4f7916ad6cd9f3d3d2aa1214fac93742e9342eb29",
-      "bytes": 86589,
-      "viewport": [
-        1440,
-        1080
-      ],
-      "stage": {
-        "x": 95,
-        "y": 402.78125,
-        "width": 934,
-        "height": 600
-      },
-      "errors": []
-    },
-    {
       "slug": "planet-explorer",
       "path": "public/previews/planet-explorer.png",
       "sha256": "126105bfe1430c5f06d21ef141d214274861311228d9ffb48e3992d2c4882db4",
@@ -465,23 +380,6 @@
       "path": "public/previews/black-hole.png",
       "sha256": "c43b5220de6bac6b2e55906cc3e22a51a28c20b86c0a84bf0b8fb46f1cdde35d",
       "bytes": 103813,
-      "viewport": [
-        1440,
-        1080
-      ],
-      "stage": {
-        "x": 95,
-        "y": 402.78125,
-        "width": 934,
-        "height": 600
-      },
-      "errors": []
-    },
-    {
-      "slug": "biological-structure",
-      "path": "public/previews/biological-structure.png",
-      "sha256": "3b97165b0e6e1c1278f5949eb5c073d9a6b764309180e1e4b193215576b85cc4",
-      "bytes": 67298,
       "viewport": [
         1440,
         1080
@@ -699,10 +597,10 @@
       "errors": []
     },
     {
-      "slug": "schematic-transition",
-      "path": "public/previews/schematic-transition.png",
-      "sha256": "92896309af7939fcc02240d7b191c530170b38221c1099420e4909bb1351073e",
-      "bytes": 108018,
+      "slug": "warehouse-strategy",
+      "path": "public/previews/warehouse-strategy.png",
+      "sha256": "467a73fa3c11c0eaed2747574f50d9c739b4d6c836a18b8f2fceb8ed55706b02",
+      "bytes": 82393,
       "viewport": [
         1440,
         1080
@@ -716,10 +614,112 @@
       "errors": []
     },
     {
-      "slug": "warehouse-strategy",
-      "path": "public/previews/warehouse-strategy.png",
-      "sha256": "467a73fa3c11c0eaed2747574f50d9c739b4d6c836a18b8f2fceb8ed55706b02",
-      "bytes": 82393,
+      "slug": "skeleton-explorer",
+      "path": "public/previews/skeleton-explorer.png",
+      "sha256": "8cd4a985a524e3d8775603dd33ff1a48342dd1235a2175c8f2bf37527e40d99e",
+      "bytes": 51235,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "character-selection",
+      "path": "public/previews/character-selection.png",
+      "sha256": "464ee1529874c53bb4a3a9b6c44dd8be49a6a395f7cb264c50cd45660db6bf63",
+      "bytes": 61591,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "ship-selection",
+      "path": "public/previews/ship-selection.png",
+      "sha256": "aafe647901922114551e0c5bfb8e1999074da05bfe83a60beb38e676ecf10058",
+      "bytes": 72646,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "robot-roster",
+      "path": "public/previews/robot-roster.png",
+      "sha256": "b37bd2474e950c8049e3c7ffc4dceb5f3fa46f59fd21bfacb8f1bc54b544b5d6",
+      "bytes": 71546,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "biological-structure",
+      "path": "public/previews/biological-structure.png",
+      "sha256": "6df928fdac1077d771b15a7c7dd568873d9f133d90287c33ac63c736d243336e",
+      "bytes": 72225,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "schematic-transition",
+      "path": "public/previews/schematic-transition.png",
+      "sha256": "8dbe2744213a44f57d518f483a897b4d8f69a0d87776dc3db11cd2b79786222e",
+      "bytes": 91977,
+      "viewport": [
+        1440,
+        1080
+      ],
+      "stage": {
+        "x": 95,
+        "y": 402.78125,
+        "width": 934,
+        "height": 600
+      },
+      "errors": []
+    },
+    {
+      "slug": "world-environment",
+      "path": "public/previews/world-environment.png",
+      "sha256": "1eeb77cfe8d6f614cd22162883060c7f082d52573fba3cb16ff851268bcc5886",
+      "bytes": 254731,
       "viewport": [
         1440,
         1080

@@ -14,11 +14,21 @@ tags: [threejs, reproduction, research]
 
 参考画面：米色图纸中的木框模块建筑、露台栏杆和绿化。
 
-重建叠层木框、玻璃、屋面、栏杆与植物，转换到俯视线框。
+新增可导出的木框模块建筑，补齐楼板分缝、柱梁、玻璃分格、露台栏杆、家具、花槽和侧部楼梯。六个模块保留 part ID，拆解与俯视线框继续使用同一套模型。
 
 ![本仓库实际运行截图](../public/previews/schematic-transition.png)
 
-原作完整设计、标注和构件数量未取得。
+原作的完整建筑设计与尺寸资料未取得；本仓库简版用于展示模块关系，不能作为施工或结构计算模型。
+
+## 新增简版模型
+
+模型由本仓库按参考画面重建，demo 与 GLB 使用同一份源模型工厂。GLB 包含几何、材质；人形模型另附清单列出的肩部待机动画。文件没有外部贴图依赖。轴向为 Y 向上，尺寸为场景单位。
+
+| 模型         | GLB                                                                    | 三角形 | 动画片段 |
+| ------------ | ---------------------------------------------------------------------- | -----: | -------: |
+| 木框模块建筑 | [下载](https://weisiwu.github.io/threejs-demo/models/timber-house.glb) |  21708 |        0 |
+
+[模型源码](../src/models/model-kit.ts) · [部件与型号映射](../src/models/entries.ts) · [原件哈希和部件范围](../public/models/manifest.json) · [MIT 许可](../public/models/LICENSE)
 
 [逐项对照记录](../research/appearance-review.json) · [外观代码](../src/visuals/)
 

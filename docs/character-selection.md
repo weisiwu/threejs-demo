@@ -14,11 +14,23 @@ tags: [threejs, reproduction, research]
 
 参考画面：浅灰选择页，左侧机甲卡，右侧绿黑银色装甲角色。
 
-增加主角色和缩略角色列、分块金属装甲、可切换配色与待机摆臂。
+新增三款独立的角色模型：绿甲侦察角色采用抬臂姿态，紫甲工程角色带头罩和背包，蓝甲守卫角色加宽肩甲。选择不同卡片会切换主模型，确认身份与模型 ID 保持对应。
 
 ![本仓库实际运行截图](../public/previews/character-selection.png)
 
-没有 Hunyuan3D 原网格和原角色动画；装甲轮廓、脸部和姿态仍有差距。
+装甲表面和原角色动画仍为简化处理；这三款是本仓库重建模型，不是 Hunyuan3D 原始网格。
+
+## 新增简版模型
+
+模型由本仓库按参考画面重建，demo 与 GLB 使用同一份源模型工厂。GLB 包含几何、材质；人形模型另附清单列出的肩部待机动画。文件没有外部贴图依赖。轴向为 Y 向上，尺寸为场景单位。
+
+| 模型         | GLB                                                                      | 三角形 | 动画片段 |
+| ------------ | ------------------------------------------------------------------------ | -----: | -------: |
+| 绿甲侦察角色 | [下载](https://weisiwu.github.io/threejs-demo/models/cyber-scout.glb)    |   5860 |        2 |
+| 紫甲工程角色 | [下载](https://weisiwu.github.io/threejs-demo/models/cyber-engineer.glb) |   6452 |        2 |
+| 蓝甲守卫角色 | [下载](https://weisiwu.github.io/threejs-demo/models/cyber-guardian.glb) |   6268 |        2 |
+
+[模型源码](../src/models/model-kit.ts) · [部件与型号映射](../src/models/entries.ts) · [原件哈希和部件范围](../public/models/manifest.json) · [MIT 许可](../public/models/LICENSE)
 
 [逐项对照记录](../research/appearance-review.json) · [外观代码](../src/visuals/)
 
@@ -26,7 +38,7 @@ tags: [threejs, reproduction, research]
 
 角色选择包含预览态与确认态。鼠标换预览不能立即覆盖已确认的角色，否则用户尚未提交选择就会进入另一条业务状态。
 
-侦察型、工程型、守卫型由三组程序化 humanoid 构成，持有 scout、engineer、guardian ID。选中模型放大，确认按钮才写入 confirmed；旋转速度只控制预览运动。
+三款角色分别对应 cyber-scout、cyber-engineer 和 cyber-guardian；业务 ID 仍为 scout、engineer、guardian。选择时切换实际主模型，确认按钮只记录当前业务 ID。小模型与主模型使用同一工厂。
 
 ## 如何核对
 
@@ -45,9 +57,9 @@ tags: [threejs, reproduction, research]
 
 ## 原资料与复现范围
 
-三个模型同时留在场景中，切换没有重复创建资源。没有角色生成调用、骨骼绑定、行走或战斗系统。引入生成资产后，应让资产清单映射到 characterId，而不是把文件名作为角色身份。
+角色包含肩肘节点与简版待机动作，GLB 保存两条肩部动画。没有行走或战斗系统；装甲、头罩、背包和不同宽度用于区分三个模型。
 
-未调用图像与三维生成工具，角色无战斗或骨骼动画系统。
+本仓库参考画面重建的简版模型；保留选择与状态，未实现原作完整动画或玩法。
 
 原帖文字说明了作者公开展示的方向。后面的仓库用于研究相近机制，除非正文另有说明，不能把它当成该条原帖的完整源码。本轮查看了视频封面并按画面重建。视频播放器未成功加载，完整动作与资产仍未核验。
 

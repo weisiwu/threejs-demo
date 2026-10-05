@@ -207,7 +207,7 @@ test('隐藏设备清除勾选，空布局保存后仍为空', async ({ page }) 
   await page.reload();
   await expect(metric(page, '图表数量')).toHaveText('0');
 });
-test('采样门隐藏后停止计数，移动角色从同源地形采样高度', async ({ page }) => {
+test('采样门隐藏后停止计数，舱室角色离开展示台落到地板', async ({ page }) => {
   await page.goto('#/demo/visibility-dashboard');
   await page.locator('#pause').click();
   await page.locator('#step').click();
@@ -221,7 +221,7 @@ test('采样门隐藏后停止计数，移动角色从同源地形采样高度',
   await page.locator('#step').click();
   await page.keyboard.up('d');
   await expect(metric(page, '角色 X')).toHaveText('2.00');
-  await expect(metric(page, '地面高度')).toHaveText((Math.sin(2 * 0.55) * 0.6).toFixed(2));
+  await expect(metric(page, '地面高度')).toHaveText('0.00');
 });
 test('保存桌面与手机阅读截图，目录预览均加载', async ({ page }) => {
   await mkdir('test-results/visuals', { recursive: true });
