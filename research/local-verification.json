@@ -5,18 +5,18 @@
     "file": "tests/mechanisms.test.ts"
   },
   "browserTests": {
-    "startTime": "2026-10-05T01:08:03.980Z",
-    "duration": 149248.28100000002,
-    "expected": 100,
+    "startTime": "2026-10-05T01:49:49.101Z",
+    "duration": 354899.703,
+    "expected": 101,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
   },
-  "browserEnvironment": "macOS Chrome / headless WebGL",
-  "scope": "43 路由桌面和 390px 布局，共 100 项浏览器断言；另查看 29 张原帖预览，逐项记录外观差异",
+  "browserEnvironment": "macOS Chrome / SwiftShader / 1 倍像素",
+  "scope": "43 路由桌面与 390px，共 101 项浏览器检查；之后两项资源与暂停复查。另查看 29 张原帖预览，逐项记录差异",
   "screenshots": "public/previews/manifest.json",
   "limitations": [
-    "已对照原帖预览图；原视频未成功播放，连续动作与原作逐帧一致性未核对",
+    "已对照预览图；原视频未成功播放，连续动作与原作逐帧一致性未核对",
     "未执行外部 AI 服务、真实设备、CFD 或分子动力学",
     "没有真实手机 GPU 帧率或功耗数据"
   ],
@@ -35,7 +35,7 @@
     },
     {
       "path": "src/runtime.ts",
-      "sha256": "3d1f0d7af131c7cb5e115bd782365596e0ada448b97b16c7c8490f6909d2c258"
+      "sha256": "98c97e30fd43885c1ec1be7cc980274ff167f9b32dbc4ef9a4bf8e472ea6b7da"
     },
     {
       "path": "src/types.ts",
@@ -43,7 +43,7 @@
     },
     {
       "path": "src/graphics.ts",
-      "sha256": "c95f9da4b94076be3873ec621e782d8c6faa6a37d9209db92d8f5b118579be92"
+      "sha256": "3b5d4afb2ff5043e0229ff70f85380b9adae2425ce968725575c67ae0f94fd6f"
     },
     {
       "path": "src/scenes/science.ts",
@@ -59,13 +59,17 @@
     },
     {
       "path": "tests/browser/experiments.spec.ts",
-      "sha256": "609544bcfb23571b83c8901e7aa8d95e0b66da386f737351af97237b974866a9"
+      "sha256": "a09337e5aca8ffde8779b63091e260d13d835ddb65064f4b534d046361f4fa09"
+    },
+    {
+      "path": "playwright.config.ts",
+      "sha256": "2309737c6494ea284cb34768e9e79936847e03b22c41ad4f9acc867a5d681491"
     }
   ],
   "appearanceFiles": [
     {
       "path": "src/presentation.ts",
-      "sha256": "c3a67ae0dd2d8fd4d4eb711204d32323c3056868e1b6f3cbf95b6db2c98c4a1a"
+      "sha256": "a005108216d293e7c0081d32e7a359e58a80144a185a0028389449a998572746"
     },
     {
       "path": "src/visuals/helpers.ts",
@@ -87,5 +91,16 @@
       "path": "src/visuals/spatial.ts",
       "sha256": "0db86ddf51ee16049c46893758df60825d03d2790a3cc907f4d4b6fc3af39208"
     }
-  ]
+  ],
+  "followupTests": {
+    "stats": {
+      "startTime": "2026-10-05T02:06:42.484Z",
+      "duration": 18628.759000000002,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "scope": "阴影纹理释放后，连续切换的几何与纹理数量、暂停绘制及镜头更新两项复查通过"
+  }
 }

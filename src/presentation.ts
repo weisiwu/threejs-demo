@@ -257,7 +257,8 @@ export function present(c: SceneContext, base: Experiment): Experiment {
   });
   const key = c.scene.children.find((o) => o instanceof T.DirectionalLight) as T.DirectionalLight;
   key.castShadow = true;
-  key.shadow.mapSize.set(1024, 1024);
+  const shadowSize = devicePixelRatio < 1 ? 512 : 1024;
+  key.shadow.mapSize.set(shadowSize, shadowSize);
   Object.assign(key.shadow.camera, { left: -12, right: 12, top: 12, bottom: -12 });
   key.shadow.bias = -0.001;
   let stamp = '';

@@ -10,9 +10,10 @@ export default defineConfig({
   use: {
     baseURL: external || 'http://127.0.0.1:44173/threejs-demo/',
     headless: true,
+    deviceScaleFactor: process.env.CI ? 0.5 : 1,
     proxy: process.env.DEMO_PROXY ? { server: process.env.DEMO_PROXY } : undefined,
     channel: process.env.CI ? undefined : 'chrome',
-    launchOptions: { args: ['--enable-unsafe-swiftshader'] },
+    launchOptions: { args: ['--enable-unsafe-swiftshader', '--use-angle=swiftshader'] },
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
   },

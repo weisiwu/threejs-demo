@@ -122,7 +122,9 @@
       "path": "public/assets/natural-earth-LICENSE",
       "source": "https://github.com/nvkelso/natural-earth-vector/blob/693f11422f4e08d2da4566b854dda53eb7c39fb3/LICENSE.md",
       "publishedSha256": "2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b",
-      "license": "Public domain"
+      "license": "Public domain",
+      "sourceSha256": "2631b5b39b6d1acc56de75235109b5af2dbb4b0ac5a127b6f06185977247fd4b",
+      "transform": "固定提交原字节副本"
     }
   ]
 }

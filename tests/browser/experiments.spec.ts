@@ -17,6 +17,19 @@ for (const spec of catalog) {
     await expect
       .poll(async () => Number(await canvas.getAttribute('data-calls')))
       .toBeGreaterThan(1);
+    if (process.env.CI && spec.slug === catalog[0].slug) {
+      console.log(
+        await canvas.evaluate((el) => {
+          const gl = (el as HTMLCanvasElement).getContext('webgl2')!;
+          const ext = gl.getExtension('WEBGL_debug_renderer_info')!;
+          return {
+            renderer: gl.getParameter(ext ? ext.UNMASKED_RENDERER_WEBGL : gl.RENDERER),
+            pixelRatio: devicePixelRatio,
+          };
+        }),
+      );
+    }
+    await page.locator('#pause').click();
     if (spec.slug === 'network-management')
       await page.getByLabel('device-1', { exact: true }).check();
     await page.locator('#action').click();
@@ -27,7 +40,6 @@ for (const spec of catalog) {
       .locator('#parameter')
       .press(spec.parameter.value === spec.parameter.max ? 'ArrowLeft' : 'ArrowRight');
     await expect(page.locator('#parameter')).not.toHaveValue(String(spec.parameter.value));
-    await page.locator('#pause').click();
     await expect(page.locator('#pause')).toHaveText('继续');
     const time = Number(await page.locator('#clock').getAttribute('data-time'));
     await page.locator('#step').click();
@@ -38,6 +50,12 @@ for (const spec of catalog) {
     await page
       .locator('#viewport')
       .screenshot({ path: `test-results/screenshots/${spec.slug}.png` });
+    const steppedTime = Number(await page.locator('#clock').getAttribute('data-time'));
+    await page.locator('#pause').click();
+    await expect
+      .poll(async () => Number(await page.locator('#clock').getAttribute('data-time')))
+      .toBeGreaterThan(steppedTime + 0.001);
+    await page.locator('#pause').click();
     await page.locator('#reset').click();
     await expect(page.locator('#status')).toHaveAttribute('data-operations', '0');
     await expect(page.locator('#parameter')).toHaveValue(String(spec.parameter.value));
@@ -128,6 +146,7 @@ test('连续切换时保持单画布，资源数量不累积', async ({ page }) 
     .poll(async () => Number(await page.locator('canvas').getAttribute('data-geometries')))
     .toBeGreaterThan(5);
   const initial = Number(await page.locator('canvas').getAttribute('data-geometries'));
+  const initialTextures = Number(await page.locator('canvas').getAttribute('data-textures'));
   for (let i = 0; i < 6; i++) {
     await page.goto('#/demo/protein-folding');
     await expect(metric(page, '残基数')).toHaveText('46');
@@ -136,6 +155,9 @@ test('连续切换时保持单画布，资源数量不累积', async ({ page }) 
     await expect
       .poll(async () => Number(await page.locator('canvas').getAttribute('data-geometries')))
       .toBe(initial);
+    await expect
+      .poll(async () => Number(await page.locator('canvas').getAttribute('data-textures')))
+      .toBe(initialTextures);
   }
 });
 test('目录筛选与手机布局', async ({ page }) => {
@@ -250,4 +272,32 @@ test('咖啡因使用 24 个真实坐标原子，切换后显示当前分子', a
   await page.locator('#action').click();
   await expect(metric(page, '分子')).toHaveText('水 H₂O');
   await expect(metric(page, '原子数')).toHaveText('3');
+});
+
+test('暂停后停止静止画面的重复绘制，参数和镜头仍会更新', async ({ page }) => {
+  await page.goto('#/demo/turbofan-airflow');
+  const canvas = page.locator('canvas');
+  await expect
+    .poll(async () => Number(await canvas.getAttribute('data-frames')))
+    .toBeGreaterThan(3);
+  await page.locator('#pause').click();
+  await page.waitForTimeout(200);
+  const before = Number(await canvas.getAttribute('data-frames'));
+  await page.waitForTimeout(300);
+  expect(Number(await canvas.getAttribute('data-frames'))).toBe(before);
+  await page.locator('#parameter').focus();
+  await page.locator('#parameter').press('ArrowRight');
+  await expect
+    .poll(async () => Number(await canvas.getAttribute('data-frames')))
+    .toBeGreaterThan(before);
+  const afterParameter = Number(await canvas.getAttribute('data-frames'));
+  const bounds = (await canvas.boundingBox())!;
+  await page.mouse.move(bounds.x + bounds.width / 2, bounds.y + bounds.height / 2);
+  await page.mouse.down();
+  await page.mouse.move(bounds.x + bounds.width / 2 + 50, bounds.y + bounds.height / 2 + 20);
+  await page.mouse.up();
+  await expect
+    .poll(async () => Number(await canvas.getAttribute('data-frames')))
+    .toBeGreaterThan(afterParameter);
+  await expect(page.locator('#pause')).toHaveText('继续');
 });

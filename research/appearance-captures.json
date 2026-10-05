@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-05T01:08:17.074Z",
+  "capturedAt": "2026-10-05T01:50:05.487Z",
   "rows": [
     {
       "slug": "customizable-dashboard",
@@ -38,8 +38,8 @@
     {
       "slug": "solar-system-basics",
       "path": "public/previews/solar-system-basics.png",
-      "sha256": "f381e150868599797a1e7e50cf068bd62694e75697ddfbacd27e60674e46d380",
-      "bytes": 33369,
+      "sha256": "4e82ab0f6aa93e310fca528ea05374cf77675d3b9ff8849366eef39a6f79af7f",
+      "bytes": 33404,
       "viewport": [
         1440,
         1080
@@ -55,8 +55,8 @@
     {
       "slug": "solar-system-orbits",
       "path": "public/previews/solar-system-orbits.png",
-      "sha256": "c2fe09a8b9670a1903bb26c6a055898e97fc85464fde298102dca6746500b015",
-      "bytes": 33760,
+      "sha256": "fb38c10ad9254f34abf9bca0a289b6822d9efa2247418a35c987c6f5f7dbe628",
+      "bytes": 33807,
       "viewport": [
         1440,
         1080
@@ -106,8 +106,8 @@
     {
       "slug": "scene-builder",
       "path": "public/previews/scene-builder.png",
-      "sha256": "8f727fb82b91312ea1f6e7e7b64187751c4de1ca98105d75fd837d3d4ce4bef4",
-      "bytes": 36016,
+      "sha256": "14c38bb79c6e8cba46360ec8b52b77296b625d464a0d0211d08e47e9d2df2dcd",
+      "bytes": 35978,
       "viewport": [
         1440,
         1080
@@ -123,8 +123,8 @@
     {
       "slug": "hexapod-robot",
       "path": "public/previews/hexapod-robot.png",
-      "sha256": "e4ab576b6d918e21fa49abba16536d3e9d129b6fbab2f3d80416b285f0575423",
-      "bytes": 106468,
+      "sha256": "0edb9f5b41b9180e68a1d21ac7dfa6214b4a6364099b2ac701a79c095f353bb8",
+      "bytes": 107890,
       "viewport": [
         1440,
         1080
@@ -140,8 +140,8 @@
     {
       "slug": "jet-engine",
       "path": "public/previews/jet-engine.png",
-      "sha256": "71dd13e4b717388d9b3119121d848a79b544ab5440479070d4522249c78165c9",
-      "bytes": 114193,
+      "sha256": "9a51d05698d418c1ad39dca6e84b3f4a9884dbd499f75bff0e4b23e599cc8d6a",
+      "bytes": 114893,
       "viewport": [
         1440,
         1080
@@ -157,8 +157,8 @@
     {
       "slug": "strandbeest",
       "path": "public/previews/strandbeest.png",
-      "sha256": "4914e6ce8f575a0b294a46481dcef45c59d19378dd497eeaf11655978b04bd92",
-      "bytes": 29480,
+      "sha256": "3c227a2457078d2ad4abb13382620f0d776134f7041b47878f522af3594f1f91",
+      "bytes": 29454,
       "viewport": [
         1440,
         1080
@@ -174,8 +174,8 @@
     {
       "slug": "kinematic-creature",
       "path": "public/previews/kinematic-creature.png",
-      "sha256": "f4a689f37b82cec2736fbf217ee41441506c7e0e8d8dce3b5bf98ffa32381fd9",
-      "bytes": 71423,
+      "sha256": "9c37a76243f52b4dffd913e44b69a299eeaed0702cd8a3f40504fe95df8fb532",
+      "bytes": 71581,
       "viewport": [
         1440,
         1080
@@ -191,8 +191,8 @@
     {
       "slug": "dna-structure",
       "path": "public/previews/dna-structure.png",
-      "sha256": "fd79d6a40f96c7caa8754ddf91668b720ae38c1fc5e97daa40b16d1273ab811a",
-      "bytes": 67444,
+      "sha256": "56b208bbeda7191ca591785c9d69c3c6851fbd0a1b75f40af01cf0bdb25124a2",
+      "bytes": 66999,
       "viewport": [
         1440,
         1080
@@ -208,8 +208,8 @@
     {
       "slug": "periodic-table",
       "path": "public/previews/periodic-table.png",
-      "sha256": "fecff04ad1dd6a263482699ee877e29f9756a5cded468857ddc7840622093176",
-      "bytes": 36741,
+      "sha256": "1d8ca11171f01552acb7b8a1f8763aeae4713b577ee3ba13d4e9c79f8b912541",
+      "bytes": 37069,
       "viewport": [
         1440,
         1080
@@ -225,8 +225,8 @@
     {
       "slug": "aurora",
       "path": "public/previews/aurora.png",
-      "sha256": "6417ee0f0de255955978f09ee6fcc117d0c5b9cdf09499d1bdccb4a52c8571d1",
-      "bytes": 79434,
+      "sha256": "41c499bb1cd49e1da5f74e8ed6620061efcf28a2977956aa345d9bc0c66b8bbb",
+      "bytes": 79601,
       "viewport": [
         1440,
         1080
@@ -242,8 +242,8 @@
     {
       "slug": "anomaly-monitor",
       "path": "public/previews/anomaly-monitor.png",
-      "sha256": "51cbb6ed2852f1eab7d3bf4ccebce6b40ef7c3461169571aa39d7782736439cd",
-      "bytes": 187189,
+      "sha256": "7e4ea623c3882f5128a04c39208dacaa06793801e2f50869691482195b05df04",
+      "bytes": 187420,
       "viewport": [
         1440,
         1080
@@ -259,8 +259,8 @@
     {
       "slug": "skeleton-explorer",
       "path": "public/previews/skeleton-explorer.png",
-      "sha256": "806e24b4ae20f647dc2764144a509d2cd394aa2a8147d2cb4899db2d9a4b212c",
-      "bytes": 43828,
+      "sha256": "2d295d8d188699f4da631abce076762af7c3d9b4d0815898115c59df007e9ee4",
+      "bytes": 44145,
       "viewport": [
         1440,
         1080
@@ -276,8 +276,8 @@
     {
       "slug": "character-selection",
       "path": "public/previews/character-selection.png",
-      "sha256": "3e81cf18732922eb426d92266b3fadd0764411d13eb66b340cf6f78d96d9bd19",
-      "bytes": 88000,
+      "sha256": "cd63c1a2d4658797e3d4b289ada237c0bc3b97272f0bc3c2185e0e8663239966",
+      "bytes": 88502,
       "viewport": [
         1440,
         1080
@@ -293,8 +293,8 @@
     {
       "slug": "ornithopter",
       "path": "public/previews/ornithopter.png",
-      "sha256": "b298a64e09b13ca9f4847f4aa9a773bf4ef3e16564e0789cbea9c2ae49fae6a8",
-      "bytes": 85654,
+      "sha256": "eeefdb5b55e9c2c9ad9e1aceb6ed391921e3087e662b8a9c4f8b549fda8b8e73",
+      "bytes": 85441,
       "viewport": [
         1440,
         1080
@@ -310,8 +310,8 @@
     {
       "slug": "ship-selection",
       "path": "public/previews/ship-selection.png",
-      "sha256": "f12592d615faa86144e36f1404662bf515563ef90df8b53efd3c67b7e2df7d33",
-      "bytes": 69314,
+      "sha256": "27bf25b35592b849aa747cf7249418dc493e33e69137a42e255ddabccd0d2283",
+      "bytes": 69420,
       "viewport": [
         1440,
         1080
@@ -327,8 +327,8 @@
     {
       "slug": "sales-timeline",
       "path": "public/previews/sales-timeline.png",
-      "sha256": "9e3f9bbec8fb2f945011375f9ac4f29459014ea4a360f2e5972d3280dddca09e",
-      "bytes": 67859,
+      "sha256": "94f3df2b1e9ae9157070c5c61097fe86200b00fb4512c69fe19ddd70deeb7a21",
+      "bytes": 68312,
       "viewport": [
         1440,
         1080
@@ -344,8 +344,8 @@
     {
       "slug": "industrial-arm",
       "path": "public/previews/industrial-arm.png",
-      "sha256": "b722457783c0cb12b68280e9746b75c7805eeaac7f8791094a3dfa6006c8af41",
-      "bytes": 88188,
+      "sha256": "c9032ba7ab866b9606877814231140476c7133e0466162e37c2966aca5d6bb1f",
+      "bytes": 88171,
       "viewport": [
         1440,
         1080
@@ -361,8 +361,8 @@
     {
       "slug": "world-environment",
       "path": "public/previews/world-environment.png",
-      "sha256": "b576c6d38dfd58a14d218861cf67d5cf5713d53fef6562d8dd700583ba74041e",
-      "bytes": 238312,
+      "sha256": "166285d2fa59166e6676f4f149c3a342618cf194bcff39d928f8880dee55cb85",
+      "bytes": 238074,
       "viewport": [
         1440,
         1080
@@ -378,8 +378,8 @@
     {
       "slug": "smart-home",
       "path": "public/previews/smart-home.png",
-      "sha256": "412c6db0be3fe5e329272fb3f52b5a385cb99e2e2f3fe48487328901e0ee0023",
-      "bytes": 71082,
+      "sha256": "deb3f1ec2405888082b31377bba768b964dfbfa5067503aaafae2e92a88f6fe8",
+      "bytes": 71147,
       "viewport": [
         1440,
         1080
@@ -395,8 +395,8 @@
     {
       "slug": "interactive-map",
       "path": "public/previews/interactive-map.png",
-      "sha256": "fac0987994f7b8b3f9e7f45a7888007846b08443e8db2a46df4695fe342588a3",
-      "bytes": 73288,
+      "sha256": "d2c42a8202d02aafb8cdf7b89bf9c51024be3a848ec0ea663cc1798386bce030",
+      "bytes": 73254,
       "viewport": [
         1440,
         1080
@@ -412,8 +412,8 @@
     {
       "slug": "futuristic-interface",
       "path": "public/previews/futuristic-interface.png",
-      "sha256": "17ed171b4841f741cd44023f5d8d812a2e265e5b199ff7b72aece02a4a9605df",
-      "bytes": 85860,
+      "sha256": "19ac322be5c594bd36247b93544ae92611541df535a5f291772905e8f21c38ab",
+      "bytes": 86017,
       "viewport": [
         1440,
         1080
@@ -429,8 +429,8 @@
     {
       "slug": "robot-roster",
       "path": "public/previews/robot-roster.png",
-      "sha256": "781d3d7d39b684ca08fd627516f17da474d62e71728c0d90a8088e035fbe6913",
-      "bytes": 85837,
+      "sha256": "432492051815ca4328ab6da4f7916ad6cd9f3d3d2aa1214fac93742e9342eb29",
+      "bytes": 86589,
       "viewport": [
         1440,
         1080
@@ -446,8 +446,8 @@
     {
       "slug": "planet-explorer",
       "path": "public/previews/planet-explorer.png",
-      "sha256": "900d39d2dfb55aa79c3bcfab62c38f6884a1c6d7b0b75cd7a11332e214425f0d",
-      "bytes": 98643,
+      "sha256": "126105bfe1430c5f06d21ef141d214274861311228d9ffb48e3992d2c4882db4",
+      "bytes": 98741,
       "viewport": [
         1440,
         1080
@@ -463,8 +463,8 @@
     {
       "slug": "black-hole",
       "path": "public/previews/black-hole.png",
-      "sha256": "d4437d08c32b7cb8985abede19f4afcd15ff13c4106502b814e7e4be9a3fed9a",
-      "bytes": 103883,
+      "sha256": "c43b5220de6bac6b2e55906cc3e22a51a28c20b86c0a84bf0b8fb46f1cdde35d",
+      "bytes": 103813,
       "viewport": [
         1440,
         1080
@@ -480,8 +480,8 @@
     {
       "slug": "biological-structure",
       "path": "public/previews/biological-structure.png",
-      "sha256": "7addcf854553bf4e9c97679022bea7562900976ea330721a7234f43a79b9bff2",
-      "bytes": 66377,
+      "sha256": "3b97165b0e6e1c1278f5949eb5c073d9a6b764309180e1e4b193215576b85cc4",
+      "bytes": 67298,
       "viewport": [
         1440,
         1080
@@ -497,8 +497,8 @@
     {
       "slug": "turbofan-airflow",
       "path": "public/previews/turbofan-airflow.png",
-      "sha256": "f7dcf29516154034766961a1797fc5e909e4dc41b25498eb7455c218da24355a",
-      "bytes": 141877,
+      "sha256": "60a0a71ad8d965d736568dae6b4dbd5fdb010e0e5382cbf1c9a6ead5d8424be7",
+      "bytes": 141743,
       "viewport": [
         1440,
         1080
@@ -514,8 +514,8 @@
     {
       "slug": "atomic-explorer",
       "path": "public/previews/atomic-explorer.png",
-      "sha256": "ba638594874322a8d57f7632b404cd5d4f5702945cb2b4c1972369a8f7d8d975",
-      "bytes": 48267,
+      "sha256": "0a2f883474ab11da52a33c83329afbb57d591b9be50b122af61f320dcc813bd3",
+      "bytes": 48396,
       "viewport": [
         1440,
         1080
@@ -531,8 +531,8 @@
     {
       "slug": "molecular-structure",
       "path": "public/previews/molecular-structure.png",
-      "sha256": "3f86081cd16754a4e0f7cc886dc8ae05b4f56e7ffe44eff26111c433326cf7b9",
-      "bytes": 70974,
+      "sha256": "a849cabef724c0d3465312fcc2a9597c9be554f2489bfade83af00759711ccf4",
+      "bytes": 70667,
       "viewport": [
         1440,
         1080
@@ -548,8 +548,8 @@
     {
       "slug": "circuit-builder",
       "path": "public/previews/circuit-builder.png",
-      "sha256": "92e029cadc2b628a9d9ade95e04a3eab774e095cf69498e5e9d8db4c24acdd7b",
-      "bytes": 64274,
+      "sha256": "bb73f0bef571157ad839329eb4b78d69610c0b6124e0b0b1b7394181bc6f9ce6",
+      "bytes": 63800,
       "viewport": [
         1440,
         1080
@@ -565,8 +565,8 @@
     {
       "slug": "reactor-diagnostics",
       "path": "public/previews/reactor-diagnostics.png",
-      "sha256": "ce788b7b0976525d5bc2193fa6d8ee625b10a5d031cd30a495f7d7eac58b9123",
-      "bytes": 113329,
+      "sha256": "a81adc3cce8ec0d1d976720e3c6ca43b8fffb2f30710df0bf0c23a1055dccd5c",
+      "bytes": 114202,
       "viewport": [
         1440,
         1080
@@ -582,8 +582,8 @@
     {
       "slug": "kinetic-pavilion",
       "path": "public/previews/kinetic-pavilion.png",
-      "sha256": "98c7d6a403725f1f7f9dc2c37bbf9314cbae26048e559619099d89c98546e3fd",
-      "bytes": 146249,
+      "sha256": "376c0465bcc62a51b61d5f489a53359d37dc9f990f47a1c591c14d5204caf038",
+      "bytes": 146475,
       "viewport": [
         1440,
         1080
@@ -599,8 +599,8 @@
     {
       "slug": "rule-universe",
       "path": "public/previews/rule-universe.png",
-      "sha256": "9dfcb77c8482bc24f45b6296fafdf415f4a444102173b0fc77dc87a476938e24",
-      "bytes": 103109,
+      "sha256": "23b671a35791676d32397b777adaed4de6e5acd139c857284e09fb8a321adc7f",
+      "bytes": 102841,
       "viewport": [
         1440,
         1080
@@ -616,8 +616,8 @@
     {
       "slug": "portable-microscope",
       "path": "public/previews/portable-microscope.png",
-      "sha256": "7e1fcebb3b1c4c119b8b287b3702dcbac1daaca8f711fc26a0c19da95d4c86f0",
-      "bytes": 62634,
+      "sha256": "2cf4a370853756bce600cb1434bedab66f28784402b4fcfda7b66534e30592c5",
+      "bytes": 62493,
       "viewport": [
         1440,
         1080
@@ -633,8 +633,8 @@
     {
       "slug": "protein-folding",
       "path": "public/previews/protein-folding.png",
-      "sha256": "324f361014a09cb02773a3d6b146415e2f45c4d5adb9a8fda68073c1faaba9d6",
-      "bytes": 55533,
+      "sha256": "2ced9836ea825a3dc15a548b7d128c4a955f1dc5cc9737764170668cf4c9d71e",
+      "bytes": 55655,
       "viewport": [
         1440,
         1080
@@ -650,8 +650,8 @@
     {
       "slug": "jellyfish-robot",
       "path": "public/previews/jellyfish-robot.png",
-      "sha256": "945817c77979819525e0c0b394e449c4f5d4dcf62185bb8e13aa78bfbbd64cd4",
-      "bytes": 126762,
+      "sha256": "bef6296ac11bd5a1b587968aec68df540f02e001ec5e3a7c4ed7b8ce36762318",
+      "bytes": 126660,
       "viewport": [
         1440,
         1080
@@ -667,8 +667,8 @@
     {
       "slug": "v8-engine",
       "path": "public/previews/v8-engine.png",
-      "sha256": "b71a6b17479f3537a672998254af2243363849dd2b07cb44e8c3e15436d5bf9b",
-      "bytes": 90005,
+      "sha256": "600b2c6a834ecb2a7384b194129cb7dc79d657bc535dba5dab3eee541d0c52c0",
+      "bytes": 90658,
       "viewport": [
         1440,
         1080
@@ -684,8 +684,8 @@
     {
       "slug": "landing-gear",
       "path": "public/previews/landing-gear.png",
-      "sha256": "23666a64517563c4258fb9c2b7f72d74d3255d48b05375552f67f899d276286c",
-      "bytes": 45221,
+      "sha256": "b8e1ab441e835b90585421c41e269394077e258525383bf3435f557897f6389b",
+      "bytes": 45540,
       "viewport": [
         1440,
         1080
@@ -701,8 +701,8 @@
     {
       "slug": "schematic-transition",
       "path": "public/previews/schematic-transition.png",
-      "sha256": "21bb52fd94481704f32da6d76ad356a63ebb6114c98221094c8f0720b653ae5c",
-      "bytes": 108335,
+      "sha256": "92896309af7939fcc02240d7b191c530170b38221c1099420e4909bb1351073e",
+      "bytes": 108018,
       "viewport": [
         1440,
         1080
@@ -718,8 +718,8 @@
     {
       "slug": "warehouse-strategy",
       "path": "public/previews/warehouse-strategy.png",
-      "sha256": "df3cb35668558745533ed8bd1786cccffeadb3a47e00c409a134b9d99244af57",
-      "bytes": 82561,
+      "sha256": "467a73fa3c11c0eaed2747574f50d9c739b4d6c836a18b8f2fceb8ed55706b02",
+      "bytes": 82393,
       "viewport": [
         1440,
         1080

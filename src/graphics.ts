@@ -86,6 +86,12 @@ export function clear(group: T.Object3D) {
     materials = new Set<T.Material>(),
     textures = new Set<T.Texture>();
   group.traverse((obj) => {
+    if (
+      obj instanceof T.DirectionalLight ||
+      obj instanceof T.PointLight ||
+      obj instanceof T.SpotLight
+    )
+      obj.shadow.dispose();
     const m = obj as T.Mesh;
     if (m.geometry) geometries.add(m.geometry);
     if (m.material)

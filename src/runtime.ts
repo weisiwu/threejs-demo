@@ -28,9 +28,10 @@ export function mountExperiment(spec: DemoSpec) {
     renderer.toneMappingExposure = 1.3;
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = T.PCFShadowMap;
+    renderer.shadowMap.autoUpdate = false;
     const room = new RoomEnvironment();
     const pmrem = new T.PMREMGenerator(renderer);
-    environment = pmrem.fromScene(room, 0.04).texture;
+    environment = pmrem.fromScene(room, 0.04, 0.1, 100, { size: 128 }).texture;
     room.dispose();
     pmrem.dispose();
   }
@@ -104,13 +105,28 @@ export function mountExperiment(spec: DemoSpec) {
   let frame = 0,
     alive = true,
     last = performance.now(),
+    lastDraw = 0,
+    renderDirty = true,
     raf = 0;
+  const invalidate = () => {
+    renderDirty = true;
+  };
+  const previousLoad = T.DefaultLoadingManager.onLoad;
+  const loaded = () => {
+    previousLoad?.();
+    invalidate();
+  };
+  T.DefaultLoadingManager.onLoad = loaded;
+  panel.addEventListener('click', invalidate);
+  panel.addEventListener('input', invalidate);
+  panel.addEventListener('change', invalidate);
   const resize = () => {
     const width = host.clientWidth,
       height = host.clientHeight;
     r.setSize(width, height, false);
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
+    invalidate();
   };
   const observer = new ResizeObserver(resize);
   observer.observe(host);
@@ -125,35 +141,46 @@ export function mountExperiment(spec: DemoSpec) {
     r.domElement.dataset.frames = String(frame);
     r.domElement.dataset.calls = String(r.info.render.calls);
     r.domElement.dataset.geometries = String(r.info.memory.geometries);
+    r.domElement.dataset.textures = String(r.info.memory.textures);
     document.querySelector('#pause')!.textContent = state.paused ? '继续' : '暂停';
   };
   const step = (dt: number) => {
     state.time += dt;
     experiment.update(dt);
-    highlight(group, state.selection);
   };
-  const render = () => {
-    controls.update();
+  const render = (advanceControls = true) => {
+    if (advanceControls) controls.update();
+    highlight(group, state.selection);
+    r.shadowMap.needsUpdate = renderDirty;
     r.render(scene, camera);
     frame++;
+    renderDirty = false;
     sync();
   };
   const loop = (now: number) => {
     if (!alive) return;
     const dt = clamp((now - last) / 1000, 0, 0.05);
     last = now;
-    if (!state.paused && document.visibilityState === 'visible') step(dt);
-    else experiment.update(0);
-    render();
+    if (!state.paused && document.visibilityState === 'visible') {
+      step(dt);
+      invalidate();
+    } else experiment.update(0);
+    const viewChanged = controls.update();
+    if ((renderDirty || viewChanged) && (state.paused || now - lastDraw >= 1000 / 30)) {
+      render(false);
+      lastDraw = now;
+    }
     raf = requestAnimationFrame(loop);
   };
   const resetClock = () => {
     last = performance.now();
+    invalidate();
   };
   document.addEventListener('visibilitychange', resetClock);
   const choose = (id: string) => {
     state.selection = id;
     experiment.select?.(id);
+    invalidate();
     if (['planet-explorer', 'solar-system-orbits'].includes(spec.slug)) {
       let obj: T.Object3D | undefined;
       group.traverse((o) => {
@@ -201,12 +228,14 @@ export function mountExperiment(spec: DemoSpec) {
     state.parameter = clamp(Number(slider.value), spec.parameter.min, spec.parameter.max);
     experiment.parameter?.(state.parameter);
     experiment.update(0);
+    invalidate();
     sync();
   };
   document.querySelector<HTMLButtonElement>('#action')!.onclick = () => {
     state.operations++;
     experiment.action();
     experiment.update(0);
+    invalidate();
     if (spec.slug === 'solar-system-orbits') choose(state.selection);
     sync();
   };
@@ -218,6 +247,7 @@ export function mountExperiment(spec: DemoSpec) {
   document.querySelector<HTMLButtonElement>('#step')!.onclick = () => {
     state.paused = true;
     for (let i = 0; i < 20; i++) step(0.05);
+    invalidate();
     render();
   };
   experiment.update(0);
@@ -229,6 +259,10 @@ export function mountExperiment(spec: DemoSpec) {
     observer.disconnect();
     document.removeEventListener('visibilitychange', resetClock);
     panel.removeEventListener('click', panelSelect);
+    panel.removeEventListener('click', invalidate);
+    panel.removeEventListener('input', invalidate);
+    panel.removeEventListener('change', invalidate);
+    if (T.DefaultLoadingManager.onLoad === loaded) T.DefaultLoadingManager.onLoad = previousLoad;
     r.domElement.removeEventListener('pointerdown', pointerDown);
     r.domElement.removeEventListener('pointerup', pointerUp);
     controls.dispose();
